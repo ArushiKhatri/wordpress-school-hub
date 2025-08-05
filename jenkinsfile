@@ -104,16 +104,22 @@ stage('Slack Notificationss') {
 
         stage('Deploy to Web Server') {
             steps {
-                script {
-                    def artifactName = readFile('latest.txt').trim()
-                    echo "Deploying $artifactName"
-
+                
+                  
                     sh """
+  echo "Downloading latest.txt from Azure..."
+                    az storage blob download \
+                      --account-name projectjenkins \
+                      --container-name wordpress-artifacts \
+                      --name latest.txt \
+                      --file latest.txt \
+                      --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
                       sudo   unzip -o "/tmp/$artifactName" -d /var/www/html/
                       sudo  chown -R www-data:www-data /var/www/html/
                        sudo systemctl restart apache2
                     """
-                }
+                
             }
         }
 
