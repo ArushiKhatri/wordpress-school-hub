@@ -155,7 +155,7 @@ stage('Slack Notification') {
                     def lines = readFile('latest.txt').trim().split('\n')
 
                     if (lines.length < 2) {
-                        echo "⚠️ Only one version found. Rollback not possible."
+                        echo "Only one version found. Rollback not possible."
                         return // Exit the stage cleanly
                     }
 
