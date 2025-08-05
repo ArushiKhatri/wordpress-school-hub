@@ -402,7 +402,7 @@ pipeline {
 
                     def slackMessage = """
                     {
-                        "text": "🔁 Rollback completed to: ${rollbackVersion}"
+                        "text": "Rollback completed to: ${rollbackVersion}"
                     }
                     """
 
