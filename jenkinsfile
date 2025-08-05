@@ -57,7 +57,7 @@ pipeline {
             }
         }
 
-stage('Slack Notification') {
+stage('Slack Notificationss') {
     steps {
         wrap([$class: 'BuildUser']) {
             sh '''
@@ -117,7 +117,7 @@ stage('Slack Notification') {
             }
         }
 
-       stage('Slack Notification') {
+       stage('Slack Notificationssss') {
     steps {
         sh '''
             ZIP_NAME=$(cat latest.txt)
@@ -177,7 +177,7 @@ stage('Slack Notification') {
                 }
             }
         }
-stage('Slack notification'){
+stage('Slack notifications'){
       steps {
     script {
         def lines = readFile('latest.txt').trim().split('\n')
