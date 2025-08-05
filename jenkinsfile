@@ -2,7 +2,7 @@ pipeline {
     agent any
   
     stages {
-#CI Stages
+//CI Stages
           stage('Clone') {
             steps {
                 sh 'echo "Cloning The Repo"'
@@ -76,7 +76,7 @@ stage('Slack Notification') {
         }
     }
 }
-#CD Stages
+//CD Stages
  stage('Download latest.txt and ZIP from Azure') {
             steps {
                 sh '''
@@ -130,7 +130,7 @@ stage('Slack Notification') {
         '''
     }
 }
-#Rollback Stages
+//Rollback Stages
   stage('Download latest.txt from Azure') {
             steps {
                 sh '''
