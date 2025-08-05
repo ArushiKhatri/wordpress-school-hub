@@ -42,7 +42,7 @@ pipeline {
                           --file "$ZIP_NAME" \
                           --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
 
-                        echo "$ZIP_NAME" >> latest.txt
+                        cat "$ZIP_NAME" > latest.txt
 
                         az storage blob upload \
                           --account-name projectjenkins \
