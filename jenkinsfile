@@ -212,7 +212,7 @@ stage('Slack notifications'){
 }
 }
 }*/
-pipeline {
+/*pipeline {
     agent any
 
     stages {
@@ -423,4 +423,225 @@ pipeline {
             }
         }
     }
+}*/
+pipeline {
+    agent any
+
+    stages {
+        // CI Stages
+        stage('Clone') {
+            steps {
+                sh 'echo "Cloning The Repo"'
+                git branch: 'main', url: 'https://github.com/ArushiKhatri/wordpress-university-hub.git'
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                sh '''
+                    echo "Cleaning old ZIPs and meta files"
+                    rm -f *.zip zipname.txt latest.txt
+
+                    echo "Archiving a zip file"
+                    DATE=$(date +"%FT%H%M%S")
+                    ZIP_NAME="wordpress-${DATE}.zip"
+
+                    zip -r "$ZIP_NAME" . -x "*.zip" -x "*.git*" -x "zipname.txt" -x "latest.txt"
+
+                    echo "$ZIP_NAME" > zipname.txt
+
+                    echo "$ZIP_NAME" > latest.txt
+                    echo "" >> latest.txt
+                    echo "---- Contents of the ZIP ----" >> latest.txt
+                    unzip -l "$ZIP_NAME" | tail -n +4 | head -n -2 | awk '{$1=$2=$3=""; print $0}' >> latest.txt
+
+                    echo "Creating latest.zip copy..."
+                    cp "$ZIP_NAME" latest.zip
+                '''
+            }
+        }
+
+        stage('Upload') {
+            steps {
+                script {
+                    sh '''
+                        echo "Uploading to Azure Blob Storage"
+                        ZIP_NAME=$(cat zipname.txt)
+
+                        az storage blob upload \
+                          --account-name projectjenkins \
+                          --container-name wordpress-artifacts \
+                          --name "$ZIP_NAME" \
+                          --file "$ZIP_NAME" \
+                          --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
+                        az storage blob upload \
+                          --account-name projectjenkins \
+                          --container-name wordpress-artifacts \
+                          --name "latest.zip" \
+                          --file "latest.zip" \
+                          --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA== \
+                          --overwrite
+
+                        az storage blob upload \
+                          --account-name projectjenkins \
+                          --container-name wordpress-artifacts \
+                          --name "latest.txt" \
+                          --file "latest.txt" \
+                          --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA== \
+                          --overwrite
+                    '''
+                }
+            }
+        }
+
+        stage('Slack Notification CI') {
+            steps {
+                wrap([$class: 'BuildUser']) {
+                    sh '''
+                        ZIP_NAME=$(cat zipname.txt)
+                        BUILD_ID_VAL=$BUILD_ID
+                        TRIGGERED_BY=$BUILD_USER_ID
+
+                        curl -X POST -H 'Content-type: application/json' \
+                        --data '{
+                            "text": "CI pipeline completed!\\n Artifact: '"$ZIP_NAME"'\\n Triggered by: '"$TRIGGERED_BY"'\\n Build ID: '"$BUILD_ID_VAL"'"
+                        }' \
+                        https://hooks.slack.com/services/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
+                    '''
+                }
+            }
+        }
+
+        // CD Stages
+        stage('Download Artifacts from Azure') {
+            steps {
+                sh '''
+                    echo "Downloading latest.zip and latest.txt from Azure..."
+                    
+                    az storage blob download \
+                      --account-name projectjenkins \
+                      --container-name wordpress-artifacts \
+                      --name latest.zip \
+                      --file "/tmp/latest.zip" \
+                      --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
+                    az storage blob download \
+                      --account-name projectjenkins \
+                      --container-name wordpress-artifacts \
+                      --name latest.txt \
+                      --file latest.txt \
+                      --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
+                    echo "latest.zip" > zipname.txt
+                '''
+            }
+        }
+
+        stage('Deploy to Web Server') {
+            steps {
+                script {
+                    def artifactName = readFile('zipname.txt').trim()
+                    echo "Deploying $artifactName"
+
+                    sh """
+                        sudo unzip -o "/tmp/$artifactName" -d /var/www/html/
+                        sudo chown -R www-data:www-data /var/www/html/
+                        sudo systemctl restart apache2
+                    """
+                }
+            }
+        }
+
+        stage('Slack Notification CD') {
+            steps {
+                sh '''
+                    ZIP_NAME=$(head -n 1 zipname.txt)
+
+                    curl -X POST -H 'Content-type: application/json' \
+                    --data "{
+                      \\"text\\": \\"CD Pipeline completed successfully!\\nDeployed Artifact: ${ZIP_NAME}\\"
+                    }" \
+                    https://hooks.slack.com/services/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
+                '''
+            }
+        }
+
+        // Rollback Stages
+        stage('Download latest.txt from Azure') {
+            steps {
+                sh '''
+                    echo "Downloading latest.txt..."
+                    az storage blob download \
+                      --account-name projectjenkins \
+                      --container-name wordpress-artifacts \
+                      --name latest.txt \
+                      --file latest.txt \
+                      --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
+                    echo "--- Contents of latest.txt ---"
+                    cat latest.txt
+                    echo "-----------------------------"
+                '''
+            }
+        }
+
+        stage('Rollback to Previous Artifact') {
+            steps {
+                script {
+                    def lines = readFile('latest.txt').split('\n').findAll { it.endsWith('.zip') }
+
+                    if (lines.size() < 2) {
+                        echo "Only one version found. Rollback not possible."
+                        return
+                    }
+
+                    def rollbackVersion = lines[1]
+                    echo "Rolling back to previous version: ${rollbackVersion}"
+
+                    sh """
+                        az storage blob download \
+                          --account-name projectjenkins \
+                          --container-name wordpress-artifacts \
+                          --name "$rollbackVersion" \
+                          --file "/tmp/$rollbackVersion" \
+                          --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA==
+
+                        sudo unzip -o "/tmp/$rollbackVersion" -d /var/www/html/
+                        sudo chown -R www-data:www-data /var/www/html/
+                        sudo systemctl restart apache2
+                    """
+                }
+            }
+        }
+
+        stage('Slack Notification Rollback') {
+            steps {
+                script {
+                    def lines = readFile('latest.txt').split('\n').findAll { it.endsWith('.zip') }
+
+                    if (lines.size() < 2) {
+                        error("Rollback not possible: Less than 2 deployed versions found.")
+                    }
+
+                    def rollbackVersion = lines[1]
+
+                    def slackMessage = """
+                    {
+                        "text": "Rollback completed to: ${rollbackVersion}"
+                    }
+                    """
+
+                    writeFile file: 'slack-payload.json', text: slackMessage
+
+                    sh '''
+                        curl -X POST -H 'Content-type: application/json' \
+                        --data @slack-payload.json \
+                        https://hooks.slack.com/services/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
+                    '''
+                }
+            }
+        }
+    }
 }
+
