@@ -450,10 +450,7 @@ pipeline {
 
                     echo "$ZIP_NAME" > zipname.txt
 
-                    echo "$ZIP_NAME" > latest.txt
-                    echo "" >> latest.txt
-                    echo "---- Contents of the ZIP ----" >> latest.txt
-                    unzip -l "$ZIP_NAME" | tail -n +4 | head -n -2 | awk '{$1=$2=$3=""; print $0}' >> latest.txt
+                   
 
                     echo "Creating latest.zip copy..."
                     cp "$ZIP_NAME" latest.zip
@@ -483,13 +480,7 @@ pipeline {
                           --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA== \
                           --overwrite
 
-                        az storage blob upload \
-                          --account-name projectjenkins \
-                          --container-name wordpress-artifacts \
-                          --name "latest.txt" \
-                          --file "latest.txt" \
-                          --account-key XKRMt1MPHZMwz50gWeXcip2LU0JeuABfQAfkLtmCczf+a1EKVG33yIZIYGMEVto2HjxmLj0hR4yk+AStGb0gQA== \
-                          --overwrite
+                    
                     '''
                 }
             }
