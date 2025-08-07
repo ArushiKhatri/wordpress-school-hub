@@ -85,7 +85,7 @@ pipeline{
                         BUILD_ID_VAL=$BUILD_ID
                         TRIGGERED_BY=$BUILD_USER_ID
 
-                       curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+                     curl -X POST -H 'Content-type: application/json' --data '{"text":"CI completed!!"}' https://hooks.slack.com/services/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
                     '''
                 }
             }
@@ -136,11 +136,7 @@ pipeline{
                 sh '''
                     ZIP_NAME=$(head -n 1 zipname.txt)
 
-                    curl -X POST -H 'Content-type: application/json' \
-                    --data "{
-                      \\"text\\": \\"CD Pipeline completed successfully!\\nDeployed Artifact: ${ZIP_NAME}\\"
-                    }" \
-                    https://hooks.slack.com/services/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
+                  curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
                 '''
             }
         }
@@ -213,9 +209,7 @@ pipeline{
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-                        curl -X POST -H 'Content-type: application/json' \
-                        --data @slack-payload.json \
-                        https://hooks.slack.com/services/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
+                        curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
                     '''
                 }
             }
