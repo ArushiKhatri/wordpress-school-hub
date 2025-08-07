@@ -1,6 +1,5 @@
 pipeline{
     agent any
-
     stages {
         // CI Stages
         stage('Clone') {
