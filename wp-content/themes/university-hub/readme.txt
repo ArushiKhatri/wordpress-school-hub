@@ -1,4 +1,4 @@
-=== University Hub ===
+=== School  Hub ===
 
 Contributors: wenthemes
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
