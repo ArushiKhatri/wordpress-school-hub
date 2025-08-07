@@ -85,11 +85,7 @@ pipeline{
                         BUILD_ID_VAL=$BUILD_ID
                         TRIGGERED_BY=$BUILD_USER_ID
 
-                        curl -X POST -H 'Content-type: application/json' \
-                        --data '{
-                            "text": "CI pipeline completed!\\n Artifact: '"$ZIP_NAME"'\\n Triggered by: '"$TRIGGERED_BY"'\\n Build ID: '"$BUILD_ID_VAL"'"
-                        }' \
-                        https://hooks.slack.com/services/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
+                       curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
                     '''
                 }
             }
