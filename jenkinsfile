@@ -136,7 +136,7 @@ pipeline{
                 sh '''
                     ZIP_NAME=$(head -n 1 zipname.txt)
 
-                  curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+                  curl -X POST -H 'Content-type: application/json' --data '{"text":"CD Completed"}' https://hooks.slack.com/services/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
                 '''
             }
         }
@@ -209,7 +209,7 @@ pipeline{
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-                        curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+                       curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
                     '''
                 }
             }
