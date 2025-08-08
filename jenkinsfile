@@ -76,18 +76,22 @@ pipeline{
             }
         }
 
-        stage('Slack Notification CI') {
-            steps {
-                wrap([$class: 'BuildUser']) {
-                    sh '''
-                        ZIP_NAME=$(cat zipname.txt)
-                        BUILD_ID_VAL=$BUILD_ID
-                        TRIGGERED_BY=$BUILD_USER_ID
+      stage('Slack Notification CI') {
+    steps {
+        wrap([$class: 'BuildUser']) {
+            sh '''
+                ZIP_NAME=$(cat zipname.txt)
+                BUILD_ID_VAL=$BUILD_ID
+                TRIGGERED_BY=$BUILD_USER_ID
 
-               curl -X POST -H 'Content-type: application/json' --data '{"text":"CI successfully Completed!!!"}' https://hooks.slack.com/services/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
-                }
-            }
+                curl -X POST -H 'Content-type: application/json' \
+                --data '{"text":"CI successfully Completed!!!"}' \
+                https://hooks.slack.com/services/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
+            '''
         }
+    }
+}
+
 
         // CD Stages
         stage('Download Artifacts from Azure') {
