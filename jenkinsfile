@@ -212,7 +212,8 @@ pipeline{
 
                     sh '''
                        curl -X POST -H 'Content-type: application/json' --data '{"text":"Rollback Completed!!"}' https://hooks.slack.com/services/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
-                }
+              ''' 
+}
             }
         }
     }
