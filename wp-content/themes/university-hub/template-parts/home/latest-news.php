@@ -2,16 +2,16 @@
 /**
  * Template part for displaying home latest news section.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
-$latest_news_title          = school_hub_get_option( 'latest_news_title' );
-$latest_news_layout         = school_hub_get_option( 'latest_news_layout' );
-$latest_news_number         = school_hub_get_option( 'latest_news_number' );
-$latest_news_column         = school_hub_get_option( 'latest_news_column' );
-$latest_news_category       = school_hub_get_option( 'latest_news_category' );
-$latest_news_featured_image = school_hub_get_option( 'latest_news_featured_image' );
-$latest_news_excerpt_length = school_hub_get_option( 'latest_news_excerpt_length' );
+$latest_news_title          = university_hub_get_option( 'latest_news_title' );
+$latest_news_layout         = university_hub_get_option( 'latest_news_layout' );
+$latest_news_number         = university_hub_get_option( 'latest_news_number' );
+$latest_news_column         = university_hub_get_option( 'latest_news_column' );
+$latest_news_category       = university_hub_get_option( 'latest_news_category' );
+$latest_news_featured_image = university_hub_get_option( 'latest_news_featured_image' );
+$latest_news_excerpt_length = university_hub_get_option( 'latest_news_excerpt_length' );
 ?>
 
 <div id="latest-news" class="home-section-latest-news">
@@ -43,7 +43,7 @@ $latest_news_excerpt_length = school_hub_get_option( 'latest_news_excerpt_length
 									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( esc_attr( $latest_news_featured_image ), array( 'class' => 'aligncenter' ) ); ?></a>
 								<?php endif; ?>
 								<div class="read-more-button">
-									<a class="more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Learn More', 'school-hub' ); ?></a>
+									<a class="more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Learn More', 'university-hub' ); ?></a>
 								</div>
 							</div><!-- .latest-news-thumb -->
 							<div class="latest-news-text-wrap">
@@ -51,16 +51,16 @@ $latest_news_excerpt_length = school_hub_get_option( 'latest_news_excerpt_length
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h3><!-- .latest-news-title -->
 								<div class="latest-news-meta">
-									<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time( _x( 'j M Y', 'date format', 'school-hub' ) ); ?></a></span>
-									<?php school_hub_the_term_link_single( 'category', '<span class="cat-links">', '</span>' ); ?>
+									<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time( _x( 'j M Y', 'date format', 'university-hub' ) ); ?></a></span>
+									<?php university_hub_the_term_link_single( 'category', '<span class="cat-links">', '</span>' ); ?>
 									<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 										<span class="comments-link">
-											<?php comments_popup_link( esc_html__( '0 comments', 'school-hub' ), esc_html__( '1 Comment', 'school-hub' ), esc_html__( '% Comments', 'school-hub' ) ); ?>
+											<?php comments_popup_link( esc_html__( '0 comments', 'university-hub' ), esc_html__( '1 Comment', 'university-hub' ), esc_html__( '% Comments', 'university-hub' ) ); ?>
 										</span>
 									<?php endif; ?>
 								</div><!-- .latest-news-meta -->
 								<?php
-								$excerpt = school_hub_the_excerpt( absint( $latest_news_excerpt_length ) );
+								$excerpt = university_hub_the_excerpt( absint( $latest_news_excerpt_length ) );
 								if ( $excerpt ) {
 									echo wp_kses_post( wpautop( $excerpt ) );
 								}

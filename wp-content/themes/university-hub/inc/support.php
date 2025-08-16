@@ -2,7 +2,7 @@
 /**
  * Theme supports.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
 // Load Footer Widget Support.

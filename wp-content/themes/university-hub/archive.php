@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
 get_header(); ?>
@@ -30,11 +30,11 @@ get_header(); ?>
 
 		<?php
 		/**
-		 * Hook - school_hub_action_posts_navigation.
+		 * Hook - university_hub_action_posts_navigation.
 		 *
-		 * @hooked: school_hub_custom_posts_navigation - 10
+		 * @hooked: university_hub_custom_posts_navigation - 10
 		 */
-		do_action( 'school_hub_action_posts_navigation' ); ?>
+		do_action( 'university_hub_action_posts_navigation' ); ?>
 
 
 		<?php else : ?>
@@ -48,10 +48,10 @@ get_header(); ?>
 
 <?php
 	/**
-	 * Hook - school_hub_action_sidebar.
+	 * Hook - university_hub_action_sidebar.
 	 *
-	 * @hooked: school_hub_add_sidebar - 10
+	 * @hooked: university_hub_add_sidebar - 10
 	 */
-	do_action( 'school_hub_action_sidebar' );
+	do_action( 'university_hub_action_sidebar' );
 ?>
 <?php get_footer(); ?>

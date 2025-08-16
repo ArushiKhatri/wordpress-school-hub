@@ -2,10 +2,10 @@
 /**
  * Helper functions related to customizer and options.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
-if ( ! function_exists( 'school_hub_get_global_layout_options' ) ) :
+if ( ! function_exists( 'university_hub_get_global_layout_options' ) ) :
 
 	/**
 	 * Returns global layout options.
@@ -14,22 +14,22 @@ if ( ! function_exists( 'school_hub_get_global_layout_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_global_layout_options() {
+	function university_hub_get_global_layout_options() {
 
 		$choices = array(
-			'left-sidebar'  => esc_html__( 'Primary Sidebar - Content', 'school-hub' ),
-			'right-sidebar' => esc_html__( 'Content - Primary Sidebar', 'school-hub' ),
-			'three-columns' => esc_html__( 'Three Columns', 'school-hub' ),
-			'no-sidebar'    => esc_html__( 'No Sidebar', 'school-hub' ),
+			'left-sidebar'  => esc_html__( 'Primary Sidebar - Content', 'university-hub' ),
+			'right-sidebar' => esc_html__( 'Content - Primary Sidebar', 'university-hub' ),
+			'three-columns' => esc_html__( 'Three Columns', 'university-hub' ),
+			'no-sidebar'    => esc_html__( 'No Sidebar', 'university-hub' ),
 		);
-		$output = apply_filters( 'school_hub_filter_layout_options', $choices );
+		$output = apply_filters( 'university_hub_filter_layout_options', $choices );
 		return $output;
 
 	}
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_pagination_type_options' ) ) :
+if ( ! function_exists( 'university_hub_get_pagination_type_options' ) ) :
 
 	/**
 	 * Returns pagination type options.
@@ -38,11 +38,11 @@ if ( ! function_exists( 'school_hub_get_pagination_type_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_pagination_type_options() {
+	function university_hub_get_pagination_type_options() {
 
 		$choices = array(
-			'default' => esc_html__( 'Default (Older / Newer Post)', 'school-hub' ),
-			'numeric' => esc_html__( 'Numeric', 'school-hub' ),
+			'default' => esc_html__( 'Default (Older / Newer Post)', 'university-hub' ),
+			'numeric' => esc_html__( 'Numeric', 'university-hub' ),
 		);
 		return $choices;
 
@@ -50,7 +50,7 @@ if ( ! function_exists( 'school_hub_get_pagination_type_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_breadcrumb_type_options' ) ) :
+if ( ! function_exists( 'university_hub_get_breadcrumb_type_options' ) ) :
 
 	/**
 	 * Returns breadcrumb type options.
@@ -59,12 +59,12 @@ if ( ! function_exists( 'school_hub_get_breadcrumb_type_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_breadcrumb_type_options() {
+	function university_hub_get_breadcrumb_type_options() {
 
 		$choices = array(
-			'disabled' => esc_html__( 'Disabled', 'school-hub' ),
-			'simple'   => esc_html__( 'Simple', 'school-hub' ),
-			'advanced' => esc_html__( 'Advanced', 'school-hub' ),
+			'disabled' => esc_html__( 'Disabled', 'university-hub' ),
+			'simple'   => esc_html__( 'Simple', 'university-hub' ),
+			'advanced' => esc_html__( 'Advanced', 'university-hub' ),
 		);
 		return $choices;
 
@@ -72,7 +72,7 @@ if ( ! function_exists( 'school_hub_get_breadcrumb_type_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_archive_layout_options' ) ) :
+if ( ! function_exists( 'university_hub_get_archive_layout_options' ) ) :
 
 	/**
 	 * Returns archive layout options.
@@ -81,13 +81,13 @@ if ( ! function_exists( 'school_hub_get_archive_layout_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_archive_layout_options() {
+	function university_hub_get_archive_layout_options() {
 
 		$choices = array(
-			'full'    => esc_html__( 'Full Post', 'school-hub' ),
-			'excerpt' => esc_html__( 'Post Excerpt', 'school-hub' ),
+			'full'    => esc_html__( 'Full Post', 'university-hub' ),
+			'excerpt' => esc_html__( 'Post Excerpt', 'university-hub' ),
 		);
-		$output = apply_filters( 'school_hub_filter_archive_layout_options', $choices );
+		$output = apply_filters( 'university_hub_filter_archive_layout_options', $choices );
 		if ( ! empty( $output ) ) {
 			ksort( $output );
 		}
@@ -97,7 +97,7 @@ if ( ! function_exists( 'school_hub_get_archive_layout_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_image_sizes_options' ) ) :
+if ( ! function_exists( 'university_hub_get_image_sizes_options' ) ) :
 
 	/**
 	 * Returns image sizes options.
@@ -108,18 +108,18 @@ if ( ! function_exists( 'school_hub_get_image_sizes_options' ) ) :
 	 * @param array $allowed Allowed image size options.
 	 * @return array Image size options.
 	 */
-	function school_hub_get_image_sizes_options( $add_disable = true, $allowed = array(), $show_dimension = true ) {
+	function university_hub_get_image_sizes_options( $add_disable = true, $allowed = array(), $show_dimension = true ) {
 
 		global $_wp_additional_image_sizes;
 		$get_intermediate_image_sizes = get_intermediate_image_sizes();
 		$choices = array();
 		if ( true === $add_disable ) {
-			$choices['disable'] = esc_html__( 'No Image', 'school-hub' );
+			$choices['disable'] = esc_html__( 'No Image', 'university-hub' );
 		}
-		$choices['thumbnail'] = esc_html__( 'Thumbnail', 'school-hub' );
-		$choices['medium']    = esc_html__( 'Medium', 'school-hub' );
-		$choices['large']     = esc_html__( 'Large', 'school-hub' );
-		$choices['full']      = esc_html__( 'Full (original)', 'school-hub' );
+		$choices['thumbnail'] = esc_html__( 'Thumbnail', 'university-hub' );
+		$choices['medium']    = esc_html__( 'Medium', 'university-hub' );
+		$choices['large']     = esc_html__( 'Large', 'university-hub' );
+		$choices['full']      = esc_html__( 'Full (original)', 'university-hub' );
 
 		if ( true === $show_dimension ) {
 			foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $_size ) {
@@ -151,7 +151,7 @@ if ( ! function_exists( 'school_hub_get_image_sizes_options' ) ) :
 endif;
 
 
-if ( ! function_exists( 'school_hub_get_image_alignment_options' ) ) :
+if ( ! function_exists( 'university_hub_get_image_alignment_options' ) ) :
 
 	/**
 	 * Returns image options.
@@ -160,13 +160,13 @@ if ( ! function_exists( 'school_hub_get_image_alignment_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_image_alignment_options() {
+	function university_hub_get_image_alignment_options() {
 
 		$choices = array(
-			'none'   => _x( 'None', 'alignment', 'school-hub' ),
-			'left'   => _x( 'Left', 'alignment', 'school-hub' ),
-			'center' => _x( 'Center', 'alignment', 'school-hub' ),
-			'right'  => _x( 'Right', 'alignment', 'school-hub' ),
+			'none'   => _x( 'None', 'alignment', 'university-hub' ),
+			'left'   => _x( 'Left', 'alignment', 'university-hub' ),
+			'center' => _x( 'Center', 'alignment', 'university-hub' ),
+			'right'  => _x( 'Right', 'alignment', 'university-hub' ),
 		);
 		return $choices;
 
@@ -174,7 +174,7 @@ if ( ! function_exists( 'school_hub_get_image_alignment_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_featured_slider_transition_effects' ) ) :
+if ( ! function_exists( 'university_hub_get_featured_slider_transition_effects' ) ) :
 
 	/**
 	 * Returns the featured slider transition effects.
@@ -183,15 +183,15 @@ if ( ! function_exists( 'school_hub_get_featured_slider_transition_effects' ) ) 
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_featured_slider_transition_effects() {
+	function university_hub_get_featured_slider_transition_effects() {
 
 		$choices = array(
-			'fade'       => _x( 'fade', 'transition effect', 'school-hub' ),
-			'fadeout'    => _x( 'fadeout', 'transition effect', 'school-hub' ),
-			'none'       => _x( 'none', 'transition effect', 'school-hub' ),
-			'scrollHorz' => _x( 'scrollHorz', 'transition effect', 'school-hub' ),
+			'fade'       => _x( 'fade', 'transition effect', 'university-hub' ),
+			'fadeout'    => _x( 'fadeout', 'transition effect', 'university-hub' ),
+			'none'       => _x( 'none', 'transition effect', 'university-hub' ),
+			'scrollHorz' => _x( 'scrollHorz', 'transition effect', 'university-hub' ),
 		);
-		$output = apply_filters( 'school_hub_filter_featured_slider_transition_effects', $choices );
+		$output = apply_filters( 'university_hub_filter_featured_slider_transition_effects', $choices );
 
 		if ( ! empty( $output ) ) {
 			ksort( $output );
@@ -203,7 +203,7 @@ if ( ! function_exists( 'school_hub_get_featured_slider_transition_effects' ) ) 
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_featured_slider_content_options' ) ) :
+if ( ! function_exists( 'university_hub_get_featured_slider_content_options' ) ) :
 
 	/**
 	 * Returns the featured slider content options.
@@ -212,13 +212,13 @@ if ( ! function_exists( 'school_hub_get_featured_slider_content_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_featured_slider_content_options() {
+	function university_hub_get_featured_slider_content_options() {
 
 		$choices = array(
-			'home-page' => esc_html__( 'Static Front Page Only', 'school-hub' ),
-			'disabled'  => esc_html__( 'Disabled', 'school-hub' ),
+			'home-page' => esc_html__( 'Static Front Page Only', 'university-hub' ),
+			'disabled'  => esc_html__( 'Disabled', 'university-hub' ),
 		);
-		$output = apply_filters( 'school_hub_filter_featured_slider_content_options', $choices );
+		$output = apply_filters( 'university_hub_filter_featured_slider_content_options', $choices );
 		if ( ! empty( $output ) ) {
 			ksort( $output );
 		}
@@ -228,7 +228,7 @@ if ( ! function_exists( 'school_hub_get_featured_slider_content_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_featured_slider_type' ) ) :
+if ( ! function_exists( 'university_hub_get_featured_slider_type' ) ) :
 
 	/**
 	 * Returns the featured slider type.
@@ -237,13 +237,13 @@ if ( ! function_exists( 'school_hub_get_featured_slider_type' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_featured_slider_type() {
+	function university_hub_get_featured_slider_type() {
 
 		$choices = array(
-			'featured-page' => __( 'Featured Pages', 'school-hub' ),
+			'featured-page' => __( 'Featured Pages', 'university-hub' ),
 		);
 
-		$output = apply_filters( 'school_hub_filter_featured_slider_type', $choices );
+		$output = apply_filters( 'university_hub_filter_featured_slider_type', $choices );
 
 		if ( ! empty( $output ) ) {
 			ksort( $output );
@@ -255,7 +255,7 @@ if ( ! function_exists( 'school_hub_get_featured_slider_type' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_numbers_dropdown_options' ) ) :
+if ( ! function_exists( 'university_hub_get_numbers_dropdown_options' ) ) :
 
 	/**
 	 * Returns numbers dropdown options.
@@ -269,7 +269,7 @@ if ( ! function_exists( 'school_hub_get_numbers_dropdown_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_numbers_dropdown_options( $min = 1, $max = 4, $prefix = '', $suffix = '' ) {
+	function university_hub_get_numbers_dropdown_options( $min = 1, $max = 4, $prefix = '', $suffix = '' ) {
 
 		$output = array();
 
@@ -286,7 +286,7 @@ if ( ! function_exists( 'school_hub_get_numbers_dropdown_options' ) ) :
 
 endif;
 
-if ( ! function_exists( 'school_hub_get_home_sections_options' ) ) :
+if ( ! function_exists( 'university_hub_get_home_sections_options' ) ) :
 
 	/**
 	 * Returns home sections options.
@@ -295,23 +295,23 @@ if ( ! function_exists( 'school_hub_get_home_sections_options' ) ) :
 	 *
 	 * @return array Options array.
 	 */
-	function school_hub_get_home_sections_options() {
+	function university_hub_get_home_sections_options() {
 
 		$choices = array(
 			'news-and-events' => array(
-				'label'    => __( 'News and Events', 'school-hub' ),
+				'label'    => __( 'News and Events', 'university-hub' ),
 				'template' => 'template-parts/home/news-and-events',
 				),
 			'call-to-action' => array(
-				'label'    => __( 'Call To Action', 'school-hub' ),
+				'label'    => __( 'Call To Action', 'university-hub' ),
 				'template' => 'template-parts/home/call-to-action',
 				),
 			'latest-news' => array(
-				'label'    => __( 'Latest News', 'school-hub' ),
+				'label'    => __( 'Latest News', 'university-hub' ),
 				'template' => 'template-parts/home/latest-news',
 				),
 			);
-		$output = apply_filters( 'school_hub_filter_home_sections_options', $choices );
+		$output = apply_filters( 'university_hub_filter_home_sections_options', $choices );
 		return $output;
 
 	}

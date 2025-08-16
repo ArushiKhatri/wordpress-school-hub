@@ -2,20 +2,20 @@
 /**
  * Template part for displaying home call to action section.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
 ?>
 <?php
-	$cta_title                 = school_hub_get_option( 'cta_title' );
-	$cta_description           = school_hub_get_option( 'cta_description' );
-	$cta_primary_button_text   = school_hub_get_option( 'cta_primary_button_text' );
-	$cta_primary_button_url    = school_hub_get_option( 'cta_primary_button_url' );
-	$cta_secondary_button_text = school_hub_get_option( 'cta_secondary_button_text' );
-	$cta_secondary_button_url  = school_hub_get_option( 'cta_secondary_button_url' );
+	$cta_title                 = university_hub_get_option( 'cta_title' );
+	$cta_description           = university_hub_get_option( 'cta_description' );
+	$cta_primary_button_text   = university_hub_get_option( 'cta_primary_button_text' );
+	$cta_primary_button_url    = university_hub_get_option( 'cta_primary_button_url' );
+	$cta_secondary_button_text = university_hub_get_option( 'cta_secondary_button_text' );
+	$cta_secondary_button_url  = university_hub_get_option( 'cta_secondary_button_url' );
 	// TODO: Conditional buttons.
 ?>
-<div id="school-hub-call-to-action" class="home-section-call-to-action">
+<div id="university-hub-call-to-action" class="home-section-call-to-action">
 	<div class="container">
 
 		<div class="cta-content">

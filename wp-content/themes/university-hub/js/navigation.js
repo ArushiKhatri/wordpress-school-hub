@@ -113,7 +113,7 @@
 	'use strict';
 
 	jQuery(document).ready(function($){
-		jQuery( window ).on( 'load.schoolHub resize.schoolHub', function() {
+		jQuery( window ).on( 'load.universityHub resize.universityHub', function() {
 			if ( window.innerWidth < 1200 ) {
 				jQuery('#main-navigation').on('focusout', function () {
 					var $elem = jQuery(this);
@@ -135,7 +135,7 @@
 
 			// Add dropdown toggle that displays child menu items.
 			var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-				.append( $( '<span />', { 'class': 'screen-reader-text', text: schoolHubOptions.screenReaderText.expand }) );
+				.append( $( '<span />', { 'class': 'screen-reader-text', text: universityHubOptions.screenReaderText.expand }) );
 
 			container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
@@ -156,7 +156,7 @@
 				// jscs:disable
 				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 				// jscs:enable
-				screenReaderSpan.text( screenReaderSpan.text() === schoolHubOptions.screenReaderText.expand ? schoolHubOptions.screenReaderText.collapse : schoolHubOptions.screenReaderText.expand );
+				screenReaderSpan.text( screenReaderSpan.text() === universityHubOptions.screenReaderText.expand ? universityHubOptions.screenReaderText.collapse : universityHubOptions.screenReaderText.expand );
 			} );
 		}
 
@@ -180,7 +180,7 @@
 				return;
 			}
 
-			menuToggle.on( 'click.schoolHub', function() {
+			menuToggle.on( 'click.universityHub', function() {
 				// jscs:disable
 				$( this ).add( siteNavigation ).attr( 'aria-expanded', $( this ).add( siteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 				// jscs:enable
@@ -191,7 +191,7 @@
 			menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
 
 			// Wait for a click on one of our menu toggles.
-			menuToggle.on( 'click.schoolHub', function() {
+			menuToggle.on( 'click.universityHub', function() {
 
 				// Assign this (the button that was clicked) to a variable.
 				var button = this;
@@ -251,12 +251,12 @@
 			// Toggle `focus` class to allow submenu access on tablets.
 			function toggleFocusClassTouchScreen() {
 				if ( window.innerWidth >= 910 ) {
-					$( document.body ).on( 'touchstart.schoolHub', function( e ) {
+					$( document.body ).on( 'touchstart.universityHub', function( e ) {
 						if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
 							$( '.main-navigation li' ).removeClass( 'focus' );
 						}
 					} );
-					siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.schoolHub', function( e ) {
+					siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.universityHub', function( e ) {
 						var el = $( this ).parent( 'li' );
 
 						if ( ! el.hasClass( 'focus' ) ) {
@@ -266,16 +266,16 @@
 						}
 					} );
 				} else {
-					siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.schoolHub' );
+					siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.universityHub' );
 				}
 			}
 
 			if ( 'ontouchstart' in window ) {
-				$( window ).on( 'resize.schoolHub', toggleFocusClassTouchScreen );
+				$( window ).on( 'resize.universityHub', toggleFocusClassTouchScreen );
 				toggleFocusClassTouchScreen();
 			}
 
-			siteNavigation.find( 'a' ).on( 'focus.schoolHub blur.schoolHub', function() {
+			siteNavigation.find( 'a' ).on( 'focus.universityHub blur.universityHub', function() {
 				$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 			} );
 
@@ -306,7 +306,7 @@
 				return;
 			}
 
-			topMenuToggle.on( 'click.schoolHub', function() {
+			topMenuToggle.on( 'click.universityHub', function() {
 				// jscs:disable
 				$( this ).add( topSiteNavigation ).attr( 'aria-expanded', $( this ).add( topSiteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 				// jscs:enable
@@ -317,7 +317,7 @@
 			topMenuToggle.add( topSiteNavigation ).attr( 'aria-expanded', 'false' );
 
 			// Wait for a click on one of our menu toggles.
-			topMenuToggle.on( 'click.schoolHub', function() {
+			topMenuToggle.on( 'click.universityHub', function() {
 
 				// Assign this (the button that was clicked) to a variable.
 				var button = this;
@@ -377,12 +377,12 @@
 			// Toggle `focus` class to allow submenu access on tablets.
 			function topNavToggleFocusClassTouchScreen() {
 				if ( window.innerWidth >= 910 ) {
-					$( document.body ).on( 'touchstart.schoolHub', function( e ) {
+					$( document.body ).on( 'touchstart.universityHub', function( e ) {
 						if ( ! $( e.target ).closest( '.top-navigation li' ).length ) {
 							$( '.top-navigation li' ).removeClass( 'focus' );
 						}
 					} );
-					topSiteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.schoolHub', function( e ) {
+					topSiteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.universityHub', function( e ) {
 						var el = $( this ).parent( 'li' );
 
 						if ( ! el.hasClass( 'focus' ) ) {
@@ -392,16 +392,16 @@
 						}
 					} );
 				} else {
-					topSiteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.schoolHub' );
+					topSiteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.universityHub' );
 				}
 			}
 
 			if ( 'ontouchstart' in window ) {
-				$( window ).on( 'resize.schoolHub', topNavToggleFocusClassTouchScreen );
+				$( window ).on( 'resize.universityHub', topNavToggleFocusClassTouchScreen );
 				topNavToggleFocusClassTouchScreen();
 			}
 
-			topSiteNavigation.find( 'a' ).on( 'focus.schoolHub blur.schoolHub', function() {
+			topSiteNavigation.find( 'a' ).on( 'focus.universityHub blur.universityHub', function() {
 				$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 			} );
 

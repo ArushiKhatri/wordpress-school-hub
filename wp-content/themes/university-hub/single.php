@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
 get_header(); ?>
@@ -19,11 +19,11 @@ get_header(); ?>
 			<?php
 			// Previous/next post navigation.
 			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'school-hub' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next post:', 'school-hub' ) . '</span> ' .
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'university-hub' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'university-hub' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'school-hub' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'school-hub' ) . '</span> ' .
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'university-hub' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'university-hub' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
 			) );
 			?>
@@ -42,10 +42,10 @@ get_header(); ?>
 
 <?php
 	/**
-	 * Hook - school_hub_action_sidebar.
+	 * Hook - university_hub_action_sidebar.
 	 *
-	 * @hooked: school_hub_add_sidebar - 10
+	 * @hooked: university_hub_add_sidebar - 10
 	 */
-	do_action( 'school_hub_action_sidebar' );
+	do_action( 'university_hub_action_sidebar' );
 ?>
 <?php get_footer(); ?>

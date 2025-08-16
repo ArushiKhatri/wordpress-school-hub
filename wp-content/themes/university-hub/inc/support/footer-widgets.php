@@ -2,7 +2,7 @@
 /**
  * Class for footer widgets.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @since 1.0.0
  */
-class school_Hub_Footer_Widgets {
+class university_Hub_Footer_Widgets {
 
 	/**
 	 * Number of maximum registered widgets.
@@ -40,7 +40,7 @@ class school_Hub_Footer_Widgets {
 	 * @access protected
 	 * @var int
 	 */
-	protected $theme_prefix = 'school_hub';
+	protected $theme_prefix = 'university_hub';
 
 	/**
 	 * Construcor.
@@ -106,7 +106,7 @@ class school_Hub_Footer_Widgets {
 
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
 			register_sidebar( array(
-				'name'          => sprintf( __( 'Footer Widget %d', 'school-hub' ), $i ),
+				'name'          => sprintf( __( 'Footer Widget %d', 'university-hub' ), $i ),
 				'id'            => sprintf( 'footer-%d', $i ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
@@ -272,4 +272,4 @@ class school_Hub_Footer_Widgets {
 }
 
 // Initialize.
-$school_hub_footer_widgets = new school_Hub_Footer_Widgets();
+$university_hub_footer_widgets = new university_Hub_Footer_Widgets();

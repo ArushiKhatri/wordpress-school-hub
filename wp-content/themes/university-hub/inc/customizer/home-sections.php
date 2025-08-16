@@ -2,15 +2,15 @@
 /**
  * Home Sections Options.
  *
- * @package school_Hub
+ * @package university_Hub
  */
 
-$default = school_hub_get_default_theme_options();
+$default = university_hub_get_default_theme_options();
 
 // Add Panel.
 $wp_customize->add_panel( 'theme_home_sections_panel',
 	array(
-		'title'      => __( 'Homepage Sections', 'school-hub' ),
+		'title'      => __( 'Homepage Sections', 'university-hub' ),
 		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		)
@@ -19,7 +19,7 @@ $wp_customize->add_panel( 'theme_home_sections_panel',
 // Home Section Manager.
 $wp_customize->add_section( 'section_home_sections_manager',
 	array(
-		'title'      => __( 'Manage Sections', 'school-hub' ),
+		'title'      => __( 'Manage Sections', 'university-hub' ),
 		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'theme_home_sections_panel',
@@ -31,20 +31,20 @@ $wp_customize->add_setting( 'theme_options[homepage_sections]',
 	array(
 		'default'           => $default['homepage_sections'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_homepage_sections',
+		'sanitize_callback' => 'university_hub_sanitize_homepage_sections',
 		)
 );
 
 $wp_customize->add_control(
-	new school_Hub_Section_Manager_Control(
+	new university_Hub_Section_Manager_Control(
 		$wp_customize,
 		'theme_options[homepage_sections]',
 		array(
-			'label'    => esc_html__( 'Toggle sections', 'school-hub' ),
+			'label'    => esc_html__( 'Toggle sections', 'university-hub' ),
 			'section'  => 'section_home_sections_manager',
 			'settings' => 'theme_options[homepage_sections]',
 			'priority' => 1,
-			'choices'  => school_hub_get_home_sections_options(),
+			'choices'  => university_hub_get_home_sections_options(),
 			)
 	)
 );
@@ -52,7 +52,7 @@ $wp_customize->add_control(
 // Home Section News and Events.
 $wp_customize->add_section( 'section_home_news_and_events',
 	array(
-		'title'      => __( 'News and Events', 'school-hub' ),
+		'title'      => __( 'News and Events', 'university-hub' ),
 		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'theme_home_sections_panel',
@@ -69,7 +69,7 @@ $wp_customize->add_setting( 'theme_options[news_and_events_ntitle]',
 );
 $wp_customize->add_control( 'theme_options[news_and_events_ntitle]',
 	array(
-		'label'    => __( 'News Title', 'school-hub' ),
+		'label'    => __( 'News Title', 'university-hub' ),
 		'section'  => 'section_home_news_and_events',
 		'type'     => 'text',
 		'priority' => 100,
@@ -81,12 +81,12 @@ $wp_customize->add_setting( 'theme_options[news_and_events_nnumber]',
 	array(
 		'default'           => $default['news_and_events_nnumber'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_number_range',
+		'sanitize_callback' => 'university_hub_sanitize_number_range',
 		)
 );
 $wp_customize->add_control( 'theme_options[news_and_events_nnumber]',
 	array(
-		'label'       => __( 'No of News', 'school-hub' ),
+		'label'       => __( 'No of News', 'university-hub' ),
 		'section'     => 'section_home_news_and_events',
 		'type'        => 'number',
 		'priority'    => 100,
@@ -103,9 +103,9 @@ $wp_customize->add_setting( 'theme_options[news_and_events_ncategory]',
 	)
 );
 $wp_customize->add_control(
-	new school_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[news_and_events_ncategory]',
+	new university_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[news_and_events_ncategory]',
 		array(
-			'label'    => __( 'News Category', 'school-hub' ),
+			'label'    => __( 'News Category', 'university-hub' ),
 			'section'  => 'section_home_news_and_events',
 			'settings' => 'theme_options[news_and_events_ncategory]',
 			'priority' => 100,
@@ -123,7 +123,7 @@ $wp_customize->add_setting( 'theme_options[news_and_events_etitle]',
 );
 $wp_customize->add_control( 'theme_options[news_and_events_etitle]',
 	array(
-		'label'    => __( 'Events Title', 'school-hub' ),
+		'label'    => __( 'Events Title', 'university-hub' ),
 		'section'  => 'section_home_news_and_events',
 		'type'     => 'text',
 		'priority' => 100,
@@ -135,12 +135,12 @@ $wp_customize->add_setting( 'theme_options[news_and_events_enumber]',
 	array(
 		'default'           => $default['news_and_events_enumber'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_number_range',
+		'sanitize_callback' => 'university_hub_sanitize_number_range',
 		)
 );
 $wp_customize->add_control( 'theme_options[news_and_events_enumber]',
 	array(
-		'label'       => __( 'No of Events', 'school-hub' ),
+		'label'       => __( 'No of Events', 'university-hub' ),
 		'section'     => 'section_home_news_and_events',
 		'type'        => 'number',
 		'priority'    => 100,
@@ -157,9 +157,9 @@ $wp_customize->add_setting( 'theme_options[news_and_events_ecategory]',
 	)
 );
 $wp_customize->add_control(
-	new school_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[news_and_events_ecategory]',
+	new university_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[news_and_events_ecategory]',
 		array(
-			'label'    => __( 'Events Category', 'school-hub' ),
+			'label'    => __( 'Events Category', 'university-hub' ),
 			'section'  => 'section_home_news_and_events',
 			'settings' => 'theme_options[news_and_events_ecategory]',
 			'priority' => 100,
@@ -170,7 +170,7 @@ $wp_customize->add_control(
 // Home Section Call To Action.
 $wp_customize->add_section( 'section_home_call_to_action',
 	array(
-		'title'      => __( 'Call To Action', 'school-hub' ),
+		'title'      => __( 'Call To Action', 'university-hub' ),
 		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'theme_home_sections_panel',
@@ -187,7 +187,7 @@ $wp_customize->add_setting( 'theme_options[cta_title]',
 );
 $wp_customize->add_control( 'theme_options[cta_title]',
 	array(
-		'label'    => __( 'Title', 'school-hub' ),
+		'label'    => __( 'Title', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -204,7 +204,7 @@ $wp_customize->add_setting( 'theme_options[cta_description]',
 );
 $wp_customize->add_control( 'theme_options[cta_description]',
 	array(
-		'label'    => __( 'Subtitle', 'school-hub' ),
+		'label'    => __( 'Subtitle', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -221,7 +221,7 @@ $wp_customize->add_setting( 'theme_options[cta_primary_button_text]',
 );
 $wp_customize->add_control( 'theme_options[cta_primary_button_text]',
 	array(
-		'label'    => __( 'Primary Button Text', 'school-hub' ),
+		'label'    => __( 'Primary Button Text', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -238,7 +238,7 @@ $wp_customize->add_setting( 'theme_options[cta_primary_button_url]',
 );
 $wp_customize->add_control( 'theme_options[cta_primary_button_url]',
 	array(
-		'label'    => __( 'Primary Button URL', 'school-hub' ),
+		'label'    => __( 'Primary Button URL', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -255,7 +255,7 @@ $wp_customize->add_setting( 'theme_options[cta_secondary_button_text]',
 );
 $wp_customize->add_control( 'theme_options[cta_secondary_button_text]',
 	array(
-		'label'    => __( 'Secondary Button Text', 'school-hub' ),
+		'label'    => __( 'Secondary Button Text', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -272,7 +272,7 @@ $wp_customize->add_setting( 'theme_options[cta_secondary_button_url]',
 );
 $wp_customize->add_control( 'theme_options[cta_secondary_button_url]',
 	array(
-		'label'    => __( 'Secondary Button URL', 'school-hub' ),
+		'label'    => __( 'Secondary Button URL', 'university-hub' ),
 		'section'  => 'section_home_call_to_action',
 		'type'     => 'text',
 		'priority' => 100,
@@ -282,7 +282,7 @@ $wp_customize->add_control( 'theme_options[cta_secondary_button_url]',
 // Home Section Latest News.
 $wp_customize->add_section( 'section_home_latest_news',
 	array(
-		'title'      => __( 'Latest News', 'school-hub' ),
+		'title'      => __( 'Latest News', 'university-hub' ),
 		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'theme_home_sections_panel',
@@ -299,7 +299,7 @@ $wp_customize->add_setting( 'theme_options[latest_news_title]',
 );
 $wp_customize->add_control( 'theme_options[latest_news_title]',
 	array(
-		'label'    => __( 'Title', 'school-hub' ),
+		'label'    => __( 'Title', 'university-hub' ),
 		'section'  => 'section_home_latest_news',
 		'type'     => 'text',
 		'priority' => 100,
@@ -311,16 +311,16 @@ $wp_customize->add_setting( 'theme_options[latest_news_layout]',
 	array(
 		'default'           => $default['latest_news_layout'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_select',
+		'sanitize_callback' => 'university_hub_sanitize_select',
 		)
 );
 $wp_customize->add_control( 'theme_options[latest_news_layout]',
 	array(
-		'label'    => __( 'Layout', 'school-hub' ),
+		'label'    => __( 'Layout', 'university-hub' ),
 		'section'  => 'section_home_latest_news',
 		'type'     => 'select',
 		'priority' => 100,
-		'choices'  => school_hub_get_numbers_dropdown_options( 1, 2, __( 'Layout', 'school-hub' ) . ' ' ),
+		'choices'  => university_hub_get_numbers_dropdown_options( 1, 2, __( 'Layout', 'university-hub' ) . ' ' ),
 		)
 );
 
@@ -329,16 +329,16 @@ $wp_customize->add_setting( 'theme_options[latest_news_column]',
 	array(
 		'default'           => $default['latest_news_column'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_select',
+		'sanitize_callback' => 'university_hub_sanitize_select',
 		)
 );
 $wp_customize->add_control( 'theme_options[latest_news_column]',
 	array(
-		'label'    => __( 'Columns', 'school-hub' ),
+		'label'    => __( 'Columns', 'university-hub' ),
 		'section'  => 'section_home_latest_news',
 		'type'     => 'select',
 		'priority' => 100,
-		'choices'  => school_hub_get_numbers_dropdown_options( 3, 4 ),
+		'choices'  => university_hub_get_numbers_dropdown_options( 3, 4 ),
 		)
 );
 
@@ -347,12 +347,12 @@ $wp_customize->add_setting( 'theme_options[latest_news_number]',
 	array(
 		'default'           => $default['latest_news_number'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_number_range',
+		'sanitize_callback' => 'university_hub_sanitize_number_range',
 		)
 );
 $wp_customize->add_control( 'theme_options[latest_news_number]',
 	array(
-		'label'       => __( 'No of Blocks', 'school-hub' ),
+		'label'       => __( 'No of Blocks', 'university-hub' ),
 		'section'     => 'section_home_latest_news',
 		'type'        => 'number',
 		'priority'    => 100,
@@ -369,9 +369,9 @@ $wp_customize->add_setting( 'theme_options[latest_news_category]',
 	)
 );
 $wp_customize->add_control(
-	new school_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[latest_news_category]',
+	new university_Hub_Dropdown_Taxonomies_Control( $wp_customize, 'theme_options[latest_news_category]',
 		array(
-			'label'    => __( 'Select Category', 'school-hub' ),
+			'label'    => __( 'Select Category', 'university-hub' ),
 			'section'  => 'section_home_latest_news',
 			'settings' => 'theme_options[latest_news_category]',
 			'priority' => 100,
@@ -384,16 +384,16 @@ $wp_customize->add_setting( 'theme_options[latest_news_featured_image]',
 	array(
 		'default'           => $default['latest_news_featured_image'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'school_hub_sanitize_select',
+		'sanitize_callback' => 'university_hub_sanitize_select',
 		)
 );
 $wp_customize->add_control( 'theme_options[latest_news_featured_image]',
 	array(
-		'label'    => __( 'Image Size', 'school-hub' ),
+		'label'    => __( 'Image Size', 'university-hub' ),
 		'section'  => 'section_home_latest_news',
 		'type'     => 'select',
 		'priority' => 100,
-		'choices'  => school_hub_get_image_sizes_options( false ),
+		'choices'  => university_hub_get_image_sizes_options( false ),
 		)
 );
 
@@ -402,13 +402,13 @@ $wp_customize->add_setting( 'theme_options[latest_news_excerpt_length]',
 	array(
 	'default'           => $default['latest_news_excerpt_length'],
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'school_hub_sanitize_number_range',
+	'sanitize_callback' => 'university_hub_sanitize_number_range',
 	)
 );
 $wp_customize->add_control( 'theme_options[latest_news_excerpt_length]',
 	array(
-	'label'       => __( 'Excerpt Length', 'school-hub' ),
-	'description' => __( 'in words', 'school-hub' ),
+	'label'       => __( 'Excerpt Length', 'university-hub' ),
+	'description' => __( 'in words', 'university-hub' ),
 	'section'     => 'section_home_latest_news',
 	'type'        => 'number',
 	'priority'    => 100,

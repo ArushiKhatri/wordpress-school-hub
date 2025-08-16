@@ -1,5 +1,5 @@
 /*
-Theme Name: school Hub
+Theme Name: university Hub
 
 Adding support for languages written in a Right To Left (RTL) direction is easy -
 it's just a matter of overwriting all the horizontal positioning attributes
@@ -486,11 +486,11 @@ a.more::after {
 /*--------------------------------------------------------------
 ## Social Links Style By WEN Themes
 --------------------------------------------------------------*/
-.school_hub_widget_social li a {
+.university_hub_widget_social li a {
     margin-left: 0;
 }
 
-.school_hub_widget_social li {
+.university_hub_widget_social li {
     margin-left: 5px;
 }
 
@@ -646,7 +646,7 @@ a.more::after {
 ## Home Section
 --------------------------------------------------------------*/
 #front-page-home-sections .section-title,
-#school-hub-front-page-widgets .widget-title {
+#university-hub-front-page-widgets .widget-title {
     border-right: 4px solid #ff6000;
     border-left: none;
     padding-right: 15px;
@@ -711,7 +711,7 @@ a.more::after {
 /*--------------------------------------------------------------
 ### Recent post widget style By WEN Themes
 --------------------------------------------------------------*/
-.school_hub_widget_recent_posts .recent-posts-date::before{
+.university_hub_widget_recent_posts .recent-posts-date::before{
     margin-left: 8px;
     margin-right: 0;
 }
@@ -719,12 +719,12 @@ a.more::after {
 /*--------------------------------------------------------------
 ### Featured Page Widget style By WEN Themes
 --------------------------------------------------------------*/
-#school-hub-front-page-widgets .featured-page-widget img.alignleft {
+#university-hub-front-page-widgets .featured-page-widget img.alignleft {
     margin-left: 60px;
     margin-right: 0;
 }
 
-#school-hub-front-page-widgets .featured-page-widget img.alignright {
+#university-hub-front-page-widgets .featured-page-widget img.alignright {
     margin-right: 60px;
     margin-left: 0;
 }
@@ -824,7 +824,7 @@ a.more::after {
         float: left;
     }
 
-    #school-hub-front-page-widgets .featured-page-widget img.alignleft {
+    #university-hub-front-page-widgets .featured-page-widget img.alignleft {
         margin-left: 30px;
     }
 }
@@ -849,7 +849,7 @@ a.more::after {
     #site-identity {
         text-align: center;
     }
-    .school_hub_widget_recent_posts .recent-posts-item {
+    .university_hub_widget_recent_posts .recent-posts-item {
         float: right;
     }
 
@@ -872,16 +872,16 @@ a.more::after {
         padding: 0 15px 30px;
     }
 
-    #school-hub-front-page-widgets .featured-page-widget img.alignleft {
+    #university-hub-front-page-widgets .featured-page-widget img.alignleft {
         margin-left: 0;
     }
 
-    .school-hub-woocommerce-product-grid-4 ul.products li.product .button {
+    .university-hub-woocommerce-product-grid-4 ul.products li.product .button {
         right: 13%;
         left: auto;
     }
 
-    .school-hub-woocommerce-product-grid-3 ul.products li.product .button {
+    .university-hub-woocommerce-product-grid-3 ul.products li.product .button {
         right: 16%;
         left: auto;
     }
@@ -894,8 +894,8 @@ a.more::after {
         float: right;
     }
 
-    .school-hub-woocommerce-product-grid-4 ul.products li.product .button,
-    .school-hub-woocommerce-product-grid-3 ul.products li.product .button {
+    .university-hub-woocommerce-product-grid-4 ul.products li.product .button,
+    .university-hub-woocommerce-product-grid-3 ul.products li.product .button {
         right: 22%;
         left: auto;
     }
@@ -990,11 +990,11 @@ a.more::after {
         margin-left: 10px;
     }
 
-    #school-hub-front-page-widgets .fetured-page-content {
+    #university-hub-front-page-widgets .fetured-page-content {
         text-align: right;
     }
 
-    #school-hub-front-page-widgets .fetured-page-content .widget-title {
+    #university-hub-front-page-widgets .fetured-page-content .widget-title {
         text-align: right;
     }
 

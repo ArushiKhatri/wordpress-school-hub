@@ -3373,7 +3373,7 @@ function make_db_current_silent( $tables = 'all' ) {
  * @param string $template   The directory name of the theme.
  * @return bool
  */
-function make_site_theme_from_oldschool( $theme_name, $template ) {
+function make_site_theme_from_olduniversity( $theme_name, $template ) {
 	$home_path   = get_home_path();
 	$site_dir    = WP_CONTENT_DIR . "/themes/$template";
 	$default_dir = WP_CONTENT_DIR . '/themes/' . WP_DEFAULT_THEME;
@@ -3589,7 +3589,7 @@ function make_site_theme() {
 	}
 
 	if ( file_exists( ABSPATH . 'wp-layout.css' ) ) {
-		if ( ! make_site_theme_from_oldschool( $theme_name, $template ) ) {
+		if ( ! make_site_theme_from_olduniversity( $theme_name, $template ) ) {
 			// TODO: rm -rf the site theme directory.
 			return false;
 		}

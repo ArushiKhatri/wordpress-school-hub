@@ -2,7 +2,7 @@
 
 	$( document ).ready( function( $ ) {
 
-		$( '#school-hub-settings-metabox-container' ).tabs();
+		$( '#university-hub-settings-metabox-container' ).tabs();
 
 	});
 

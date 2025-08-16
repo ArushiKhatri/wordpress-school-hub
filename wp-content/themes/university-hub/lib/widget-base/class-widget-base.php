@@ -13,7 +13,7 @@
  *
  * @since 1.0.0
  */
-class school_Hub_Widget_Base extends WP_Widget {
+class university_Hub_Widget_Base extends WP_Widget {
 
 	/**
 	 * Fields.
@@ -278,7 +278,7 @@ class school_Hub_Widget_Base extends WP_Widget {
 						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
 					</label>
 					<!-- <br /> -->
-					<input type="button" class="select-img button button-primary" value="<?php esc_attr_e( 'Upload', 'school-hub' ); ?>" data-uploader_title="<?php esc_attr_e( 'Select Image', 'school-hub' ); ?>" data-uploader_button_text="<?php esc_attr_e( 'Choose Image', 'school-hub' ); ?>" />
+					<input type="button" class="select-img button button-primary" value="<?php esc_attr_e( 'Upload', 'university-hub' ); ?>" data-uploader_title="<?php esc_attr_e( 'Select Image', 'university-hub' ); ?>" data-uploader_button_text="<?php esc_attr_e( 'Choose Image', 'university-hub' ); ?>" />
 					<?php
 					$image_status = false;
 					if ( ! empty( $value ) ) {
@@ -289,7 +289,7 @@ class school_Hub_Widget_Base extends WP_Widget {
 						$remove_button_style = 'display:inline-block;';
 					}
 					?>
-					<input type="button" value="<?php echo esc_attr( _x( 'X', 'remove button', 'school-hub' ) ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $remove_button_style ); ?>" />
+					<input type="button" value="<?php echo esc_attr( _x( 'X', 'remove button', 'university-hub' ) ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $remove_button_style ); ?>" />
 					<input type="hidden" class="img" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" value="<?php echo esc_attr( $value ); ?>" />
 					<div class="image-preview-wrap">
 					<?php if ( ! empty( $value ) ) : ?>
