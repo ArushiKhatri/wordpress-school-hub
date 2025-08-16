@@ -2,44 +2,44 @@
 /**
  * Theme widgets.
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
 // Load widget base.
 require_once get_template_directory() . '/lib/widget-base/class-widget-base.php';
 
-if ( ! function_exists( 'university_hub_load_widgets' ) ) :
+if ( ! function_exists( 'school_hub_load_widgets' ) ) :
 
 	/**
 	 * Load widgets.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_load_widgets() {
+	function school_hub_load_widgets() {
 
 		// Social widget.
-		register_widget( 'University_Hub_Social_Widget' );
+		register_widget( 'school_Hub_Social_Widget' );
 
 		// Featured Page widget.
-		register_widget( 'University_Hub_Featured_Page_Widget' );
+		register_widget( 'school_Hub_Featured_Page_Widget' );
 
 		// Recent Posts widget.
-		register_widget( 'University_Hub_Recent_Posts_Widget' );
+		register_widget( 'school_Hub_Recent_Posts_Widget' );
 
 	}
 
 endif;
 
-add_action( 'widgets_init', 'university_hub_load_widgets' );
+add_action( 'widgets_init', 'school_hub_load_widgets' );
 
-if ( ! class_exists( 'University_Hub_Social_Widget' ) ) :
+if ( ! class_exists( 'school_Hub_Social_Widget' ) ) :
 
 	/**
 	 * Social widget Class.
 	 *
 	 * @since 1.0.0
 	 */
-	class University_Hub_Social_Widget extends University_Hub_Widget_Base {
+	class school_Hub_Social_Widget extends school_Hub_Widget_Base {
 
 		/**
 		 * Sets up a new widget instance.
@@ -49,13 +49,13 @@ if ( ! class_exists( 'University_Hub_Social_Widget' ) ) :
 		function __construct() {
 
 			$opts = array(
-				'classname'                   => 'university_hub_widget_social',
-				'description'                 => __( 'Displays social icons.', 'university-hub' ),
+				'classname'                   => 'school_hub_widget_social',
+				'description'                 => __( 'Displays social icons.', 'school-hub' ),
 				'customize_selective_refresh' => true,
 				);
 			$fields = array(
 				'title' => array(
-					'label' => __( 'Title:', 'university-hub' ),
+					'label' => __( 'Title:', 'school-hub' ),
 					'type'  => 'text',
 					'class' => 'widefat',
 					),
@@ -63,13 +63,13 @@ if ( ! class_exists( 'University_Hub_Social_Widget' ) ) :
 
 			if ( false === has_nav_menu( 'social' ) ) {
 				$fields['message'] = array(
-					'label' => __( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'university-hub' ),
+					'label' => __( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'school-hub' ),
 					'type'  => 'message',
 					'class' => 'widefat',
 					);
 			}
 
-			parent::__construct( 'university-hub-social', __( 'UH: Social', 'university-hub' ), $opts, array(), $fields );
+			parent::__construct( 'school-hub-social', __( 'UH: Social', 'school-hub' ), $opts, array(), $fields );
 
 		}
 
@@ -107,14 +107,14 @@ if ( ! class_exists( 'University_Hub_Social_Widget' ) ) :
 	}
 endif;
 
-if ( ! class_exists( 'University_Hub_Featured_Page_Widget' ) ) :
+if ( ! class_exists( 'school_Hub_Featured_Page_Widget' ) ) :
 
 	/**
 	 * Featured page widget Class.
 	 *
 	 * @since 1.0.0
 	 */
-	class University_Hub_Featured_Page_Widget extends University_Hub_Widget_Base {
+	class school_Hub_Featured_Page_Widget extends school_Hub_Widget_Base {
 
 		/**
 		 * Sets up a new widget instance.
@@ -124,48 +124,48 @@ if ( ! class_exists( 'University_Hub_Featured_Page_Widget' ) ) :
 		function __construct() {
 
 			$opts = array(
-				'classname'                   => 'university_hub_widget_featured_page',
-				'description'                 => __( 'Displays single featured Page or Post.', 'university-hub' ),
+				'classname'                   => 'school_hub_widget_featured_page',
+				'description'                 => __( 'Displays single featured Page or Post.', 'school-hub' ),
 				'customize_selective_refresh' => true,
 				);
 			$fields = array(
 				'title' => array(
-					'label' => __( 'Title:', 'university-hub' ),
+					'label' => __( 'Title:', 'school-hub' ),
 					'type'  => 'text',
 					'class' => 'widefat',
 					),
 				'use_page_title' => array(
-					'label'   => __( 'Use Page/Post Title as Widget Title', 'university-hub' ),
+					'label'   => __( 'Use Page/Post Title as Widget Title', 'school-hub' ),
 					'type'    => 'checkbox',
 					'default' => true,
 					),
 				'featured_page' => array(
-					'label'            => __( 'Select Page:', 'university-hub' ),
+					'label'            => __( 'Select Page:', 'school-hub' ),
 					'type'             => 'dropdown-pages',
-					'show_option_none' => __( '&mdash; Select &mdash;', 'university-hub' ),
+					'show_option_none' => __( '&mdash; Select &mdash;', 'school-hub' ),
 					),
 				'id_message' => array(
-					'label' => '<strong>' . _x( 'OR', 'message', 'university-hub' ) . '</strong>',
+					'label' => '<strong>' . _x( 'OR', 'message', 'school-hub' ) . '</strong>',
 					'type'  => 'message',
 					),
 				'featured_post' => array(
-					'label'             => __( 'Post ID:', 'university-hub' ),
-					'placeholder'       => __( 'Eg: 1234', 'university-hub' ),
+					'label'             => __( 'Post ID:', 'school-hub' ),
+					'placeholder'       => __( 'Eg: 1234', 'school-hub' ),
 					'type'              => 'text',
-					'sanitize_callback' => 'university_hub_widget_sanitize_post_id',
+					'sanitize_callback' => 'school_hub_widget_sanitize_post_id',
 					),
 				'content_type' => array(
-					'label'   => __( 'Show Content:', 'university-hub' ),
+					'label'   => __( 'Show Content:', 'school-hub' ),
 					'type'    => 'select',
 					'default' => 'full',
 					'options' => array(
-						'excerpt' => __( 'Excerpt', 'university-hub' ),
-						'full'    => __( 'Full', 'university-hub' ),
+						'excerpt' => __( 'Excerpt', 'school-hub' ),
+						'full'    => __( 'Full', 'school-hub' ),
 						),
 					),
 				'excerpt_length' => array(
-					'label'       => __( 'Excerpt Length:', 'university-hub' ),
-					'description' => __( 'Applies when Excerpt is selected in Content option.', 'university-hub' ),
+					'label'       => __( 'Excerpt Length:', 'school-hub' ),
+					'description' => __( 'Applies when Excerpt is selected in Content option.', 'school-hub' ),
 					'type'        => 'number',
 					'css'         => 'max-width:60px;',
 					'default'     => 40,
@@ -173,19 +173,19 @@ if ( ! class_exists( 'University_Hub_Featured_Page_Widget' ) ) :
 					'max'         => 400,
 					),
 				'featured_image' => array(
-					'label'   => __( 'Featured Image:', 'university-hub' ),
+					'label'   => __( 'Featured Image:', 'school-hub' ),
 					'type'    => 'select',
-					'options' => university_hub_get_image_sizes_options(),
+					'options' => school_hub_get_image_sizes_options(),
 					),
 				'featured_image_alignment' => array(
-					'label'   => __( 'Image Alignment:', 'university-hub' ),
+					'label'   => __( 'Image Alignment:', 'school-hub' ),
 					'type'    => 'select',
 					'default' => 'center',
-					'options' => university_hub_get_image_alignment_options(),
+					'options' => school_hub_get_image_alignment_options(),
 					),
 				);
 
-			parent::__construct( 'university-hub-featured-page', __( 'UH: Featured Page', 'university-hub' ), $opts, array(), $fields );
+			parent::__construct( 'school-hub-featured-page', __( 'UH: Featured Page', 'school-hub' ), $opts, array(), $fields );
 
 		}
 
@@ -246,7 +246,7 @@ if ( ! class_exists( 'University_Hub_Featured_Page_Widget' ) ) :
 				?>
 				<?php if ( 'excerpt' === $params['content_type'] ) : ?>
 					<?php
-						$excerpt = university_hub_the_excerpt( absint( $params['excerpt_length'] ) );
+						$excerpt = school_hub_the_excerpt( absint( $params['excerpt_length'] ) );
 						echo wp_kses_post( wpautop( $excerpt ) );
 						?>
 				<?php else : ?>
@@ -264,14 +264,14 @@ if ( ! class_exists( 'University_Hub_Featured_Page_Widget' ) ) :
 	}
 endif;
 
-if ( ! class_exists( 'University_Hub_Recent_Posts_Widget' ) ) :
+if ( ! class_exists( 'school_Hub_Recent_Posts_Widget' ) ) :
 
 	/**
 	 * Recent posts widget Class.
 	 *
 	 * @since 1.0.0
 	 */
-	class University_Hub_Recent_Posts_Widget extends University_Hub_Widget_Base {
+	class school_Hub_Recent_Posts_Widget extends school_Hub_Widget_Base {
 
 		/**
 		 * Sets up a new widget instance.
@@ -281,23 +281,23 @@ if ( ! class_exists( 'University_Hub_Recent_Posts_Widget' ) ) :
 		function __construct() {
 
 			$opts = array(
-				'classname'                   => 'university_hub_widget_recent_posts',
-				'description'                 => __( 'Displays recent posts.', 'university-hub' ),
+				'classname'                   => 'school_hub_widget_recent_posts',
+				'description'                 => __( 'Displays recent posts.', 'school-hub' ),
 				'customize_selective_refresh' => true,
 				);
 			$fields = array(
 				'title' => array(
-					'label' => __( 'Title:', 'university-hub' ),
+					'label' => __( 'Title:', 'school-hub' ),
 					'type'  => 'text',
 					'class' => 'widefat',
 					),
 				'post_category' => array(
-					'label'           => __( 'Select Category:', 'university-hub' ),
+					'label'           => __( 'Select Category:', 'school-hub' ),
 					'type'            => 'dropdown-taxonomies',
-					'show_option_all' => __( 'All Categories', 'university-hub' ),
+					'show_option_all' => __( 'All Categories', 'school-hub' ),
 					),
 				'post_number' => array(
-					'label'   => __( 'Number of Posts:', 'university-hub' ),
+					'label'   => __( 'Number of Posts:', 'school-hub' ),
 					'type'    => 'number',
 					'default' => 4,
 					'css'     => 'max-width:60px;',
@@ -305,15 +305,15 @@ if ( ! class_exists( 'University_Hub_Recent_Posts_Widget' ) ) :
 					'max'     => 100,
 					),
 				'featured_image' => array(
-					'label'   => __( 'Featured Image:', 'university-hub' ),
+					'label'   => __( 'Featured Image:', 'school-hub' ),
 					'type'    => 'select',
 					'default' => 'thumbnail',
-					'options' => university_hub_get_image_sizes_options( true, array( 'disable', 'thumbnail' ), false ),
+					'options' => school_hub_get_image_sizes_options( true, array( 'disable', 'thumbnail' ), false ),
 					),
 				'image_width' => array(
-					'label'       => __( 'Image Width:', 'university-hub' ),
+					'label'       => __( 'Image Width:', 'school-hub' ),
 					'type'        => 'number',
-					'description' => __( 'px', 'university-hub' ),
+					'description' => __( 'px', 'school-hub' ),
 					'css'         => 'max-width:60px;',
 					'adjacent'    => true,
 					'default'     => 60,
@@ -321,13 +321,13 @@ if ( ! class_exists( 'University_Hub_Recent_Posts_Widget' ) ) :
 					'max'         => 150,
 					),
 				'disable_date' => array(
-					'label'   => __( 'Disable Date', 'university-hub' ),
+					'label'   => __( 'Disable Date', 'school-hub' ),
 					'type'    => 'checkbox',
 					'default' => false,
 					),
 				);
 
-			parent::__construct( 'university-hub-recent-posts', __( 'UH: Recent Posts', 'university-hub' ), $opts, array(), $fields );
+			parent::__construct( 'school-hub-recent-posts', __( 'UH: Recent Posts', 'school-hub' ), $opts, array(), $fields );
 
 		}
 

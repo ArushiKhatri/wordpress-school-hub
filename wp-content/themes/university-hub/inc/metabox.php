@@ -2,25 +2,25 @@
 /**
  * Implement theme metabox.
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_add_theme_meta_box' ) ) :
+if ( ! function_exists( 'school_hub_add_theme_meta_box' ) ) :
 
 	/**
 	 * Add the Meta Box
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_theme_meta_box() {
+	function school_hub_add_theme_meta_box() {
 
 		$apply_metabox_post_types = array( 'post', 'page' );
 
 		foreach ( $apply_metabox_post_types as $key => $type ) {
 			add_meta_box(
 				'theme-settings',
-				esc_html__( 'Theme Settings', 'university-hub' ),
-				'university_hub_render_theme_settings_metabox',
+				esc_html__( 'Theme Settings', 'school-hub' ),
+				'school_hub_render_theme_settings_metabox',
 				$type
 			);
 		}
@@ -29,9 +29,9 @@ if ( ! function_exists( 'university_hub_add_theme_meta_box' ) ) :
 
 endif;
 
-add_action( 'add_meta_boxes', 'university_hub_add_theme_meta_box' );
+add_action( 'add_meta_boxes', 'school_hub_add_theme_meta_box' );
 
-if ( ! function_exists( 'university_hub_render_theme_settings_metabox' ) ) :
+if ( ! function_exists( 'school_hub_render_theme_settings_metabox' ) ) :
 
 	/**
 	 * Render theme settings meta box.
@@ -41,59 +41,59 @@ if ( ! function_exists( 'university_hub_render_theme_settings_metabox' ) ) :
 	 * @param WP_Post $post    The current post.
 	 * @param array   $metabox Metabox arguments.
 	 */
-	function university_hub_render_theme_settings_metabox( $post, $metabox ) {
+	function school_hub_render_theme_settings_metabox( $post, $metabox ) {
 
 		$post_id = $post->ID;
 
 		// Meta box nonce for verification.
-		wp_nonce_field( basename( __FILE__ ), 'university_hub_theme_settings_meta_box_nonce' );
+		wp_nonce_field( basename( __FILE__ ), 'school_hub_theme_settings_meta_box_nonce' );
 
 		// Fetch values of current post meta.
-		$values = get_post_meta( $post_id, 'university_hub_theme_settings', true );
-		$university_hub_theme_settings_post_layout = isset( $values['post_layout'] ) ? esc_attr( $values['post_layout'] ) : '';
-		$university_hub_theme_settings_single_image = isset( $values['single_image'] ) ? esc_attr( $values['single_image'] ) : '';
+		$values = get_post_meta( $post_id, 'school_hub_theme_settings', true );
+		$school_hub_theme_settings_post_layout = isset( $values['post_layout'] ) ? esc_attr( $values['post_layout'] ) : '';
+		$school_hub_theme_settings_single_image = isset( $values['single_image'] ) ? esc_attr( $values['single_image'] ) : '';
 	?>
-	<div id="university-hub-settings-metabox-container" class="university-hub-settings-metabox-container">
+	<div id="school-hub-settings-metabox-container" class="school-hub-settings-metabox-container">
 	  <ul>
-	    <li><a href="#university-hub-settings-metabox-tab-layout"><?php echo __( 'Layout', 'university-hub' ); ?></a></li>
-	    <li><a href="#university-hub-settings-metabox-tab-image"><?php echo __( 'Image', 'university-hub' ); ?></a></li>
+	    <li><a href="#school-hub-settings-metabox-tab-layout"><?php echo __( 'Layout', 'school-hub' ); ?></a></li>
+	    <li><a href="#school-hub-settings-metabox-tab-image"><?php echo __( 'Image', 'school-hub' ); ?></a></li>
 	  </ul>
-	  <div id="university-hub-settings-metabox-tab-layout">
-	    <h4><?php echo __( 'Layout Settings', 'university-hub' ); ?></h4>
-	    <div class="university-hub-row-content">
-	    	<label for="university_hub_theme_settings_post_layout"><?php echo esc_html__( 'Single Layout', 'university-hub' ); ?></label>
+	  <div id="school-hub-settings-metabox-tab-layout">
+	    <h4><?php echo __( 'Layout Settings', 'school-hub' ); ?></h4>
+	    <div class="school-hub-row-content">
+	    	<label for="school_hub_theme_settings_post_layout"><?php echo esc_html__( 'Single Layout', 'school-hub' ); ?></label>
 	    	<?php
 	    	$dropdown_args = array(
-				'id'          => 'university_hub_theme_settings_post_layout',
-				'name'        => 'university_hub_theme_settings[post_layout]',
-				'selected'    => $university_hub_theme_settings_post_layout,
+				'id'          => 'school_hub_theme_settings_post_layout',
+				'name'        => 'school_hub_theme_settings[post_layout]',
+				'selected'    => $school_hub_theme_settings_post_layout,
 				'add_default' => true,
 	    		);
-	    	university_hub_render_select_dropdown( $dropdown_args, 'university_hub_get_global_layout_options' );
+	    	school_hub_render_select_dropdown( $dropdown_args, 'school_hub_get_global_layout_options' );
 	    	?>
 
-	    </div><!-- .university-hub-row-content -->
+	    </div><!-- .school-hub-row-content -->
 
-	  </div><!-- #university-hub-settings-metabox-tab-layout -->
+	  </div><!-- #school-hub-settings-metabox-tab-layout -->
 
-	  <div id="university-hub-settings-metabox-tab-image">
-		    <h4><?php echo __( 'Image Settings', 'university-hub' ); ?></h4>
-		    <div class="university-hub-row-content">
-			    <label for="university_hub_theme_settings_single_image"><?php echo esc_html__( 'Image in Single Post/Page', 'university-hub' ); ?></label>
+	  <div id="school-hub-settings-metabox-tab-image">
+		    <h4><?php echo __( 'Image Settings', 'school-hub' ); ?></h4>
+		    <div class="school-hub-row-content">
+			    <label for="school_hub_theme_settings_single_image"><?php echo esc_html__( 'Image in Single Post/Page', 'school-hub' ); ?></label>
 	        	<?php
 	        	$dropdown_args = array(
-	    			'id'          => 'university_hub_theme_settings_single_image',
-	    			'name'        => 'university_hub_theme_settings[single_image]',
-	    			'selected'    => $university_hub_theme_settings_single_image,
+	    			'id'          => 'school_hub_theme_settings_single_image',
+	    			'name'        => 'school_hub_theme_settings[single_image]',
+	    			'selected'    => $school_hub_theme_settings_single_image,
 	    			'add_default' => true,
 	        		);
-	        	university_hub_render_select_dropdown( $dropdown_args, 'university_hub_get_image_sizes_options', array( 'add_disable' => true, 'allowed' => array( 'disable', 'large' ), 'show_dimension' => false ) );
+	        	school_hub_render_select_dropdown( $dropdown_args, 'school_hub_get_image_sizes_options', array( 'add_disable' => true, 'allowed' => array( 'disable', 'large' ), 'show_dimension' => false ) );
 	        	?>
-		    </div><!-- .university-hub-row-content -->
+		    </div><!-- .school-hub-row-content -->
 
-	  </div><!-- #university-hub-settings-metabox-tab-image -->
+	  </div><!-- #school-hub-settings-metabox-tab-image -->
 
-	</div><!-- #university-hub-settings-metabox-container -->
+	</div><!-- #school-hub-settings-metabox-container -->
 
     <?php
 	}
@@ -102,7 +102,7 @@ endif;
 
 
 
-if ( ! function_exists( 'university_hub_save_theme_settings_meta' ) ) :
+if ( ! function_exists( 'school_hub_save_theme_settings_meta' ) ) :
 
 	/**
 	 * Save theme settings meta box value.
@@ -112,12 +112,12 @@ if ( ! function_exists( 'university_hub_save_theme_settings_meta' ) ) :
 	 * @param int     $post_id Post ID.
 	 * @param WP_Post $post Post object.
 	 */
-	function university_hub_save_theme_settings_meta( $post_id, $post ) {
+	function school_hub_save_theme_settings_meta( $post_id, $post ) {
 
 		// Verify nonce.
 		if (
-			! ( isset( $_POST['university_hub_theme_settings_meta_box_nonce'] )
-			&& wp_verify_nonce( sanitize_key( $_POST['university_hub_theme_settings_meta_box_nonce'] ), basename( __FILE__ ) ) )
+			! ( isset( $_POST['school_hub_theme_settings_meta_box_nonce'] )
+			&& wp_verify_nonce( sanitize_key( $_POST['school_hub_theme_settings_meta_box_nonce'] ), basename( __FILE__ ) ) )
 		) {
 			return;
 		}
@@ -141,13 +141,13 @@ if ( ! function_exists( 'university_hub_save_theme_settings_meta' ) ) :
 			return;
 		}
 
-		if ( isset( $_POST['university_hub_theme_settings'] ) && is_array( $_POST['university_hub_theme_settings'] ) ) {
-			$raw_value = wp_unslash( $_POST['university_hub_theme_settings'] );
+		if ( isset( $_POST['school_hub_theme_settings'] ) && is_array( $_POST['school_hub_theme_settings'] ) ) {
+			$raw_value = wp_unslash( $_POST['school_hub_theme_settings'] );
 
 			if ( ! array_filter( $raw_value ) ) {
 
 				// No value.
-				delete_post_meta( $post_id, 'university_hub_theme_settings' );
+				delete_post_meta( $post_id, 'school_hub_theme_settings' );
 
 			} else {
 
@@ -180,7 +180,7 @@ if ( ! function_exists( 'university_hub_save_theme_settings_meta' ) ) :
 
 				}
 
-				update_post_meta( $post_id, 'university_hub_theme_settings', $sanitized_values );
+				update_post_meta( $post_id, 'school_hub_theme_settings', $sanitized_values );
 			}
 
 		} // End if theme settings.
@@ -189,4 +189,4 @@ if ( ! function_exists( 'university_hub_save_theme_settings_meta' ) ) :
 
 endif;
 
-add_action( 'save_post', 'university_hub_save_theme_settings_meta', 10, 2 );
+add_action( 'save_post', 'school_hub_save_theme_settings_meta', 10, 2 );

@@ -5,7 +5,7 @@ pipeline{
         stage('Clone') {
             steps {
                 sh 'echo "Cloning The Repo"'
-                git branch: 'main', url: 'https://github.com/ArushiKhatri/wordpress-university-hub.git'
+                git branch: 'main', url: 'https://github.com/ArushiKhatri/wordpress-school-hub.git'
             }
         }
 

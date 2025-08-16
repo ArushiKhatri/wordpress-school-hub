@@ -1,16 +1,16 @@
 /*
-Theme Name: University Hub
-Theme URI: https://wenthemes.com/item/wordpress-themes/university-hub/
+Theme Name: school Hub
+Theme URI: https://wenthemes.com/item/wordpress-themes/school-hub/
 Author: WEN Themes
 Author URI: https://wenthemes.com/
-Description: University Hub, an Education theme by WEN Themes, is a responsive WordPress theme for university, school, college or other educational institutions. Along with educational institutions, University Hub is flexible and loaded with several features to also cater to the needs of design agencies, corporate websites and small businesses. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=university-hub
+Description: school Hub, an Education theme by WEN Themes, is a responsive WordPress theme for school, school, college or other educational institutions. Along with educational institutions, school Hub is flexible and loaded with several features to also cater to the needs of design agencies, corporate websites and small businesses. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=school-hub
 Version: 2.3
 Requires at least: 5.9
 Tested up to: 6.8
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: university-hub
+Text Domain: school-hub
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
 */
 
@@ -957,8 +957,8 @@ figure.alignright {
 .site-content::after,
 .site-footer::before,
 .site-footer::after,
-#university-hub-front-page-widgets::after,
-#university-hub-front-page-widgets::before,
+#school-hub-front-page-widgets::after,
+#school-hub-front-page-widgets::before,
 #featured-slider::after,
 #featured-slider::before,
 .widget::after,
@@ -993,17 +993,17 @@ figure.alignright {
     max-width: 100%;
 }
 
-#university-hub-front-page-widgets .widget {
+#school-hub-front-page-widgets .widget {
     padding: 50px 0;
     margin: 0;
 }
 
 /* Make sure select elements fit in widgets. */
-#university-hub-front-page-widgets {
+#school-hub-front-page-widgets {
     clear: both;
 }
 
-#university-hub-front-page-widgets .widget-title {
+#school-hub-front-page-widgets .widget-title {
     color: #242526;
     font-weight: 400;
     margin: 0 0 25px;
@@ -1699,25 +1699,25 @@ a.custom-logo-link {
     float: left;
 }
 
-#header-social .university_hub_widget_social ul li a::before {
+#header-social .school_hub_widget_social ul li a::before {
     line-height: 1.5;
     font-size: 16px;
 }
 
-#header-social .university_hub_widget_social li a {
+#header-social .school_hub_widget_social li a {
     height: 25px;
     background: inherit;
     width: 20px;
 }
 
-#header-social .university_hub_widget_social ul li a::before {
+#header-social .school_hub_widget_social ul li a::before {
     color: rgba(255, 255, 255, 0.71);
     text-shadow: inherit;
     font-size: 14px;
     line-height: 2;
 }
 
-#header-social .university_hub_widget_social ul li a:hover::before {
+#header-social .school_hub_widget_social ul li a:hover::before {
     color: #fff;
 }
 
@@ -2174,16 +2174,16 @@ a.quick-email,
 /*--------------------------------------------------------------
 ## Social Links Style By WEN Themes
 --------------------------------------------------------------*/
-.university_hub_widget_social {
+.school_hub_widget_social {
     clear: both;
     overflow: hidden;
 }
 
-.university_hub_widget_social ul {
+.school_hub_widget_social ul {
     margin: 0;
 }
 
-.university_hub_widget_social li a {
+.school_hub_widget_social li a {
     background: #222222 none repeat scroll 0 0;
     display: block;
     height: 40px;
@@ -2195,33 +2195,33 @@ a.quick-email,
     width: 40px;
 }
 
-.university_hub_widget_social li {
+.school_hub_widget_social li {
     display: inline-block;
     margin-right: 5px;
     margin-bottom: 5px;
 }
 
-.widget-area .university_hub_widget_social li,
-#footer-widgets .university_hub_widget_social li {
+.widget-area .school_hub_widget_social li,
+#footer-widgets .school_hub_widget_social li {
     padding: 0;
 }
 
-.widget-area .university_hub_widget_social li:before,
-#footer-widgets .university_hub_widget_social li:before {
+.widget-area .school_hub_widget_social li:before,
+#footer-widgets .school_hub_widget_social li:before {
     display: none;
 }
 
-.university_hub_widget_social ul li a:before {
+.school_hub_widget_social ul li a:before {
     font-size: 19px;
 }
 
-.university_hub_widget_social li a i {
+.school_hub_widget_social li a i {
     color: #cacad8;
     font-size: 18px;
     font-weight: normal;
 }
 
-.university_hub_widget_social ul li a:before {
+.school_hub_widget_social ul li a:before {
     color: #ffffff;
     content: "\f0c1";
     display: block;
@@ -2231,380 +2231,380 @@ a.quick-email,
     text-shadow: -2px 1px 1px #222222;
 }
 
-.university_hub_widget_social ul li a[href*="mailto:"]:before,
-.university_hub_widget_social ul li a[href*="tel:"]:before,
-.university_hub_widget_social ul li a[href$="/feed"]:before {
+.school_hub_widget_social ul li a[href*="mailto:"]:before,
+.school_hub_widget_social ul li a[href*="tel:"]:before,
+.school_hub_widget_social ul li a[href$="/feed"]:before {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
 }
 
-.university_hub_widget_social ul li a:hover {
+.school_hub_widget_social ul li a:hover {
     background-color: #001837;
     -moz-transition: all 0.4s ease-out 0s;
     -webkit-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
 }
 
-.university_hub_widget_social ul li a:hover::before {
+.school_hub_widget_social ul li a:hover::before {
     color: #fff;
 }
 
-.university_hub_widget_social ul li a[href*="mailto:"]:before {
+.school_hub_widget_social ul li a[href*="mailto:"]:before {
     content: "\f0e0";
 }
 
-.university_hub_widget_social ul li a[href*="tel:"]:before {
+.school_hub_widget_social ul li a[href*="tel:"]:before {
     content: "\f095";
 }
 
-.university_hub_widget_social ul li a[href$="/feed"]:before {
+.school_hub_widget_social ul li a[href$="/feed"]:before {
     content: "\f09e";
 }
 
-.university_hub_widget_social ul li a[href*="facebook.com"]:before {
+.school_hub_widget_social ul li a[href*="facebook.com"]:before {
     content: "\f09a";
 }
 
-.university_hub_widget_social ul li a[href*="twitter.com"]:before {
+.school_hub_widget_social ul li a[href*="twitter.com"]:before {
     content: "\f099";
 }
 
-.university_hub_widget_social ul li a[href*="linkedin.com"]:before {
+.school_hub_widget_social ul li a[href*="linkedin.com"]:before {
     content: "\f0e1";
 }
 
-.university_hub_widget_social ul li a[href*="plus.google.com"]:before {
+.school_hub_widget_social ul li a[href*="plus.google.com"]:before {
     content: "\f0d5";
 }
 
-.university_hub_widget_social ul li a[href*="youtube.com"]:before {
+.school_hub_widget_social ul li a[href*="youtube.com"]:before {
     content: "\f167";
 }
 
-.university_hub_widget_social ul li a[href*="dribbble.com"]:before {
+.school_hub_widget_social ul li a[href*="dribbble.com"]:before {
     content: "\f17d";
 }
 
-.university_hub_widget_social ul li a[href*="pinterest.com"]:before {
+.school_hub_widget_social ul li a[href*="pinterest.com"]:before {
     content: "\f0d2";
 }
 
-.university_hub_widget_social ul li a[href*="bitbucket.org"]:before {
+.school_hub_widget_social ul li a[href*="bitbucket.org"]:before {
     content: "\f171";
 }
 
-.university_hub_widget_social ul li a[href*="github.com"]:before {
+.school_hub_widget_social ul li a[href*="github.com"]:before {
     content: "\f113";
 }
 
-.university_hub_widget_social ul li a[href*="codepen.io"]:before {
+.school_hub_widget_social ul li a[href*="codepen.io"]:before {
     content: "\f1cb";
 }
 
-.university_hub_widget_social ul li a[href*="flickr.com"]:before {
+.school_hub_widget_social ul li a[href*="flickr.com"]:before {
     content: "\f16e";
 }
 
-.university_hub_widget_social ul li a[href*="foursquare.com"]:before {
+.school_hub_widget_social ul li a[href*="foursquare.com"]:before {
     content: "\f180";
 }
 
-.university_hub_widget_social ul li a[href*="instagram.com"]:before {
+.school_hub_widget_social ul li a[href*="instagram.com"]:before {
     content: "\f16d";
 }
 
-.university_hub_widget_social ul li a[href*="tumblr.com"]:before {
+.school_hub_widget_social ul li a[href*="tumblr.com"]:before {
     content: "\f173";
 }
 
-.university_hub_widget_social ul li a[href*="reddit.com"]:before {
+.school_hub_widget_social ul li a[href*="reddit.com"]:before {
     content: "\f1a1";
 }
 
-.university_hub_widget_social ul li a[href*="vimeo.com"]:before {
+.school_hub_widget_social ul li a[href*="vimeo.com"]:before {
     content: "\f194";
 }
 
-.university_hub_widget_social ul li a[href*="digg.com"]:before {
+.school_hub_widget_social ul li a[href*="digg.com"]:before {
     content: "\f1a6";
 }
 
-.university_hub_widget_social ul li a[href*="twitch.tv"]:before {
+.school_hub_widget_social ul li a[href*="twitch.tv"]:before {
     content: "\f1e8";
 }
 
-.university_hub_widget_social ul li a[href*="stumbleupon.com"]:before {
+.school_hub_widget_social ul li a[href*="stumbleupon.com"]:before {
     content: "\f1a4";
 }
 
-.university_hub_widget_social ul li a[href*="delicious.com"]:before {
+.school_hub_widget_social ul li a[href*="delicious.com"]:before {
     content: "\f1a5";
 }
 
-.university_hub_widget_social ul li a[href*="soundcloud.com"]:before {
+.school_hub_widget_social ul li a[href*="soundcloud.com"]:before {
     content: "\f1be";
 }
 
-.university_hub_widget_social ul li a[href*="wordpress.org"]:before,
-.university_hub_widget_social ul li a[href*="wordpress.com"]:before {
+.school_hub_widget_social ul li a[href*="wordpress.org"]:before,
+.school_hub_widget_social ul li a[href*="wordpress.com"]:before {
     content: "\f19a";
 }
 
-.university_hub_widget_social ul li a[href*="jsfiddle.net"]:before {
+.school_hub_widget_social ul li a[href*="jsfiddle.net"]:before {
     content: "\f1cc";
 }
 
-.university_hub_widget_social ul li a[href*="tripadvisor.com"]:before {
+.school_hub_widget_social ul li a[href*="tripadvisor.com"]:before {
     content: "\f262";
 }
 
-.university_hub_widget_social ul li a[href*="foursquare.com"]:before {
+.school_hub_widget_social ul li a[href*="foursquare.com"]:before {
     content: "\f180";
 }
 
-.university_hub_widget_social ul li a[href*="angel.co"]:before {
+.school_hub_widget_social ul li a[href*="angel.co"]:before {
     content: "\f209";
 }
 
-.university_hub_widget_social ul li a[href*="slack.com"]:before {
+.school_hub_widget_social ul li a[href*="slack.com"]:before {
     content: "\f198";
 }
 
-.university_hub_widget_social ul li a[href*="tiktok.com"]:before {
+.school_hub_widget_social ul li a[href*="tiktok.com"]:before {
     content: "\e07b";
 }
 
-.university_hub_widget_social ul li a[href*="x.com"]:before {
+.school_hub_widget_social ul li a[href*="x.com"]:before {
     content: "\e61b";
 }
 
-.university_hub_widget_social ul li a[href*="threads.com"]:before {
+.school_hub_widget_social ul li a[href*="threads.com"]:before {
     content: "\e618";
 }
 
-.university_hub_widget_social ul li a[href*="bsky.app"]:before {
+.school_hub_widget_social ul li a[href*="bsky.app"]:before {
     content: "\e671";
 }
 
-.university_hub_widget_social ul li a[href*="spotify.com"]:before {
+.school_hub_widget_social ul li a[href*="spotify.com"]:before {
     content: "\f1bc";
 }
 
-.university_hub_widget_social ul li a[href*="snapchat.com"]:before {
+.school_hub_widget_social ul li a[href*="snapchat.com"]:before {
     content: "\f2ab";
 }
 
-.university_hub_widget_social ul li a[href*="apple.com"]:before {
+.school_hub_widget_social ul li a[href*="apple.com"]:before {
     content: "\f179";
 }
 
-.university_hub_widget_social ul li a[href*="amazon.com"]:before {
+.school_hub_widget_social ul li a[href*="amazon.com"]:before {
     content: "\f270";
 }
 
-.university_hub_widget_social ul li a[href*="bandcamp.com"]:before {
+.school_hub_widget_social ul li a[href*="bandcamp.com"]:before {
     content: "\f2d5";
 }
 
-.university_hub_widget_social ul li a[href*="behance.net"]:before,
-.university_hub_widget_social ul li a[href*="behance.com"]:before {
+.school_hub_widget_social ul li a[href*="behance.net"]:before,
+.school_hub_widget_social ul li a[href*="behance.com"]:before {
     content: "\f1b4";
 }
 
-.university_hub_widget_social ul li a[href*="deviantart.com"]:before {
+.school_hub_widget_social ul li a[href*="deviantart.com"]:before {
     content: "\f1bd";
 }
 
-.university_hub_widget_social ul li a[href*="etsy.com"]:before {
+.school_hub_widget_social ul li a[href*="etsy.com"]:before {
     content: "\f2d7";
 }
 
-.university_hub_widget_social ul li a[href*="t.me"]:before,
-.university_hub_widget_social ul li a[href*="telegram.org"]:before {
+.school_hub_widget_social ul li a[href*="t.me"]:before,
+.school_hub_widget_social ul li a[href*="telegram.org"]:before {
     content: "\f2c6";
 }
 
 /*social links hover effect */
-.university_hub_widget_social ul li a[href*="facebook.com"] {
+.school_hub_widget_social ul li a[href*="facebook.com"] {
     background-color: #3b5998;
 }
 
-.university_hub_widget_social ul li a[href*="twitter.com"] {
+.school_hub_widget_social ul li a[href*="twitter.com"] {
     background-color: #00aced;
 }
 
-.university_hub_widget_social ul li a[href*="plus.google.com"] {
+.school_hub_widget_social ul li a[href*="plus.google.com"] {
     background-color: #dd4b39;
 }
 
-.university_hub_widget_social ul li a[href$="/feed"] {
+.school_hub_widget_social ul li a[href$="/feed"] {
     background-color: #dc622c;
 }
 
-.university_hub_widget_social ul li a[href*="wordpress.org"],
-.university_hub_widget_social ul li a[href*="wordpress.com"] {
+.school_hub_widget_social ul li a[href*="wordpress.org"],
+.school_hub_widget_social ul li a[href*="wordpress.com"] {
     background-color: #45bbe6;
 }
 
-.university_hub_widget_social ul li a[href*="github.com"] {
+.school_hub_widget_social ul li a[href*="github.com"] {
     background-color: #4183c4;
 }
 
-.university_hub_widget_social ul li a[href*="linkedin.com"] {
+.school_hub_widget_social ul li a[href*="linkedin.com"] {
     background-color: #007bb6;
 }
 
-.university_hub_widget_social ul li a[href*="pinterest.com"] {
+.school_hub_widget_social ul li a[href*="pinterest.com"] {
     background-color: #cb2027;
 }
 
-.university_hub_widget_social ul li a[href*="flickr.com"] {
+.school_hub_widget_social ul li a[href*="flickr.com"] {
     background-color: #ff0084;
 }
 
-.university_hub_widget_social ul li a[href*="vimeo.com"] {
+.school_hub_widget_social ul li a[href*="vimeo.com"] {
     background-color: #aad450;
 }
 
-.university_hub_widget_social ul li a[href*="youtube.com"] {
+.school_hub_widget_social ul li a[href*="youtube.com"] {
     background-color: #bb0000;
 }
 
-.university_hub_widget_social ul li a[href*="instagram.com"] {
+.school_hub_widget_social ul li a[href*="instagram.com"] {
     background-color: #517fa4;
 }
 
-.university_hub_widget_social ul li a[href*="dribbble.com"] {
+.school_hub_widget_social ul li a[href*="dribbble.com"] {
     background-color: #ea4c89;
 }
 
-.university_hub_widget_social ul li a[href*="skype.com"] {
+.school_hub_widget_social ul li a[href*="skype.com"] {
     background-color: #12a5f4;
 }
 
-.university_hub_widget_social ul li a[href*="digg.com"] {
+.school_hub_widget_social ul li a[href*="digg.com"] {
     background-color: #333;
 }
 
-.university_hub_widget_social ul li a[href*="codepen.io"] {
+.school_hub_widget_social ul li a[href*="codepen.io"] {
     background-color: #001837;
 }
 
-.university_hub_widget_social ul li a[href*="reddit.com"] {
+.school_hub_widget_social ul li a[href*="reddit.com"] {
     background-color: #ff4500;
 }
 
-.university_hub_widget_social ul li a[href*="mailto:"] {
+.school_hub_widget_social ul li a[href*="mailto:"] {
     background-color: #1d62f0;
 }
 
-.university_hub_widget_social ul li a[href*="foursquare.com"] {
+.school_hub_widget_social ul li a[href*="foursquare.com"] {
     background-color: #f94877;
 }
 
-.university_hub_widget_social ul li a[href*="stumbleupon.com"] {
+.school_hub_widget_social ul li a[href*="stumbleupon.com"] {
     background-color: #eb4924;
 }
 
-.university_hub_widget_social ul li a[href*="twitch.tv"] {
+.school_hub_widget_social ul li a[href*="twitch.tv"] {
     background-color: #6441a5;
 }
 
-.university_hub_widget_social ul li a[href*="tumblr.com"] {
+.school_hub_widget_social ul li a[href*="tumblr.com"] {
     background-color: #32506d;
 }
 
-.university_hub_widget_social ul li a[href*="foursquare.com"] {
+.school_hub_widget_social ul li a[href*="foursquare.com"] {
     background-color: #f94877;
 }
 
-.university_hub_widget_social ul li a[href*="stumbleupon.com"] {
+.school_hub_widget_social ul li a[href*="stumbleupon.com"] {
     background-color: #eb4924;
 }
 
-.university_hub_widget_social ul li a[href*="twitch.tv"] {
+.school_hub_widget_social ul li a[href*="twitch.tv"] {
     background-color: #6441a5;
 }
 
-.university_hub_widget_social ul li a[href*="tumblr.com"] {
+.school_hub_widget_social ul li a[href*="tumblr.com"] {
     background-color: #32506d;
 }
 
-.university_hub_widget_social ul li a[href*="soundcloud.com"] {
+.school_hub_widget_social ul li a[href*="soundcloud.com"] {
     background-color: #ff5500;
 }
 
-.university_hub_widget_social ul li a[href*="jsfiddle.net"] {
+.school_hub_widget_social ul li a[href*="jsfiddle.net"] {
     background-color: #4679bd;
 }
 
-.university_hub_widget_social ul li a[href*="tripadvisor.com"] {
+.school_hub_widget_social ul li a[href*="tripadvisor.com"] {
     background-color: #86c171;
 }
 
-.university_hub_widget_social ul li a[href*="foursquare.com"] {
+.school_hub_widget_social ul li a[href*="foursquare.com"] {
     background-color: #2d5be3;
 }
 
-.university_hub_widget_social ul li a[href*="angel.co"] {
+.school_hub_widget_social ul li a[href*="angel.co"] {
     background-color: #001837;
 }
 
-.university_hub_widget_social ul li a[href*="slack.com"] {
+.school_hub_widget_social ul li a[href*="slack.com"] {
     background-color: #56b68b;
 }
 
-.university_hub_widget_social ul li a[href*="tiktok.com"] {
+.school_hub_widget_social ul li a[href*="tiktok.com"] {
     background-color: #000000;
 }
 
-.university_hub_widget_social ul li a[href*="x.com"] {
+.school_hub_widget_social ul li a[href*="x.com"] {
     background-color: #000000;
 }
 
-.university_hub_widget_social ul li a[href*="threads.com"] {
+.school_hub_widget_social ul li a[href*="threads.com"] {
     background-color: #000000;
 }
 
-.university_hub_widget_social ul li a[href*="bsky.app"] {
+.school_hub_widget_social ul li a[href*="bsky.app"] {
     background-color: #87CEEB;
 }
 
-.university_hub_widget_social ul li a[href*="spotify.com"] {
+.school_hub_widget_social ul li a[href*="spotify.com"] {
     background-color: #1ed760;
 }
 
-.university_hub_widget_social ul li a[href*="snapchat.com"] {
+.school_hub_widget_social ul li a[href*="snapchat.com"] {
     background-color: #FFFC00;
 }
 
-.university_hub_widget_social ul li a[href*="apple.com"] {
+.school_hub_widget_social ul li a[href*="apple.com"] {
     background-color: #000000;
 }
 
-.university_hub_widget_social ul li a[href*="amazon.com"] {
+.school_hub_widget_social ul li a[href*="amazon.com"] {
     background-color: #f90;
 }
 
-.university_hub_widget_social ul li a[href*="bandcamp.com"] {
+.school_hub_widget_social ul li a[href*="bandcamp.com"] {
     background-color: #639aa9;
 }
 
-.university_hub_widget_social ul li a[href*="behance.net"],
-.university_hub_widget_social ul li a[href*="behance.com"] {
+.school_hub_widget_social ul li a[href*="behance.net"],
+.school_hub_widget_social ul li a[href*="behance.com"] {
     background-color: #1769FF;
 }
 
-.university_hub_widget_social ul li a[href*="deviantart.com"] {
+.school_hub_widget_social ul li a[href*="deviantart.com"] {
     background-color: #05CC47;
 }
 
-.university_hub_widget_social ul li a[href*="etsy.com"] {
+.school_hub_widget_social ul li a[href*="etsy.com"] {
     background-color: #F1641E;
 }
 
-.university_hub_widget_social ul li a[href*="t.me"],
-.university_hub_widget_social ul li a[href*="telegram.org"] {
+.school_hub_widget_social ul li a[href*="t.me"],
+.school_hub_widget_social ul li a[href*="telegram.org"] {
     background-color: #0088CC;
 }
 
@@ -3064,11 +3064,11 @@ a.quick-email,
 }
 
 /*Footer Navigation*/
-#colophon .university_hub_widget_social ul li a::before {
+#colophon .school_hub_widget_social ul li a::before {
     font-size: 14px;
 }
 
-#colophon .university_hub_widget_social li a {
+#colophon .school_hub_widget_social li a {
     height: 30px;
     width: 30px;
 }
@@ -3284,20 +3284,20 @@ div.wpcf7 {
 ## Home Section
 --------------------------------------------------------------*/
 #front-page-home-sections>div::after,
-#university-hub-front-page-widgets::after {
+#school-hub-front-page-widgets::after {
     clear: both;
     content: "";
     display: table;
 }
 
 #front-page-home-sections>div,
-#university-hub-front-page-widgets {
+#school-hub-front-page-widgets {
     padding: 40px 0;
     clear: both;
 }
 
 #front-page-home-sections .section-title,
-#university-hub-front-page-widgets .widget-title {
+#school-hub-front-page-widgets .widget-title {
     border-left: 4px solid #ff6000;
     color: #00387d;
     display: inline-block;
@@ -3312,7 +3312,7 @@ div.wpcf7 {
     color: #fff;
 }
 
-#university-hub-front-page-widgets {
+#school-hub-front-page-widgets {
     background-color: rgb(247, 252, 254);
 }
 
@@ -3686,32 +3686,32 @@ a.more {
 /*--------------------------------------------------------------
 ### Recent post widget style By WEN Themes
 --------------------------------------------------------------*/
-#footer-widgets .university_hub_widget_recent_posts .recent-posts-item {
+#footer-widgets .school_hub_widget_recent_posts .recent-posts-item {
     margin: 0;
 }
 
-.university_hub_widget_recent_posts .recent-posts-title {
+.school_hub_widget_recent_posts .recent-posts-title {
     font-size: 18px;
     line-height: 1.3;
     margin-bottom: 10px;
 }
 
-.university_hub_widget_recent_posts .recent-posts-title a {
+.school_hub_widget_recent_posts .recent-posts-title a {
     color: #222;
 }
 
-.university_hub_widget_recent_posts .recent-posts-item {
+.school_hub_widget_recent_posts .recent-posts-item {
     clear: both;
     margin-top: 30px;
 }
 
-.university_hub_widget_recent_posts .recent-posts-item::after {
+.school_hub_widget_recent_posts .recent-posts-item::after {
     clear: both;
     content: "";
     display: table;
 }
 
-.university_hub_widget_recent_posts .recent-posts-date::before {
+.school_hub_widget_recent_posts .recent-posts-date::before {
     display: inline-block;
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
@@ -3890,43 +3890,43 @@ a.more {
     width: 100%;
 }
 
-#university-hub-front-page-widgets .home-section-team {
+#school-hub-front-page-widgets .home-section-team {
     background: #f9f9f9 none repeat scroll 0 0;
 }
 
 /*--------------------------------------------------------------
 ### Featured Page Widget style By WEN Themes
 --------------------------------------------------------------*/
-#university-hub-front-page-widgets .university_hub_widget_featured_page .container {
+#school-hub-front-page-widgets .school_hub_widget_featured_page .container {
     width: 1349px;
     padding: 0;
     max-width: 100%;
 }
 
-#university-hub-front-page-widgets .featured-page-widget img.alignleft {
+#school-hub-front-page-widgets .featured-page-widget img.alignleft {
     margin-right: 60px;
     vertical-align: middle;
     margin-bottom: 0;
     max-width: 50%;
 }
 
-#university-hub-front-page-widgets .featured-page-widget img.alignright {
+#school-hub-front-page-widgets .featured-page-widget img.alignright {
     margin-left: 60px;
     vertical-align: middle;
     margin-bottom: 0;
     max-width: 50%;
 }
 
-#university-hub-front-page-widgets .fetured-page-content {
+#school-hub-front-page-widgets .fetured-page-content {
     padding: 50px;
 }
 
-#university-hub-front-page-widgets .featured-page-widget.entry-content {
+#school-hub-front-page-widgets .featured-page-widget.entry-content {
     margin: 0;
     background: #fff;
 }
 
-#university-hub-front-page-widgets .university_hub_widget_featured_page {
+#school-hub-front-page-widgets .school_hub_widget_featured_page {
     padding: 0;
 }
 
@@ -4293,47 +4293,47 @@ a.more {
 /*--------------------------------------------------------------
 ### Woocommercce Product Grid widget style By WEN Themes
 --------------------------------------------------------------*/
-.university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product {
+.school_hub_widget_products_grid .school-hub-woocommerce-product-grid-4 ul.products li.product {
     margin: 0 1.5% 30px;
     width: 22%;
 }
 
-.university_hub_widget_products_grid .university-hub-woocommerce-product-grid-3 ul.products li.product {
+.school_hub_widget_products_grid .school-hub-woocommerce-product-grid-3 ul.products li.product {
     width: 30.3%;
     margin: 0 1.5% 30px;
 }
 
-.university-hub-woocommerce ul {
+.school-hub-woocommerce ul {
     margin: 0;
 }
 
-.university_hub_widget_products_grid .university-hub-woocommerce {
+.school_hub_widget_products_grid .school-hub-woocommerce {
     margin: 0 -15px;
 }
 
-#university-hub-front-page-widgets .university_hub_widget_products_grid {
+#school-hub-front-page-widgets .school_hub_widget_products_grid {
     padding-bottom: 0;
 }
 
 /*--------------------------------------------------------------
 ### Woocommercce Carousel widget style By WEN Themes
 --------------------------------------------------------------*/
-.university-hub-woocommerce .slick-prev {
+.school-hub-woocommerce .slick-prev {
     left: 0;
     z-index: 999;
 }
 
-.university-hub-woocommerce .slick-next {
+.school-hub-woocommerce .slick-next {
     right: 0;
     z-index: 999;
 }
 
-.university-hub-woocommerce .slick-arrow {
+.school-hub-woocommerce .slick-arrow {
     bottom: 50%;
     position: absolute;
 }
 
-.university-hub-woocommerce .slick-arrow i {
+.school-hub-woocommerce .slick-arrow i {
     background: #4fc3dd none repeat scroll 0 0;
     color: #fff;
     cursor: pointer;
@@ -4345,7 +4345,7 @@ a.more {
     width: 40px;
 }
 
-.university-hub-woocommerce ul.products li.product a img {
+.school-hub-woocommerce ul.products li.product a img {
     box-shadow: none;
     display: block;
     height: auto;
@@ -4353,14 +4353,14 @@ a.more {
     width: 100%;
 }
 
-.university-hub-woocommerce .quantity .qty {
+.school-hub-woocommerce .quantity .qty {
     height: 36px;
     text-align: center;
     width: 3.631em;
 }
 
-.university-hub-woocommerce ul.products li.product,
-.university-hub-woocommerce -page ul.products li.product {
+.school-hub-woocommerce ul.products li.product,
+.school-hub-woocommerce -page ul.products li.product {
     background: #ffffff none repeat scroll 0 0;
     float: left;
     list-style-type: none;
@@ -4370,28 +4370,28 @@ a.more {
     margin: 0 15px;
 }
 
-.university-hub-woocommerce ul.products li.product .price del {
+.school-hub-woocommerce ul.products li.product .price del {
     color: inherit;
     display: inline-block;
 }
 
-.university-hub-woocommerce span.onsale {
+.school-hub-woocommerce span.onsale {
     background-color: #ff6000;
     color: #ffffff;
     position: absolute;
     z-index: 99;
 }
 
-.university-hub-woocommerce #review_form #respond p.stars {
+.school-hub-woocommerce #review_form #respond p.stars {
     margin: 10px 0;
     padding: 0;
 }
 
-.university-hub-woocommerce ul.products li.product .price ins {
+.school-hub-woocommerce ul.products li.product .price ins {
     font-weight: 700;
 }
 
-.university-hub-woocommerce ul.products li.product .onsale::after {
+.school-hub-woocommerce ul.products li.product .onsale::after {
     content: '';
     width: 0px;
     height: 0px;
@@ -4405,7 +4405,7 @@ a.more {
     transform: rotate(45deg);
 }
 
-.university-hub-woocommerce ul.products li.product .onsale {
+.school-hub-woocommerce ul.products li.product .onsale {
     border-radius: 0;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
     font-size: 14px;
@@ -4425,7 +4425,7 @@ a.more {
     font-weight: bold;
 }
 
-.university-hub-woocommerce ul.products li.product h3 {
+.school-hub-woocommerce ul.products li.product h3 {
     font-size: 16px;
     font-weight: normal;
     letter-spacing: 1px;
@@ -4433,11 +4433,11 @@ a.more {
     width: 100%;
 }
 
-.university-hub-woocommerce.university-hub-woocommerce-product-grid-3 ul.products li.product .button {
+.school-hub-woocommerce.school-hub-woocommerce-product-grid-3 ul.products li.product .button {
     left: 32%;
 }
 
-.university-hub-woocommerce ul.products li.product .button {
+.school-hub-woocommerce ul.products li.product .button {
     font-size: 15px;
     left: 21%;
     position: absolute;
@@ -4451,17 +4451,17 @@ a.more {
     text-transform: capitalize;
 }
 
-.university-hub-woocommerce ul.products li.product .button:hover {
+.school-hub-woocommerce ul.products li.product .button:hover {
     color: #fff;
 }
 
-.university-hub-woocommerce ul.products li.product:hover .button {
+.school-hub-woocommerce ul.products li.product:hover .button {
     visibility: visible;
     opacity: 1;
     top: 40%;
 }
 
-.university-hub-woocommerce .star-rating {
+.school-hub-woocommerce .star-rating {
     float: right;
     font-family: star;
     font-size: 1em;
@@ -4472,7 +4472,7 @@ a.more {
     width: 5.4em;
 }
 
-.university-hub-woocommerce .star-rating::before {
+.school-hub-woocommerce .star-rating::before {
     color: #d3ced2;
     content: "sssss";
     float: left;
@@ -4481,7 +4481,7 @@ a.more {
     top: 0;
 }
 
-.university-hub-woocommerce .star-rating span {
+.school-hub-woocommerce .star-rating span {
     float: left;
     left: 0;
     overflow: hidden;
@@ -4490,7 +4490,7 @@ a.more {
     top: 0;
 }
 
-.university-hub-woocommerce .star-rating span::before {
+.school-hub-woocommerce .star-rating span::before {
     color: #ffd353;
     content: "SSSSS";
     left: 0;
@@ -4498,23 +4498,23 @@ a.more {
     top: 0;
 }
 
-.university-hub-woocommerce .woocommerce-product-rating {
+.school-hub-woocommerce .woocommerce-product-rating {
     display: block;
     line-height: 2;
 }
 
-.university-hub-woocommerce .woocommerce-product-rating::after,
-.university-hub-woocommerce .woocommerce-product-rating::before {
+.school-hub-woocommerce .woocommerce-product-rating::after,
+.school-hub-woocommerce .woocommerce-product-rating::before {
     content: " ";
     display: table;
 }
 
-.university-hub-woocommerce .woocommerce-product-rating .star-rating {
+.school-hub-woocommerce .woocommerce-product-rating .star-rating {
     float: left;
     margin: 0.5em 4px 0 0;
 }
 
-.university-hub-woocommerce .products .star-rating {
+.school-hub-woocommerce .products .star-rating {
     display: block;
     float: none;
     left: 25px;
@@ -4522,11 +4522,11 @@ a.more {
     top: 62%;
 }
 
-.university-hub-woocommerce .hreview-aggregate .star-rating {
+.school-hub-woocommerce .hreview-aggregate .star-rating {
     margin: 10px 0 0;
 }
 
-.university-hub-woocommerce ul.products li.product .price {
+.school-hub-woocommerce ul.products li.product .price {
     color: #77a464;
     display: block;
     font-size: 16px;
@@ -4534,11 +4534,11 @@ a.more {
     margin-bottom: 15px;
 }
 
-.university-hub-woocommerce ul.products li.product .star-rating {
+.school-hub-woocommerce ul.products li.product .star-rating {
     font-size: 16px;
 }
 
-.university-hub-woocommerce a.button::after {
+.school-hub-woocommerce a.button::after {
     content: "\f217";
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
@@ -4996,7 +4996,7 @@ a.more {
 --------------------------------------------------------------*/
 /* Smaller than standard 1349 above (devices and browsers) */
 @media only screen and (min-width:1400px) {
-    .university_hub_widget_featured_page .container {
+    .school_hub_widget_featured_page .container {
         width: 1230px;
         padding: 0 15px;
         max-width: 100%;
@@ -5114,7 +5114,7 @@ a.more {
         line-height: 1.4;
     }
 
-    #university-hub-front-page-widgets .featured-page-widget img.alignleft {
+    #school-hub-front-page-widgets .featured-page-widget img.alignleft {
         margin-bottom: 0;
         margin-right: 30px;
         max-width: 45%;
@@ -5164,7 +5164,7 @@ a.more {
         padding: 2px;
     }
 
-    .university_hub_widget_contact .wpcf7-form>p {
+    .school_hub_widget_contact .wpcf7-form>p {
         width: 100%;
     }
 
@@ -5204,7 +5204,7 @@ a.more {
         clear: both;
     }
 
-    #university-hub-front-page-widgets .widget {
+    #school-hub-front-page-widgets .widget {
         padding: 30px 0;
     }
 
@@ -5516,7 +5516,7 @@ a.more {
         width: 100%;
     }
 
-    .university_hub_widget_recent_posts .recent-posts-item {
+    .school_hub_widget_recent_posts .recent-posts-item {
         clear: both;
         float: left;
         margin-top: 30px;
@@ -5621,28 +5621,28 @@ a.more {
         width: 100%;
     }
 
-    #university-hub-front-page-widgets .featured-page-widget img.alignleft {
+    #school-hub-front-page-widgets .featured-page-widget img.alignleft {
         margin-bottom: 30px;
         margin-right: 0;
         max-width: 100%;
     }
 
-    #university-hub-front-page-widgets .university_hub_widget_featured_page .container {
+    #school-hub-front-page-widgets .school_hub_widget_featured_page .container {
         max-width: 97%;
         padding: 0 15px;
     }
 
-    #university-hub-front-page-widgets .fetured-page-content {
+    #school-hub-front-page-widgets .fetured-page-content {
         padding: 30px;
     }
 
-    .university-hub-woocommerce-product-grid-4 ul.products li.product .button {
+    .school-hub-woocommerce-product-grid-4 ul.products li.product .button {
         padding: 5px 13px;
         left: 13%;
         font-size: 14px;
     }
 
-    .university-hub-woocommerce-product-grid-3 ul.products li.product .button {
+    .school-hub-woocommerce-product-grid-3 ul.products li.product .button {
         left: 16%;
     }
 
@@ -5656,7 +5656,7 @@ a.more {
         display: block;
     }
 
-    .university-hub-woocommerce .products .star-rating {
+    .school-hub-woocommerce .products .star-rating {
         top: 20px;
     }
 }
@@ -5692,11 +5692,11 @@ a.more {
         overflow: hidden;
     }
 
-    #university-hub-front-page-widgets .widget-title {
+    #school-hub-front-page-widgets .widget-title {
         font-size: 25px;
     }
 
-    #university-hub-front-page-widgets .university_hub_widget_call_to_action .call-to-action-description p {
+    #school-hub-front-page-widgets .school_hub_widget_call_to_action .call-to-action-description p {
         font-size: 15px;
     }
 
@@ -5704,7 +5704,7 @@ a.more {
         clear: both;
     }
 
-    #university-hub-front-page-widgets {
+    #school-hub-front-page-widgets {
         clear: both;
     }
 
@@ -5733,14 +5733,14 @@ a.more {
         clear: both;
     }
 
-    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product,
-    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-3 ul.products li.product {
+    .school_hub_widget_products_grid .school-hub-woocommerce-product-grid-4 ul.products li.product,
+    .school_hub_widget_products_grid .school-hub-woocommerce-product-grid-3 ul.products li.product {
         margin: 0 1.5% 30px;
         width: 47%;
     }
 
-    .university-hub-woocommerce-product-grid-4 ul.products li.product .button,
-    .university-hub-woocommerce-product-grid-3 ul.products li.product .button {
+    .school-hub-woocommerce-product-grid-4 ul.products li.product .button,
+    .school-hub-woocommerce-product-grid-3 ul.products li.product .button {
         font-size: 14px;
         left: 22%;
         padding: 5px 13px;
@@ -5842,7 +5842,7 @@ a.more {
         width: 100%;
     }
 
-    #university-hub-front-page-widgets .widget {
+    #school-hub-front-page-widgets .widget {
         margin: 0;
         padding: 30px 0;
     }
@@ -5865,7 +5865,7 @@ a.more {
         color: #ffffff;
     }
 
-    #university-hub-services.home-section-services .services-item {
+    #school-hub-services.home-section-services .services-item {
         width: 50%;
     }
 
@@ -6106,7 +6106,7 @@ a.more {
     }
 
     /*main slider */
-    #university-hub-front-page-widgets .widget-title {
+    #school-hub-front-page-widgets .widget-title {
         font-size: 25px;
         margin-bottom: 10px;
     }
@@ -6142,7 +6142,7 @@ a.more {
         text-align: right;
     }
 
-    .social-links .university_hub_widget_social li {
+    .social-links .school_hub_widget_social li {
         display: inline-block;
         float: none;
     }
@@ -6212,7 +6212,7 @@ a.more {
         width: 100%;
     }
 
-    #university-hub-front-page-widgets .widget-title {
+    #school-hub-front-page-widgets .widget-title {
         font-size: 22px;
         margin-bottom: 10px;
     }
@@ -6230,7 +6230,7 @@ a.more {
         margin-bottom: 8px;
     }
 
-    .header-social-wrapper .university_hub_widget_social li {
+    .header-social-wrapper .school_hub_widget_social li {
         float: none;
         display: inline-block;
     }
@@ -6267,11 +6267,11 @@ a.more {
         top: 10px;
     }
 
-    #footer-widgets .footer-active-2 .university_hub_widget_social {
+    #footer-widgets .footer-active-2 .school_hub_widget_social {
         margin-top: 0;
     }
 
-    #university-hub-services.home-section-services .services-item,
+    #school-hub-services.home-section-services .services-item,
     .home-section-latest-news .latest-news-item,
     #latest-news.home-section-latest-news .latest-news-item,
     .home-section-featured-blocks .inner-wrapper article {
@@ -6289,12 +6289,12 @@ a.more {
         font-size: 18px;
     }
 
-    #university-hub-front-page-widgets .fetured-page-content {
+    #school-hub-front-page-widgets .fetured-page-content {
         padding: 0 15px;
         text-align: left;
     }
 
-    #university-hub-front-page-widgets .fetured-page-content .widget-title {
+    #school-hub-front-page-widgets .fetured-page-content .widget-title {
         font-size: 19px;
         text-align: left;
     }
@@ -6333,19 +6333,19 @@ a.more {
         font-size: 31px;
     }
 
-    #university-hub-featured-blocks article {
+    #school-hub-featured-blocks article {
         margin-bottom: 15px;
     }
 
-    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product,
-    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product {
+    .school_hub_widget_products_grid .school-hub-woocommerce-product-grid-4 ul.products li.product,
+    .school_hub_widget_products_grid .school-hub-woocommerce-product-grid-4 ul.products li.product {
         width: 94%;
         margin: 0 auto 15px;
         float: none;
     }
 
-    .university-hub-woocommerce-product-grid-4 ul.products li.product .button,
-    .university-hub-woocommerce-product-grid-3 ul.products li.product .button {
+    .school-hub-woocommerce-product-grid-4 ul.products li.product .button,
+    .school-hub-woocommerce-product-grid-3 ul.products li.product .button {
         font-size: 14px;
         left: 28%;
         padding: 5px 13px;

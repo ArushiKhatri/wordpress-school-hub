@@ -5,10 +5,10 @@
  *
  * @link https://codex.wordpress.org/Functions_File_Explained
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
-if (! function_exists('university_hub_setup')) :
+if (! function_exists('school_hub_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -16,12 +16,12 @@ if (! function_exists('university_hub_setup')) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function university_hub_setup()
+	function school_hub_setup()
 	{
 		/*
 		 * Make theme available for translation.
 		 */
-		load_theme_textdomain('university-hub', get_template_directory() . '/languages');
+		load_theme_textdomain('school-hub', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
@@ -31,15 +31,15 @@ if (! function_exists('university_hub_setup')) :
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support('post-thumbnails');
-		add_image_size('university-hub-thumb', 400, 300);
+		add_image_size('school-hub-thumb', 400, 300);
 
 		// Register nav menu locations.
 		register_nav_menus(array(
-			'primary'  => esc_html__('Primary Menu', 'university-hub'),
-			'top'      => esc_html__('Top Menu', 'university-hub'),
-			'footer'   => esc_html__('Footer Menu', 'university-hub'),
-			'social'   => esc_html__('Social Menu', 'university-hub'),
-			'notfound' => esc_html__('404 Menu', 'university-hub'),
+			'primary'  => esc_html__('Primary Menu', 'school-hub'),
+			'top'      => esc_html__('Top Menu', 'school-hub'),
+			'footer'   => esc_html__('Footer Menu', 'school-hub'),
+			'social'   => esc_html__('Social Menu', 'school-hub'),
+			'notfound' => esc_html__('404 Menu', 'school-hub'),
 		));
 
 		/*
@@ -53,7 +53,7 @@ if (! function_exists('university_hub_setup')) :
 		));
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('university_hub_custom_background_args', array(
+		add_theme_support('custom-background', apply_filters('school_hub_custom_background_args', array(
 			'default-color' => 'f7fcfe',
 		)));
 
@@ -80,26 +80,26 @@ if (! function_exists('university_hub_setup')) :
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __('Small', 'university-hub'),
-					'shortName' => __('S', 'university-hub'),
+					'name'      => __('Small', 'school-hub'),
+					'shortName' => __('S', 'school-hub'),
 					'size'      => 13,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __('Normal', 'university-hub'),
-					'shortName' => __('M', 'university-hub'),
+					'name'      => __('Normal', 'school-hub'),
+					'shortName' => __('M', 'school-hub'),
 					'size'      => 14,
 					'slug'      => 'normal',
 				),
 				array(
-					'name'      => __('Large', 'university-hub'),
-					'shortName' => __('L', 'university-hub'),
+					'name'      => __('Large', 'school-hub'),
+					'shortName' => __('L', 'school-hub'),
 					'size'      => 30,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __('Huge', 'university-hub'),
-					'shortName' => __('XL', 'university-hub'),
+					'name'      => __('Huge', 'school-hub'),
+					'shortName' => __('XL', 'school-hub'),
 					'size'      => 36,
 					'slug'      => 'huge',
 				),
@@ -111,52 +111,52 @@ if (! function_exists('university_hub_setup')) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __('Black', 'university-hub'),
+					'name'  => __('Black', 'school-hub'),
 					'slug'  => 'black',
 					'color' => '#000',
 				),
 				array(
-					'name'  => __('White', 'university-hub'),
+					'name'  => __('White', 'school-hub'),
 					'slug'  => 'white',
 					'color' => '#ffffff',
 				),
 				array(
-					'name'  => __('Gray', 'university-hub'),
+					'name'  => __('Gray', 'school-hub'),
 					'slug'  => 'gray',
 					'color' => '#727272',
 				),
 				array(
-					'name'  => __('Blue', 'university-hub'),
+					'name'  => __('Blue', 'school-hub'),
 					'slug'  => 'blue',
 					'color' => '#179bd7',
 				),
 				array(
-					'name'  => __('Navy Blue', 'university-hub'),
+					'name'  => __('Navy Blue', 'school-hub'),
 					'slug'  => 'navy-blue',
 					'color' => '#253b80',
 				),
 				array(
-					'name'  => __('Light Blue', 'university-hub'),
+					'name'  => __('Light Blue', 'school-hub'),
 					'slug'  => 'light-blue',
 					'color' => '#f7fcfe',
 				),
 				array(
-					'name'  => __('Orange', 'university-hub'),
+					'name'  => __('Orange', 'school-hub'),
 					'slug'  => 'orange',
 					'color' => '#ff6000',
 				),
 				array(
-					'name'  => __('Green', 'university-hub'),
+					'name'  => __('Green', 'school-hub'),
 					'slug'  => 'green',
 					'color' => '#77a464',
 				),
 				array(
-					'name'  => __('Red', 'university-hub'),
+					'name'  => __('Red', 'school-hub'),
 					'slug'  => 'red',
 					'color' => '#e4572e',
 				),
 				array(
-					'name'  => __('Yellow', 'university-hub'),
+					'name'  => __('Yellow', 'school-hub'),
 					'slug'  => 'yellow',
 					'color' => '#f4a024',
 				),
@@ -165,7 +165,7 @@ if (! function_exists('university_hub_setup')) :
 	}
 endif;
 
-add_action('after_setup_theme', 'university_hub_setup');
+add_action('after_setup_theme', 'school_hub_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -174,121 +174,121 @@ add_action('after_setup_theme', 'university_hub_setup');
  *
  * @global int $content_width
  */
-function university_hub_content_width()
+function school_hub_content_width()
 {
-	$GLOBALS['content_width'] = apply_filters('university_hub_content_width', 771);
+	$GLOBALS['content_width'] = apply_filters('school_hub_content_width', 771);
 }
-add_action('after_setup_theme', 'university_hub_content_width', 0);
+add_action('after_setup_theme', 'school_hub_content_width', 0);
 
 /**
  * Register widget area.
  */
-function university_hub_widgets_init()
+function school_hub_widgets_init()
 {
 	register_sidebar(array(
-		'name'          => esc_html__('Primary Sidebar', 'university-hub'),
+		'name'          => esc_html__('Primary Sidebar', 'school-hub'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__('Add widgets here to appear in your Primary Sidebar.', 'university-hub'),
+		'description'   => esc_html__('Add widgets here to appear in your Primary Sidebar.', 'school-hub'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	));
 	register_sidebar(array(
-		'name'          => esc_html__('Secondary Sidebar', 'university-hub'),
+		'name'          => esc_html__('Secondary Sidebar', 'school-hub'),
 		'id'            => 'sidebar-2',
-		'description'   => esc_html__('Add widgets here to appear in your Secondary Sidebar.', 'university-hub'),
+		'description'   => esc_html__('Add widgets here to appear in your Secondary Sidebar.', 'school-hub'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	));
 }
-add_action('widgets_init', 'university_hub_widgets_init');
+add_action('widgets_init', 'school_hub_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function university_hub_scripts()
+function school_hub_scripts()
 {
 
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_style('university-hub-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/font-awesome' . $min . '.css', '', '6.7.2');
+	wp_enqueue_style('school-hub-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/font-awesome' . $min . '.css', '', '6.7.2');
 
-	$fonts_url = university_hub_fonts_url();
+	$fonts_url = school_hub_fonts_url();
 	if (! empty($fonts_url)) {
-		wp_enqueue_style('university-hub-google-fonts', $fonts_url, array(), null);
+		wp_enqueue_style('school-hub-google-fonts', $fonts_url, array(), null);
 	}
 
 	// Theme stylesheet.
-	wp_enqueue_style('university-hub-style', get_stylesheet_uri(), null, date('Ymd-Gis', filemtime(get_template_directory() . '/style.css')));
+	wp_enqueue_style('school-hub-style', get_stylesheet_uri(), null, date('Ymd-Gis', filemtime(get_template_directory() . '/style.css')));
 
 	// Theme block stylesheet.
-	wp_enqueue_style('university-hub-block-style', get_theme_file_uri('/css/blocks.css'), array('university-hub-style'), '20211006');
+	wp_enqueue_style('school-hub-block-style', get_theme_file_uri('/css/blocks.css'), array('school-hub-style'), '20211006');
 
-	wp_enqueue_script('university-hub-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array('jquery'), '20200713', true);
+	wp_enqueue_script('school-hub-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array('jquery'), '20200713', true);
 
-	wp_localize_script('university-hub-navigation', 'universityHubOptions', array(
+	wp_localize_script('school-hub-navigation', 'schoolHubOptions', array(
 		'screenReaderText' => array(
-			'expand'   => esc_html__('expand child menu', 'university-hub'),
-			'collapse' => esc_html__('collapse child menu', 'university-hub'),
+			'expand'   => esc_html__('expand child menu', 'school-hub'),
+			'collapse' => esc_html__('collapse child menu', 'school-hub'),
 		),
 	));
 
-	wp_enqueue_script('university-hub-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true);
+	wp_enqueue_script('school-hub-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true);
 
 	wp_enqueue_script('jquery-cycle2', get_template_directory_uri() . '/third-party/cycle2/js/jquery.cycle2' . $min . '.js', array('jquery'), '2.1.6', true);
 
 	wp_enqueue_script('jquery-easy-ticker', get_template_directory_uri() . '/third-party/ticker/jquery.easy-ticker' . $min . '.js', array('jquery'), '2.0', true);
 
-	wp_enqueue_script('university-hub-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array('jquery'), '1.0.2', true);
+	wp_enqueue_script('school-hub-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array('jquery'), '1.0.2', true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
 }
-add_action('wp_enqueue_scripts', 'university_hub_scripts');
+add_action('wp_enqueue_scripts', 'school_hub_scripts');
 
 /**
  * Enqueue styles for the block-based editor.
  *
- * @since University Hub
+ * @since school Hub
  */
-function university_hub_block_editor_styles()
+function school_hub_block_editor_styles()
 {
 	// Theme block stylesheet.
-	wp_enqueue_style('university-hub-editor-style', get_template_directory_uri() . '/css/editor-blocks.css', array(), '20101208');
+	wp_enqueue_style('school-hub-editor-style', get_template_directory_uri() . '/css/editor-blocks.css', array(), '20101208');
 
-	$fonts_url = university_hub_fonts_url();
+	$fonts_url = school_hub_fonts_url();
 	if (! empty($fonts_url)) {
-		wp_enqueue_style('university-hub-google-fonts', $fonts_url, array(), null);
+		wp_enqueue_style('school-hub-google-fonts', $fonts_url, array(), null);
 	}
 }
-add_action('enqueue_block_editor_assets', 'university_hub_block_editor_styles');
+add_action('enqueue_block_editor_assets', 'school_hub_block_editor_styles');
 
 /**
  * Enqueue admin scripts and styles.
  */
-function university_hub_admin_scripts($hook)
+function school_hub_admin_scripts($hook)
 {
 
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
 	if (in_array($hook, array('post.php', 'post-new.php'))) {
-		wp_enqueue_style('university-hub-metabox', get_template_directory_uri() . '/css/metabox' . $min . '.css', '', '1.0.1');
-		wp_enqueue_script('university-hub-metabox', get_template_directory_uri() . '/js/metabox' . $min . '.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'), '1.0.1', true);
+		wp_enqueue_style('school-hub-metabox', get_template_directory_uri() . '/css/metabox' . $min . '.css', '', '1.0.1');
+		wp_enqueue_script('school-hub-metabox', get_template_directory_uri() . '/js/metabox' . $min . '.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'), '1.0.1', true);
 	}
 
 	if ('widgets.php' === $hook) {
 		wp_enqueue_style('wp-color-picker');
 		wp_enqueue_script('wp-color-picker');
 		wp_enqueue_media();
-		wp_enqueue_style('university-hub-widgets', get_template_directory_uri() . '/css/widgets' . $min . '.css', array(), '1.0.0');
-		wp_enqueue_script('university-hub-widgets', get_template_directory_uri() . '/js/widgets' . $min . '.js', array('jquery'), '1.0.1', true);
+		wp_enqueue_style('school-hub-widgets', get_template_directory_uri() . '/css/widgets' . $min . '.css', array(), '1.0.0');
+		wp_enqueue_script('school-hub-widgets', get_template_directory_uri() . '/js/widgets' . $min . '.js', array('jquery'), '1.0.1', true);
 	}
 }
-add_action('admin_enqueue_scripts', 'university_hub_admin_scripts');
+add_action('admin_enqueue_scripts', 'school_hub_admin_scripts');
 
 /**
  * Load init.

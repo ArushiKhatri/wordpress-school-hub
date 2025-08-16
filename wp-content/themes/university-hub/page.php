@@ -9,12 +9,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
 get_header(); ?>
 
-<?php if ( true === apply_filters( 'university_hub_filter_home_page_content', true ) ) : ?>
+<?php if ( true === apply_filters( 'school_hub_filter_home_page_content', true ) ) : ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -37,11 +37,11 @@ get_header(); ?>
 
 <?php
 	/**
-	 * Hook - university_hub_action_sidebar.
+	 * Hook - school_hub_action_sidebar.
 	 *
-	 * @hooked: university_hub_add_sidebar - 10
+	 * @hooked: school_hub_add_sidebar - 10
 	 */
-	do_action( 'university_hub_action_sidebar' );
+	do_action( 'school_hub_action_sidebar' );
 ?>
 
 <?php endif; // End if show home content. ?>

@@ -2,10 +2,10 @@
 /**
  * Core functions.
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_get_option' ) ) :
+if ( ! function_exists( 'school_hub_get_option' ) ) :
 
 	/**
 	 * Get theme option
@@ -15,9 +15,9 @@ if ( ! function_exists( 'university_hub_get_option' ) ) :
 	 * @param string $key Option key.
 	 * @return mixed Option value.
 	 */
-	function university_hub_get_option( $key ) {
+	function school_hub_get_option( $key ) {
 
-		$default_options = university_hub_get_default_theme_options();
+		$default_options = school_hub_get_default_theme_options();
 
 		if ( empty( $key ) ) {
 			return;
@@ -38,7 +38,7 @@ if ( ! function_exists( 'university_hub_get_option' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_get_options' ) ) :
+if ( ! function_exists( 'school_hub_get_options' ) ) :
 
 	/**
 	 * Get all theme options.
@@ -47,9 +47,9 @@ if ( ! function_exists( 'university_hub_get_options' ) ) :
 	 *
 	 * @return array Theme options.
 	 */
-  function university_hub_get_options() {
+  function school_hub_get_options() {
 
-    $default_options = university_hub_get_default_theme_options();
+    $default_options = school_hub_get_default_theme_options();
     $theme_options = (array)get_theme_mod( 'theme_options' );
     $theme_options = wp_parse_args( $theme_options, $default_options );
     return $theme_options;
@@ -58,17 +58,17 @@ if ( ! function_exists( 'university_hub_get_options' ) ) :
 
 endif;
 
-if( ! function_exists( 'university_hub_exclude_category_in_blog_page' ) ) :
+if( ! function_exists( 'school_hub_exclude_category_in_blog_page' ) ) :
 
   /**
    * Exclude category in blog page.
    *
    * @since 1.0
    */
-  function university_hub_exclude_category_in_blog_page( $query ) {
+  function school_hub_exclude_category_in_blog_page( $query ) {
 
     if( $query->is_home && $query->is_main_query()   ) {
-      $exclude_categories = university_hub_get_option( 'exclude_categories' );
+      $exclude_categories = school_hub_get_option( 'exclude_categories' );
       if ( ! empty( $exclude_categories ) ) {
         $cats = explode( ',', $exclude_categories );
         $cats = array_filter( $cats, 'is_numeric' );
@@ -84,4 +84,4 @@ if( ! function_exists( 'university_hub_exclude_category_in_blog_page' ) ) :
 
 endif;
 
-add_filter( 'pre_get_posts', 'university_hub_exclude_category_in_blog_page' );
+add_filter( 'pre_get_posts', 'school_hub_exclude_category_in_blog_page' );

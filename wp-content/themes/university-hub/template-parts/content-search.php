@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package University_Hub
+ * @package school_Hub
  */
 
 ?>
@@ -22,7 +22,7 @@
 	</div><!-- .entry-content-wrapper -->
 
 	<footer class="entry-footer">
-		<?php university_hub_entry_footer(); ?>
+		<?php school_hub_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
