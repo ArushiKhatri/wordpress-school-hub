@@ -84,7 +84,7 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-               curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
 
             '''
         }
@@ -139,8 +139,7 @@ pipeline{
 
                 
  
-curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
-
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
 
 
                 '''
@@ -215,7 +214,7 @@ curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-                      curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+                     curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
 
               ''' 
 }
