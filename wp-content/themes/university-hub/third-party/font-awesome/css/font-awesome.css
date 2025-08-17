@@ -533,7 +533,7 @@ readers do not read off random characters that represent icons */
 .fa-football-ball {
   --fa: "\f44e"; }
 
-.fa-university-circle-exclamation {
+.fa-school-circle-exclamation {
   --fa: "\e56c"; }
 
 .fa-crop {
@@ -971,7 +971,7 @@ readers do not read off random characters that represent icons */
 .fa-exclamation-circle {
   --fa: "\f06a"; }
 
-.fa-university-circle-xmark {
+.fa-school-circle-xmark {
   --fa: "\e56d"; }
 
 .fa-arrow-right-from-bracket {
@@ -1373,7 +1373,7 @@ readers do not read off random characters that represent icons */
 .fa-road-barrier {
   --fa: "\e562"; }
 
-.fa-university {
+.fa-school {
   --fa: "\f549"; }
 
 .fa-igloo {
@@ -1514,7 +1514,7 @@ readers do not read off random characters that represent icons */
 .fa-user {
   --fa: "\f007"; }
 
-.fa-university-circle-check {
+.fa-school-circle-check {
   --fa: "\e56b"; }
 
 .fa-dumpster {
@@ -4889,7 +4889,7 @@ readers do not read off random characters that represent icons */
 .fa-list-dots {
   --fa: "\f0ca"; }
 
-.fa-university-lock {
+.fa-school-lock {
   --fa: "\e56f"; }
 
 .fa-tower-cell {
@@ -5201,7 +5201,7 @@ readers do not read off random characters that represent icons */
 .fa-tablet-android {
   --fa: "\f3fb"; }
 
-.fa-university-flag {
+.fa-school-flag {
   --fa: "\e56e"; }
 
 .fa-fill {
@@ -6143,7 +6143,7 @@ readers do not read off random characters that represent icons */
 .fa-museum {
   --fa: "\f19c"; }
 
-.fa-university {
+.fa-school {
   --fa: "\f19c"; }
 
 .fa-umbrella {

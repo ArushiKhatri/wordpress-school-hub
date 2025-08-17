@@ -2,7 +2,7 @@
 /**
  * Customizer partials.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @return void
  */
-function university_hub_customize_partial_blogname() {
+function school_hub_customize_partial_blogname() {
 
 	bloginfo( 'name' );
 
@@ -25,7 +25,7 @@ function university_hub_customize_partial_blogname() {
  *
  * @return void
  */
-function university_hub_customize_partial_blogdescription() {
+function school_hub_customize_partial_blogdescription() {
 
 	bloginfo( 'description' );
 
@@ -38,10 +38,10 @@ function university_hub_customize_partial_blogdescription() {
  *
  * @return void
  */
-function university_hub_render_partial_copyright_text() {
+function school_hub_render_partial_copyright_text() {
 
-	$copyright_text = university_hub_get_option( 'copyright_text' );
-	$copyright_text = apply_filters( 'university_hub_filter_copyright_text', $copyright_text );
+	$copyright_text = school_hub_get_option( 'copyright_text' );
+	$copyright_text = apply_filters( 'school_hub_filter_copyright_text', $copyright_text );
 	if ( ! empty( $copyright_text ) ) {
 		$copyright_text = wp_kses_data( $copyright_text );
 	}

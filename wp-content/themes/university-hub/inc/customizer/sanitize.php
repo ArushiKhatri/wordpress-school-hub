@@ -2,10 +2,10 @@
 /**
  * Sanitization functions.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_sanitize_select' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_select' ) ) :
 
 	/**
 	 * Sanitize select.
@@ -16,7 +16,7 @@ if ( ! function_exists( 'university_hub_sanitize_select' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return mixed Sanitized value.
 	 */
-	function university_hub_sanitize_select( $input, $setting ) {
+	function school_hub_sanitize_select( $input, $setting ) {
 
 		// Ensure input is a slug.
 		$input = sanitize_key( $input );
@@ -31,7 +31,7 @@ if ( ! function_exists( 'university_hub_sanitize_select' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_select_liberal' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_select_liberal' ) ) :
 
 	/**
 	 * Sanitize select, quite liberal than other select sanitization.
@@ -42,7 +42,7 @@ if ( ! function_exists( 'university_hub_sanitize_select_liberal' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return mixed Sanitized value.
 	 */
-	function university_hub_sanitize_select_liberal( $input, $setting ) {
+	function school_hub_sanitize_select_liberal( $input, $setting ) {
 
 		// Escape value.
 		$input = esc_attr( $input );
@@ -58,7 +58,7 @@ if ( ! function_exists( 'university_hub_sanitize_select_liberal' ) ) :
 endif;
 
 
-if ( ! function_exists( 'university_hub_sanitize_checkbox' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_checkbox' ) ) :
 
 	/**
 	 * Sanitize checkbox.
@@ -68,7 +68,7 @@ if ( ! function_exists( 'university_hub_sanitize_checkbox' ) ) :
 	 * @param bool $checked Whether the checkbox is checked.
 	 * @return bool Whether the checkbox is checked.
 	 */
-	function university_hub_sanitize_checkbox( $checked ) {
+	function school_hub_sanitize_checkbox( $checked ) {
 
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'university_hub_sanitize_checkbox' ) ) :
 endif;
 
 
-if ( ! function_exists( 'university_hub_sanitize_positive_integer' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_positive_integer' ) ) :
 
 	/**
 	 * Sanitize positive integer.
@@ -88,7 +88,7 @@ if ( ! function_exists( 'university_hub_sanitize_positive_integer' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int Sanitized number; otherwise, the setting default.
 	 */
-	function university_hub_sanitize_positive_integer( $input, $setting ) {
+	function school_hub_sanitize_positive_integer( $input, $setting ) {
 
 		$input = absint( $input );
 
@@ -100,7 +100,7 @@ if ( ! function_exists( 'university_hub_sanitize_positive_integer' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_dropdown_pages' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_dropdown_pages' ) ) :
 
 	/**
 	 * Sanitize dropdown pages.
@@ -111,7 +111,7 @@ if ( ! function_exists( 'university_hub_sanitize_dropdown_pages' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int|string Page ID if the page is published; otherwise, the setting default.
 	 */
-	function university_hub_sanitize_dropdown_pages( $page_id, $setting ) {
+	function school_hub_sanitize_dropdown_pages( $page_id, $setting ) {
 
 		// Ensure $input is an absolute integer.
 		$page_id = absint( $page_id );
@@ -123,7 +123,7 @@ if ( ! function_exists( 'university_hub_sanitize_dropdown_pages' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_image' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_image' ) ) :
 
 	/**
 	 * Sanitize image.
@@ -136,7 +136,7 @@ if ( ! function_exists( 'university_hub_sanitize_image' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return string The image filename if the extension is allowed; otherwise, the setting default.
 	 */
-	function university_hub_sanitize_image( $image, $setting ) {
+	function school_hub_sanitize_image( $image, $setting ) {
 
 		/**
 		 * Array of valid image file types.
@@ -163,7 +163,7 @@ if ( ! function_exists( 'university_hub_sanitize_image' ) ) :
 endif;
 
 
-if ( ! function_exists( 'university_hub_sanitize_number_range' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_number_range' ) ) :
 
 	/**
 	 * Sanitize number range.
@@ -176,7 +176,7 @@ if ( ! function_exists( 'university_hub_sanitize_number_range' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise, the setting default.
 	 */
-	function university_hub_sanitize_number_range( $input, $setting ) {
+	function school_hub_sanitize_number_range( $input, $setting ) {
 
 		// Ensure input is an absolute integer.
 		$input = absint( $input );
@@ -200,7 +200,7 @@ if ( ! function_exists( 'university_hub_sanitize_number_range' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_post_id' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_post_id' ) ) :
 
 	/**
 	 * Sanitize post ID.
@@ -211,7 +211,7 @@ if ( ! function_exists( 'university_hub_sanitize_post_id' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int|string Page ID if the post is published; otherwise, the setting default.
 	 */
-	function university_hub_sanitize_post_id( $post_id, $setting ) {
+	function school_hub_sanitize_post_id( $post_id, $setting ) {
 
 		// Ensure $input is an absolute integer.
 		$post_id = absint( $post_id );
@@ -223,7 +223,7 @@ if ( ! function_exists( 'university_hub_sanitize_post_id' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_textarea_content' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_textarea_content' ) ) :
 
 	/**
 	 * Sanitize textarea content.
@@ -234,14 +234,14 @@ if ( ! function_exists( 'university_hub_sanitize_textarea_content' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return string Sanitized content.
 	 */
-	function university_hub_sanitize_textarea_content( $input, $setting ) {
+	function school_hub_sanitize_textarea_content( $input, $setting ) {
 
 		return ( stripslashes( wp_filter_post_kses( addslashes( $input ) ) ) );
 
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_sanitize_homepage_sections' ) ) :
+if ( ! function_exists( 'school_hub_sanitize_homepage_sections' ) ) :
 
 	/**
 	 * Sanitize homepage sections.
@@ -252,13 +252,13 @@ if ( ! function_exists( 'university_hub_sanitize_homepage_sections' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return string Sanitized content.
 	 */
-	function university_hub_sanitize_homepage_sections( $input, $setting ) {
+	function school_hub_sanitize_homepage_sections( $input, $setting ) {
 
 		$input = (array)$input;
 		$output = array();
 
 		if ( ! empty( $input ) ) {
-			$all_sections = university_hub_get_home_sections_options();
+			$all_sections = school_hub_get_home_sections_options();
 			$section_keys = array_keys( $all_sections );
 
 			foreach ( $input as $key ) {

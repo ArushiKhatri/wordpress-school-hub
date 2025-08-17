@@ -2,15 +2,15 @@
 /**
  * Custom template tags for this theme.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_entry_footer' ) ) :
+if ( ! function_exists( 'school_hub_entry_footer' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function university_hub_entry_footer() {
+	function school_hub_entry_footer() {
 
 		$show_meta_author = true;
 		if ( 'post' === get_post_type() ) {
@@ -54,7 +54,7 @@ if ( ! function_exists( 'university_hub_entry_footer' ) ) :
 			$show_meta_comment = true;
 			if ( true === $show_meta_comment ) {
 				echo '<span class="comments-link">';
-				comments_popup_link( esc_html__( 'Leave a comment', 'university-hub' ), esc_html__( '1 Comment', 'university-hub' ), esc_html__( '% Comments', 'university-hub' ) );
+				comments_popup_link( esc_html__( 'Leave a comment', 'school-hub' ), esc_html__( '1 Comment', 'school-hub' ), esc_html__( '% Comments', 'school-hub' ) );
 				echo '</span>';
 			}
 		}
@@ -64,35 +64,35 @@ if ( ! function_exists( 'university_hub_entry_footer' ) ) :
 			$show_meta_categories = true;
 			if ( true === $show_meta_categories ) {
 				/* Translators: used between list items, there is a space after the comma. */
-				$categories_list = get_the_category_list( esc_html__( ', ', 'university-hub' ) );
-				if ( $categories_list && university_hub_categorized_blog() ) {
+				$categories_list = get_the_category_list( esc_html__( ', ', 'school-hub' ) );
+				if ( $categories_list && school_hub_categorized_blog() ) {
 					printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
 				}
 			}
 			$show_meta_tags = true;
 			if ( true === $show_meta_tags ) {
 				/* Translators: used between list items, there is a space after the comma. */
-				$tags_list = get_the_tag_list( '', esc_html__( ', ', 'university-hub' ) );
+				$tags_list = get_the_tag_list( '', esc_html__( ', ', 'school-hub' ) );
 				if ( $tags_list ) {
 					printf( '<span class="tags-links">%1$s</span>', $tags_list ); // WPCS: XSS OK.
 				}
 			}
 		}
 
-		edit_post_link( esc_html__( 'Edit', 'university-hub' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( esc_html__( 'Edit', 'school-hub' ), '<span class="edit-link">', '</span>' );
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_entry_meta_date' ) ) :
+if ( ! function_exists( 'school_hub_entry_meta_date' ) ) :
 
 	/**
 	 * Prints HTML with date meta.
 	 */
-	function university_hub_entry_meta_date() {
+	function school_hub_entry_meta_date() {
 		?>
 		<div class="custom-entry-date">
-			<span class="entry-month"><?php the_time( _x( 'M', 'date format', 'university-hub' ) ); ?></span>
-			<span class="entry-day"><?php the_time( _x( 'd', 'date format', 'university-hub' ) ); ?></span>
+			<span class="entry-month"><?php the_time( _x( 'M', 'date format', 'school-hub' ) ); ?></span>
+			<span class="entry-day"><?php the_time( _x( 'd', 'date format', 'school-hub' ) ); ?></span>
 		</div>
 		<?php
 	}
@@ -104,8 +104,8 @@ endif;
  *
  * @return bool
  */
-function university_hub_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'university_hub_categories' ) ) ) {
+function school_hub_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'school_hub_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -117,30 +117,30 @@ function university_hub_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'university_hub_categories', $all_the_cool_cats );
+		set_transient( 'school_hub_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so university_hub_categorized_blog should return true.
+		// This blog has more than 1 category so school_hub_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so university_hub_categorized_blog should return false.
+		// This blog has only 1 category so school_hub_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in university_hub_categorized_blog.
+ * Flush out the transients used in school_hub_categorized_blog.
  */
-function university_hub_category_transient_flusher() {
+function school_hub_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'university_hub_categories' );
+	delete_transient( 'school_hub_categories' );
 }
-add_action( 'edit_category', 'university_hub_category_transient_flusher' );
-add_action( 'save_post',     'university_hub_category_transient_flusher' );
+add_action( 'edit_category', 'school_hub_category_transient_flusher' );
+add_action( 'save_post',     'school_hub_category_transient_flusher' );
 
 /**
  * Display single taxonomy link.
@@ -154,7 +154,7 @@ add_action( 'save_post',     'university_hub_category_transient_flusher' );
  * @param string $after    HTML to place after.
  * @param int    $post_id  Post ID.
  */
-function university_hub_the_term_link_single( $taxonomy = 'category', $before = '', $after = '', $post_id = false ) {
+function school_hub_the_term_link_single( $taxonomy = 'category', $before = '', $after = '', $post_id = false ) {
 
 	// Bail if post is not related to taxonomy.
 	if ( ! is_object_in_taxonomy( get_post_type( $post_id ), $taxonomy ) ) {

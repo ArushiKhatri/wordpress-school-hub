@@ -4,39 +4,39 @@
  *
  * This file contains hook functions attached to theme hooks.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_skip_to_content' ) ) :
+if ( ! function_exists( 'school_hub_skip_to_content' ) ) :
 	/**
 	 * Add Skip to content.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_skip_to_content() {
-	?><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'university-hub' ); ?></a><?php
+	function school_hub_skip_to_content() {
+	?><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'school-hub' ); ?></a><?php
 	}
 endif;
 
-add_action( 'university_hub_action_before', 'university_hub_skip_to_content', 15 );
+add_action( 'school_hub_action_before', 'school_hub_skip_to_content', 15 );
 
 
-if ( ! function_exists( 'university_hub_site_branding' ) ) :
+if ( ! function_exists( 'school_hub_site_branding' ) ) :
 
 	/**
 	 * Site branding.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_site_branding() {
+	function school_hub_site_branding() {
 
 		?>
 	    <div class="site-branding">
 
-			<?php university_hub_the_custom_logo(); ?>
+			<?php school_hub_the_custom_logo(); ?>
 
-			<?php $show_title = university_hub_get_option( 'show_title' ); ?>
-			<?php $show_tagline = university_hub_get_option( 'show_tagline' ); ?>
+			<?php $show_title = school_hub_get_option( 'show_title' ); ?>
+			<?php $show_tagline = school_hub_get_option( 'show_tagline' ); ?>
 			<?php if ( true === $show_title || true === $show_tagline ) :  ?>
 				<div id="site-identity">
 					<?php if ( true === $show_title ) :  ?>
@@ -53,10 +53,10 @@ if ( ! function_exists( 'university_hub_site_branding' ) ) :
 			<?php endif; ?>
 	    </div><!-- .site-branding -->
 	    <?php
-			$contact_number    = university_hub_get_option( 'contact_number' );
-			$contact_email     = university_hub_get_option( 'contact_email' );
-			$contact_address_1 = university_hub_get_option( 'contact_address_1' );
-			$contact_address_2 = university_hub_get_option( 'contact_address_2' );
+			$contact_number    = school_hub_get_option( 'contact_number' );
+			$contact_email     = school_hub_get_option( 'contact_email' );
+			$contact_address_1 = school_hub_get_option( 'contact_address_1' );
+			$contact_address_2 = school_hub_get_option( 'contact_address_2' );
 		?>
 		<div id="quick-contact">
 			<?php if ( ! empty( $contact_number ) || ! empty( $contact_email ) || ! empty( $contact_address_1 )  || ! empty( $contact_address_2 )) : ?>
@@ -82,7 +82,7 @@ if ( ! function_exists( 'university_hub_site_branding' ) ) :
 	    		<button id="menu-toggle" class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
 					<i class="fa fa-bars"></i>
           			<i class="fa fa-close"></i>
-		    		<span class="menu-label"><?php esc_html_e( 'Menu', 'university-hub' ); ?></span>
+		    		<span class="menu-label"><?php esc_html_e( 'Menu', 'school-hub' ); ?></span>
 		    	</button>
 
 				<div class="menu-inside-wrapper">
@@ -92,13 +92,13 @@ if ( ! function_exists( 'university_hub_site_branding' ) ) :
 							array(
 							'theme_location' => 'primary',
 							'menu_id'        => 'primary-menu',
-							'fallback_cb'    => 'university_hub_primary_navigation_fallback',
+							'fallback_cb'    => 'school_hub_primary_navigation_fallback',
 							)
 						);
 						?>
 					</nav><!-- #site-navigation -->
 
-					<?php $search_in_header = university_hub_get_option( 'search_in_header' ); ?>
+					<?php $search_in_header = school_hub_get_option( 'search_in_header' ); ?>
 			        <?php if ( true === $search_in_header ) : ?>
 				        <div class="header-search-box">
 				        	<?php get_search_form(); ?>
@@ -113,33 +113,33 @@ if ( ! function_exists( 'university_hub_site_branding' ) ) :
 
 endif;
 
-add_action( 'university_hub_action_header', 'university_hub_site_branding' );
+add_action( 'school_hub_action_header', 'school_hub_site_branding' );
 
-if ( ! function_exists( 'university_hub_header_top_content' ) ) :
+if ( ! function_exists( 'school_hub_header_top_content' ) ) :
 
 	/**
 	 * Header Top.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_header_top_content() {
-		$show_ticker = university_hub_get_option( 'show_ticker' );
+	function school_hub_header_top_content() {
+		$show_ticker = school_hub_get_option( 'show_ticker' );
 		?>
 		<div id="tophead">
 			<div class="container">
 				<?php if ( true === $show_ticker ) : ?>
 					<div class="top-news">
 						<span class="top-news-title">
-						<?php $ticker_title = university_hub_get_option( 'ticker_title' );  ?>
+						<?php $ticker_title = school_hub_get_option( 'ticker_title' );  ?>
 						<?php echo ( ! empty( $ticker_title ) ) ? esc_html( $ticker_title ) : '&nbsp;'; ?>
 						</span>
-						<?php echo university_hub_get_news_ticker_content(); ?>
+						<?php echo school_hub_get_news_ticker_content(); ?>
 					</div> <!-- #top-news -->
 				<?php endif; ?>
 
-				<?php if ( true === university_hub_get_option( 'show_social_in_header' )  ) : ?>
+				<?php if ( true === school_hub_get_option( 'show_social_in_header' )  ) : ?>
 					<div id="header-social">
-						<?php the_widget( 'university_Hub_Social_Widget' ); ?>
+						<?php the_widget( 'school_Hub_Social_Widget' ); ?>
 					</div><!-- #header-social -->
 				<?php endif; ?>
 
@@ -149,7 +149,7 @@ if ( ! function_exists( 'university_hub_header_top_content' ) ) :
 							<button id="top-menu-toggle" class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 								<i class="fa fa-bars"></i>
 			          			<i class="fa fa-close"></i>
-					    		<span class="menu-label"><?php esc_html_e( 'Top Menu', 'university-hub' ); ?></span>
+					    		<span class="menu-label"><?php esc_html_e( 'Top Menu', 'school-hub' ); ?></span>
 					    	</button>
 
 							<div class="menu-inside-wrapper">
@@ -176,19 +176,19 @@ if ( ! function_exists( 'university_hub_header_top_content' ) ) :
 
 endif;
 
-add_action( 'university_hub_action_before_header', 'university_hub_header_top_content', 5 );
+add_action( 'school_hub_action_before_header', 'school_hub_header_top_content', 5 );
 
-if ( ! function_exists( 'university_hub_footer_copyright' ) ) :
+if ( ! function_exists( 'school_hub_footer_copyright' ) ) :
 
 	/**
 	 * Footer copyright
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_footer_copyright() {
+	function school_hub_footer_copyright() {
 
 		// Check if footer is disabled.
-		$footer_status = apply_filters( 'university_hub_filter_footer_status', true );
+		$footer_status = apply_filters( 'school_hub_filter_footer_status', true );
 		if ( true !== $footer_status ) {
 			return;
 		}
@@ -204,17 +204,17 @@ if ( ! function_exists( 'university_hub_footer_copyright' ) ) :
 		) );
 
 		// Copyright content.
-		$copyright_text = university_hub_get_option( 'copyright_text' );
-		$copyright_text = apply_filters( 'university_hub_filter_copyright_text', $copyright_text );
+		$copyright_text = school_hub_get_option( 'copyright_text' );
+		$copyright_text = apply_filters( 'school_hub_filter_copyright_text', $copyright_text );
 		if ( ! empty( $copyright_text ) ) {
 			$copyright_text = wp_kses_data( $copyright_text );
 		}
 
 		// Powered by content.
-		$powered_by_text = sprintf( __( 'university Hub by %s', 'university-hub' ), '<a target="_blank" rel="designer" href="https://wenthemes.com/">' . __( 'WEN Themes', 'university-hub' ) . '</a>' );
+		$powered_by_text = sprintf( __( 'school Hub by %s', 'school-hub' ), '<a target="_blank" rel="designer" href="https://wenthemes.com/">' . __( 'WEN Themes', 'school-hub' ) . '</a>' );
 
 		// Social in footer.
-		$show_social_in_footer = university_hub_get_option( 'show_social_in_footer' );
+		$show_social_in_footer = school_hub_get_option( 'show_social_in_footer' );
 		?>
 
 		<div class="colophon-inner">
@@ -222,7 +222,7 @@ if ( ! function_exists( 'university_hub_footer_copyright' ) ) :
 		    <?php if ( true === $show_social_in_footer && has_nav_menu( 'social' ) ) : ?>
 			    <div class="colophon-column">
 			    	<div class="footer-social">
-			    		<?php the_widget( 'university_Hub_Social_Widget' ); ?>
+			    		<?php the_widget( 'school_Hub_Social_Widget' ); ?>
 			    	</div><!-- .footer-social -->
 			    </div><!-- .colophon-column -->
 		    <?php endif; ?>
@@ -256,26 +256,26 @@ if ( ! function_exists( 'university_hub_footer_copyright' ) ) :
 
 endif;
 
-add_action( 'university_hub_action_footer', 'university_hub_footer_copyright', 10 );
+add_action( 'school_hub_action_footer', 'school_hub_footer_copyright', 10 );
 
 
-if ( ! function_exists( 'university_hub_add_sidebar' ) ) :
+if ( ! function_exists( 'school_hub_add_sidebar' ) ) :
 
 	/**
 	 * Add sidebar.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_sidebar() {
+	function school_hub_add_sidebar() {
 
 		global $post;
 
-		$global_layout = university_hub_get_option( 'global_layout' );
-		$global_layout = apply_filters( 'university_hub_filter_theme_global_layout', $global_layout );
+		$global_layout = school_hub_get_option( 'global_layout' );
+		$global_layout = apply_filters( 'school_hub_filter_theme_global_layout', $global_layout );
 
 		// Check if single.
 		if ( $post && is_singular() ) {
-			$post_options = get_post_meta( $post->ID, 'university_hub_theme_settings', true );
+			$post_options = get_post_meta( $post->ID, 'school_hub_theme_settings', true );
 			if ( isset( $post_options['post_layout'] ) && ! empty( $post_options['post_layout'] ) ) {
 				$global_layout = $post_options['post_layout'];
 			}
@@ -299,18 +299,18 @@ if ( ! function_exists( 'university_hub_add_sidebar' ) ) :
 
 endif;
 
-add_action( 'university_hub_action_sidebar', 'university_hub_add_sidebar' );
+add_action( 'school_hub_action_sidebar', 'school_hub_add_sidebar' );
 
 
-if ( ! function_exists( 'university_hub_custom_posts_navigation' ) ) :
+if ( ! function_exists( 'school_hub_custom_posts_navigation' ) ) :
 	/**
 	 * Posts navigation.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_custom_posts_navigation() {
+	function school_hub_custom_posts_navigation() {
 
-		$pagination_type = university_hub_get_option( 'pagination_type' );
+		$pagination_type = school_hub_get_option( 'pagination_type' );
 
 		switch ( $pagination_type ) {
 
@@ -329,34 +329,34 @@ if ( ! function_exists( 'university_hub_custom_posts_navigation' ) ) :
 	}
 endif;
 
-add_action( 'university_hub_action_posts_navigation', 'university_hub_custom_posts_navigation' );
+add_action( 'school_hub_action_posts_navigation', 'school_hub_custom_posts_navigation' );
 
 
-if ( ! function_exists( 'university_hub_add_image_in_single_display' ) ) :
+if ( ! function_exists( 'school_hub_add_image_in_single_display' ) ) :
 
 	/**
 	 * Add image in single post.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_image_in_single_display() {
+	function school_hub_add_image_in_single_display() {
 
 		global $post;
 
 		if ( has_post_thumbnail() ) {
 
-			$values = get_post_meta( $post->ID, 'university_hub_theme_settings', true );
-			$university_hub_theme_settings_single_image = isset( $values['single_image'] ) ? esc_attr( $values['single_image'] ) : '';
+			$values = get_post_meta( $post->ID, 'school_hub_theme_settings', true );
+			$school_hub_theme_settings_single_image = isset( $values['single_image'] ) ? esc_attr( $values['single_image'] ) : '';
 
-			if ( ! $university_hub_theme_settings_single_image ) {
-				$university_hub_theme_settings_single_image = university_hub_get_option( 'single_image' );
+			if ( ! $school_hub_theme_settings_single_image ) {
+				$school_hub_theme_settings_single_image = school_hub_get_option( 'single_image' );
 			}
 
-			if ( 'disable' !== $university_hub_theme_settings_single_image ) {
+			if ( 'disable' !== $school_hub_theme_settings_single_image ) {
 				$args = array(
 					'class' => 'aligncenter',
 				);
-				the_post_thumbnail( esc_attr( $university_hub_theme_settings_single_image ), $args );
+				the_post_thumbnail( esc_attr( $school_hub_theme_settings_single_image ), $args );
 			}
 		}
 
@@ -364,19 +364,19 @@ if ( ! function_exists( 'university_hub_add_image_in_single_display' ) ) :
 
 endif;
 
-add_action( 'university_hub_single_image', 'university_hub_add_image_in_single_display' );
+add_action( 'school_hub_single_image', 'school_hub_add_image_in_single_display' );
 
-if ( ! function_exists( 'university_hub_add_breadcrumb' ) ) :
+if ( ! function_exists( 'school_hub_add_breadcrumb' ) ) :
 
 	/**
 	 * Add breadcrumb.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_breadcrumb() {
+	function school_hub_add_breadcrumb() {
 
 		// Bail if Breadcrumb disabled.
-		$breadcrumb_type = university_hub_get_option( 'breadcrumb_type' );
+		$breadcrumb_type = school_hub_get_option( 'breadcrumb_type' );
 		if ( 'disabled' === $breadcrumb_type ) {
 			return;
 		}
@@ -389,7 +389,7 @@ if ( ! function_exists( 'university_hub_add_breadcrumb' ) ) :
 		echo '<div id="breadcrumb"><div class="container">';
 		switch ( $breadcrumb_type ) {
 			case 'simple':
-				university_hub_simple_breadcrumb();
+				school_hub_simple_breadcrumb();
 			break;
 
 			case 'advanced':
@@ -407,41 +407,41 @@ if ( ! function_exists( 'university_hub_add_breadcrumb' ) ) :
 
 endif;
 
-add_action( 'university_hub_action_before_content', 'university_hub_add_breadcrumb', 7 );
+add_action( 'school_hub_action_before_content', 'school_hub_add_breadcrumb', 7 );
 
-if ( ! function_exists( 'university_hub_footer_goto_top' ) ) :
+if ( ! function_exists( 'school_hub_footer_goto_top' ) ) :
 
 	/**
 	 * Go to top.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_footer_goto_top() {
+	function school_hub_footer_goto_top() {
 
-		echo '<a href="#page" class="scrollup" id="btn-scrollup"><i class="fa fa-angle-up"><span class="screen-reader-text">' . esc_html__( 'Scroll Up', 'university-hub' ) . '</span></i></a>';
+		echo '<a href="#page" class="scrollup" id="btn-scrollup"><i class="fa fa-angle-up"><span class="screen-reader-text">' . esc_html__( 'Scroll Up', 'school-hub' ) . '</span></i></a>';
 
 	}
 
 endif;
 
-add_action( 'university_hub_action_after', 'university_hub_footer_goto_top', 20 );
+add_action( 'school_hub_action_after', 'school_hub_footer_goto_top', 20 );
 
-if ( ! function_exists( 'university_hub_add_front_page_home_sections' ) ) :
+if ( ! function_exists( 'school_hub_add_front_page_home_sections' ) ) :
 
 	/**
 	 * Add Front Page widget sections.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_front_page_home_sections() {
+	function school_hub_add_front_page_home_sections() {
 
-		$section_status = apply_filters( 'university_hub_filter_front_page_home_sections_status', false );
+		$section_status = apply_filters( 'school_hub_filter_front_page_home_sections_status', false );
 
 		if ( true !== $section_status ) {
 			return;
 		}
 
-		$active_sections = university_hub_get_active_homepage_sections();
+		$active_sections = school_hub_get_active_homepage_sections();
 
 		if ( ! empty( $active_sections ) ) {
 			echo '<div id="front-page-home-sections" class="widget-area">';
@@ -454,20 +454,20 @@ if ( ! function_exists( 'university_hub_add_front_page_home_sections' ) ) :
 	}
 endif;
 
-add_action( 'university_hub_action_before_content', 'university_hub_add_front_page_home_sections', 6 );
+add_action( 'school_hub_action_before_content', 'school_hub_add_front_page_home_sections', 6 );
 
 
 
-if( ! function_exists( 'university_hub_check_front_homepage_section_status' ) ) :
+if( ! function_exists( 'school_hub_check_front_homepage_section_status' ) ) :
 
 	/**
 	 * Check status of front homepage section.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_check_front_homepage_section_status( $input ) {
+	function school_hub_check_front_homepage_section_status( $input ) {
 
-		$current_id = university_hub_get_index_page_id();
+		$current_id = school_hub_get_index_page_id();
 
 		if ( is_front_page() && get_queried_object_id() === $current_id && $current_id > 0 ) {
 			$input = true;
@@ -478,9 +478,9 @@ if( ! function_exists( 'university_hub_check_front_homepage_section_status' ) ) 
 	}
 endif;
 
-add_filter( 'university_hub_filter_front_page_home_sections_status', 'university_hub_check_front_homepage_section_status' );
+add_filter( 'school_hub_filter_front_page_home_sections_status', 'school_hub_check_front_homepage_section_status' );
 
-if ( ! function_exists( 'university_hub_check_home_page_content' ) ) :
+if ( ! function_exists( 'school_hub_check_home_page_content' ) ) :
 
 	/**
 	 * Check home page content status.
@@ -490,10 +490,10 @@ if ( ! function_exists( 'university_hub_check_home_page_content' ) ) :
 	 * @param bool $status Home page content status.
 	 * @return bool Modified home page content status.
 	 */
-	function university_hub_check_home_page_content( $status ) {
+	function school_hub_check_home_page_content( $status ) {
 
 		if ( is_front_page() ) {
-			$home_content_status = university_hub_get_option( 'home_content_status' );
+			$home_content_status = school_hub_get_option( 'home_content_status' );
 			if ( false === $home_content_status ) {
 				$status = false;
 			}
@@ -504,4 +504,4 @@ if ( ! function_exists( 'university_hub_check_home_page_content' ) ) :
 
 endif;
 
-add_action( 'university_hub_filter_home_page_content', 'university_hub_check_home_page_content' );
+add_action( 'school_hub_filter_home_page_content', 'school_hub_check_home_page_content' );

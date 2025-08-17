@@ -1,4 +1,4 @@
-=== university  Hub ===
+=== school  Hub ===
 
 Contributors: wenthemes
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
@@ -12,7 +12,7 @@ An Education WordPress theme.
 
 == Description ==
 
-university Hub, an Education theme by WEN Themes, is a responsive WordPress theme for university, university, college or other educational institutions. Along with educational institutions, university Hub is flexible and loaded with several features to also cater to the needs of design agencies, corporate websites and small businesses. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=university-hub
+school Hub, an Education theme by WEN Themes, is a responsive WordPress theme for school, school, college or other educational institutions. Along with educational institutions, school Hub is flexible and loaded with several features to also cater to the needs of design agencies, corporate websites and small businesses. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=school-hub
 
 == Installation ==
 
@@ -113,8 +113,8 @@ university Hub, an Education theme by WEN Themes, is a responsive WordPress them
 
 == Copyright ==
 
-university Hub WordPress Theme, Copyright 2015-2025 wenthemes.com
-university Hub distributed under the terms of the GNU General Public License v3
+school Hub WordPress Theme, Copyright 2015-2025 wenthemes.com
+school Hub distributed under the terms of the GNU General Public License v3
 
 == Credits ==
 

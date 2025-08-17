@@ -2,20 +2,20 @@
 /**
  * Implementation of slider feature.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 // Check slider status.
-add_filter( 'university_hub_filter_slider_status', 'university_hub_check_slider_status' );
+add_filter( 'school_hub_filter_slider_status', 'school_hub_check_slider_status' );
 
 // Add slider to the theme.
-add_action( 'university_hub_action_before_content', 'university_hub_add_featured_slider', 5 );
+add_action( 'school_hub_action_before_content', 'school_hub_add_featured_slider', 5 );
 
 // Slider details.
-add_filter( 'university_hub_filter_slider_details', 'university_hub_get_slider_details' );
+add_filter( 'school_hub_filter_slider_details', 'school_hub_get_slider_details' );
 
 
-if ( ! function_exists( 'university_hub_get_slider_details' ) ) :
+if ( ! function_exists( 'school_hub_get_slider_details' ) ) :
 	/**
 	 * Slider details.
 	 *
@@ -23,11 +23,11 @@ if ( ! function_exists( 'university_hub_get_slider_details' ) ) :
 	 *
 	 * @param array $input Slider details.
 	 */
-	function university_hub_get_slider_details( $input ) {
+	function school_hub_get_slider_details( $input ) {
 
-		$featured_slider_type           = university_hub_get_option( 'featured_slider_type' );
-		$featured_slider_number         = university_hub_get_option( 'featured_slider_number' );
-		$featured_slider_read_more_text = university_hub_get_option( 'featured_slider_read_more_text' );
+		$featured_slider_type           = school_hub_get_option( 'featured_slider_type' );
+		$featured_slider_number         = school_hub_get_option( 'featured_slider_number' );
+		$featured_slider_read_more_text = school_hub_get_option( 'featured_slider_read_more_text' );
 
 		switch ( $featured_slider_type ) {
 
@@ -36,7 +36,7 @@ if ( ! function_exists( 'university_hub_get_slider_details' ) ) :
 				$ids = array();
 
 				for ( $i = 1; $i <= $featured_slider_number ; $i++ ) {
-					$id = university_hub_get_option( 'featured_slider_page_' . $i );
+					$id = school_hub_get_option( 'featured_slider_page_' . $i );
 					if ( ! empty( $id ) ) {
 						$ids[] = absint( $id );
 					}
@@ -67,11 +67,11 @@ if ( ! function_exists( 'university_hub_get_slider_details' ) ) :
 					foreach ( $all_posts as $key => $post ) {
 
 						if ( has_post_thumbnail( $post->ID ) ) {
-							$image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'university-hub-slider' );
+							$image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'school-hub-slider' );
 							$slides[ $cnt ]['images']  = $image_array;
 							$slides[ $cnt ]['title']   = esc_html( $post->post_title );
 							$slides[ $cnt ]['url']     = esc_url( get_permalink( $post->ID ) );
-							$slides[ $cnt ]['excerpt'] = university_hub_the_excerpt( apply_filters( 'university_hub_filter_slider_caption_length', 20 ), $post );
+							$slides[ $cnt ]['excerpt'] = school_hub_the_excerpt( apply_filters( 'school_hub_filter_slider_caption_length', 20 ), $post );
 							if ( ! empty( $featured_slider_read_more_text ) ) {
 								$slides[ $cnt ]['primary_button_text'] = esc_attr( $featured_slider_read_more_text );
 								$slides[ $cnt ]['primary_button_url'] = $slides[ $cnt ]['url'];
@@ -95,34 +95,34 @@ if ( ! function_exists( 'university_hub_get_slider_details' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_add_featured_slider' ) ) :
+if ( ! function_exists( 'school_hub_add_featured_slider' ) ) :
 	/**
 	 * Add featured slider.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_add_featured_slider() {
+	function school_hub_add_featured_slider() {
 
-		$flag_apply_slider = apply_filters( 'university_hub_filter_slider_status', false );
+		$flag_apply_slider = apply_filters( 'school_hub_filter_slider_status', false );
 		if ( true !== $flag_apply_slider ) {
 			return false;
 		}
 
 		$slider_details = array();
-		$slider_details = apply_filters( 'university_hub_filter_slider_details', $slider_details );
+		$slider_details = apply_filters( 'school_hub_filter_slider_details', $slider_details );
 
 		if ( empty( $slider_details ) ) {
 			return;
 		}
 
 		// Render slider now.
-		university_hub_render_featured_slider( $slider_details );
+		school_hub_render_featured_slider( $slider_details );
 
 	}
 endif;
 
 
-if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
+if ( ! function_exists( 'school_hub_render_featured_slider' ) ) :
 	/**
 	 * Render featured slider.
 	 *
@@ -130,18 +130,18 @@ if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
 	 *
 	 * @param array $slider_details Details of slider content.
 	 */
-	function university_hub_render_featured_slider( $slider_details = array() ) {
+	function school_hub_render_featured_slider( $slider_details = array() ) {
 
 		if ( empty( $slider_details ) ) {
 			return;
 		}
-		$featured_slider_transition_effect   = university_hub_get_option( 'featured_slider_transition_effect' );
-		$featured_slider_enable_caption      = university_hub_get_option( 'featured_slider_enable_caption' );
-		$featured_slider_enable_arrow        = university_hub_get_option( 'featured_slider_enable_arrow' );
-		$featured_slider_enable_pager        = university_hub_get_option( 'featured_slider_enable_pager' );
-		$featured_slider_enable_autoplay     = university_hub_get_option( 'featured_slider_enable_autoplay' );
-		$featured_slider_transition_duration = university_hub_get_option( 'featured_slider_transition_duration' );
-		$featured_slider_transition_delay    = university_hub_get_option( 'featured_slider_transition_delay' );
+		$featured_slider_transition_effect   = school_hub_get_option( 'featured_slider_transition_effect' );
+		$featured_slider_enable_caption      = school_hub_get_option( 'featured_slider_enable_caption' );
+		$featured_slider_enable_arrow        = school_hub_get_option( 'featured_slider_enable_arrow' );
+		$featured_slider_enable_pager        = school_hub_get_option( 'featured_slider_enable_pager' );
+		$featured_slider_enable_autoplay     = school_hub_get_option( 'featured_slider_enable_autoplay' );
+		$featured_slider_transition_duration = school_hub_get_option( 'featured_slider_transition_duration' );
+		$featured_slider_transition_delay    = school_hub_get_option( 'featured_slider_transition_delay' );
 
 		// Cycle data.
 		$slide_data = array(
@@ -184,8 +184,8 @@ if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
 			<?php if ( $featured_slider_enable_arrow ) : ?>
 	            <!-- prev/next links -->
 
-	            <div class="cycle-prev"><i class="fa fa-angle-left" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Previous', 'university-hub' ); ?></span></i></div>
-	            <div class="cycle-next"><i class="fa fa-angle-right" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Next', 'university-hub' ); ?></span></i></div>
+	            <div class="cycle-prev"><i class="fa fa-angle-left" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Previous', 'school-hub' ); ?></span></i></div>
+	            <div class="cycle-next"><i class="fa fa-angle-right" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Next', 'school-hub' ); ?></span></i></div>
 			<?php endif; ?>
 
           <?php if ( $featured_slider_enable_pager ) :  ?>
@@ -273,17 +273,17 @@ if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
 
 endif;
 
-if( ! function_exists( 'university_hub_check_slider_status' ) ) :
+if( ! function_exists( 'school_hub_check_slider_status' ) ) :
 
 	/**
 	 * Check status of slider.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_check_slider_status( $input ) {
+	function school_hub_check_slider_status( $input ) {
 
 		// Slider status.
-		$featured_slider_status = university_hub_get_option( 'featured_slider_status' );
+		$featured_slider_status = school_hub_get_option( 'featured_slider_status' );
 
 		// Get Page ID outside Loop.
 		$page_id = null;

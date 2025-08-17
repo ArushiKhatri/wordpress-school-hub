@@ -1,1 +1,1 @@
-# wordpress-university-hub
+# wordpress-school-hub

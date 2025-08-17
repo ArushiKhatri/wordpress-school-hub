@@ -1,5 +1,5 @@
 /*
-Theme Name: university Hub
+Theme Name: school Hub
 Description: Used to style blocks.
 */
 
@@ -346,8 +346,8 @@ p.has-drop-cap:not(:focus)::first-letter {
     font-weight: 400;
 }
 
-.sidebar .wp-block-group .university_hub_widget_social,
-#footer-widgets .wp-block-group .university_hub_widget_social {
+.sidebar .wp-block-group .school_hub_widget_social,
+#footer-widgets .wp-block-group .school_hub_widget_social {
     margin-top: 0;
 }
 

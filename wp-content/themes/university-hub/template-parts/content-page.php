@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 ?>
@@ -17,18 +17,18 @@
 
     <?php
 	  /**
-	   * Hook - university_hub_single_image.
+	   * Hook - school_hub_single_image.
 	   *
-	   * @hooked university_hub_add_image_in_single_display - 10
+	   * @hooked school_hub_add_image_in_single_display - 10
 	   */
-	  do_action( 'university_hub_single_image' );
+	  do_action( 'school_hub_single_image' );
 	?>
 	<div class="entry-content-wrapper">
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'university-hub' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'school-hub' ),
 					'after'  => '</div>',
 				) );
 			?>
@@ -36,7 +36,7 @@
 	</div><!-- .entry-content-wrapper -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( esc_html__( 'Edit', 'university-hub' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'school-hub' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

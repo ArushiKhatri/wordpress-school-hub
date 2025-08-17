@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'university-hub' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'school-hub' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -34,11 +34,11 @@ get_header(); ?>
 
 			<?php
 			/**
-			 * Hook - university_hub_action_posts_navigation.
+			 * Hook - school_hub_action_posts_navigation.
 			 *
-			 * @hooked: university_hub_custom_posts_navigation - 10
+			 * @hooked: school_hub_custom_posts_navigation - 10
 			 */
-			do_action( 'university_hub_action_posts_navigation' ); ?>
+			do_action( 'school_hub_action_posts_navigation' ); ?>
 
 		<?php else : ?>
 
@@ -51,10 +51,10 @@ get_header(); ?>
 
 <?php
 	/**
-	 * Hook - university_hub_action_sidebar.
+	 * Hook - school_hub_action_sidebar.
 	 *
-	 * @hooked: university_hub_add_sidebar - 10
+	 * @hooked: school_hub_add_sidebar - 10
 	 */
-	do_action( 'university_hub_action_sidebar' );
+	do_action( 'school_hub_action_sidebar' );
 ?>
 <?php get_footer(); ?>

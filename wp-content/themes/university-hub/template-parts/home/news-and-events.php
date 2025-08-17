@@ -2,19 +2,19 @@
 /**
  * Template part for displaying home news and events section.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 ?>
 <?php
-$news_and_events_ntitle    = university_hub_get_option( 'news_and_events_ntitle' );
-$news_and_events_nnumber   = university_hub_get_option( 'news_and_events_nnumber' );
-$news_and_events_ncategory = university_hub_get_option( 'news_and_events_ncategory' );
-$news_and_events_etitle    = university_hub_get_option( 'news_and_events_etitle' );
-$news_and_events_enumber   = university_hub_get_option( 'news_and_events_enumber' );
-$news_and_events_ecategory = university_hub_get_option( 'news_and_events_ecategory' );
+$news_and_events_ntitle    = school_hub_get_option( 'news_and_events_ntitle' );
+$news_and_events_nnumber   = school_hub_get_option( 'news_and_events_nnumber' );
+$news_and_events_ncategory = school_hub_get_option( 'news_and_events_ncategory' );
+$news_and_events_etitle    = school_hub_get_option( 'news_and_events_etitle' );
+$news_and_events_enumber   = school_hub_get_option( 'news_and_events_enumber' );
+$news_and_events_ecategory = school_hub_get_option( 'news_and_events_ecategory' );
 ?>
-<div id="university-hub-news-and-events" class="home-section-news-and-events">
+<div id="school-hub-news-and-events" class="home-section-news-and-events">
 	<div class="container">
 		<div class="inner-wrapper">
 			<div class="recent-news">
@@ -41,21 +41,21 @@ $news_and_events_ecategory = university_hub_get_option( 'news_and_events_ecatego
 
 							<div class="news-post">
 								<?php if ( has_post_thumbnail() ) : ?>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'university-hub-thumb', array( 'class' => 'aligncenter' ) ); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'school-hub-thumb', array( 'class' => 'aligncenter' ) ); ?></a>
 								<?php endif; ?>
 
 								<div class="news-content">
 									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 									<div class="block-meta">
-										<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time( _x( 'F d, Y', 'date format', 'university-hub' ) ); ?></a></span>
+										<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time( _x( 'F d, Y', 'date format', 'school-hub' ) ); ?></a></span>
 										<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 											<span class="comments-link">
-												<?php comments_popup_link( esc_html__( '0 comments', 'university-hub' ), esc_html__( '1 Comment', 'university-hub' ), esc_html__( '% Comments', 'university-hub' ) ); ?>
+												<?php comments_popup_link( esc_html__( '0 comments', 'school-hub' ), esc_html__( '1 Comment', 'school-hub' ), esc_html__( '% Comments', 'school-hub' ) ); ?>
 											</span>
 										<?php endif; ?>
 									</div><!-- .block-meta -->
 									<?php
-									$excerpt = university_hub_the_excerpt( 20 );
+									$excerpt = school_hub_the_excerpt( 20 );
 									echo wp_kses_post( wpautop( $excerpt ) );
 									?>
 								</div><!-- .news-content -->
@@ -92,12 +92,12 @@ $news_and_events_ecategory = university_hub_get_option( 'news_and_events_ecatego
 
 							<div class="event-post">
 								<div class="custom-entry-date">
-									<span class="entry-month"><?php the_time( _x( 'M', 'date format', 'university-hub' ) ); ?></span>
-									<span class="entry-day"><?php the_time( _x( 'd', 'date format', 'university-hub' ) ); ?></span>
+									<span class="entry-month"><?php the_time( _x( 'M', 'date format', 'school-hub' ) ); ?></span>
+									<span class="entry-day"><?php the_time( _x( 'd', 'date format', 'school-hub' ) ); ?></span>
 								</div>
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php
-								$excerpt = university_hub_the_excerpt( 10 );
+								$excerpt = school_hub_the_excerpt( 10 );
 								echo wp_kses_post( wpautop( $excerpt ) );
 								?>
 							</div> <!-- .event-post -->

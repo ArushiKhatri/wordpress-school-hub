@@ -2,10 +2,10 @@
 /**
  * Common helper functions.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
-if ( ! function_exists( 'university_hub_the_excerpt' ) ) :
+if ( ! function_exists( 'school_hub_the_excerpt' ) ) :
 
 	/**
 	 * Generate excerpt.
@@ -16,7 +16,7 @@ if ( ! function_exists( 'university_hub_the_excerpt' ) ) :
 	 * @param WP_Post $post_obj WP_Post instance (Optional).
 	 * @return string Excerpt.
 	 */
-	function university_hub_the_excerpt( $length = 0, $post_obj = null ) {
+	function school_hub_the_excerpt( $length = 0, $post_obj = null ) {
 
 		global $post;
 
@@ -44,14 +44,14 @@ if ( ! function_exists( 'university_hub_the_excerpt' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_simple_breadcrumb' ) ) :
+if ( ! function_exists( 'school_hub_simple_breadcrumb' ) ) :
 
 	/**
 	 * Simple breadcrumb.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_simple_breadcrumb() {
+	function school_hub_simple_breadcrumb() {
 
 		if ( ! function_exists( 'breadcrumb_trail' ) ) {
 			require_once trailingslashit( get_template_directory() ) . 'lib/breadcrumbs/breadcrumbs.php';
@@ -68,7 +68,7 @@ if ( ! function_exists( 'university_hub_simple_breadcrumb' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_fonts_url' ) ) :
+if ( ! function_exists( 'school_hub_fonts_url' ) ) :
 
 	/**
 	 * Return fonts URL.
@@ -76,14 +76,14 @@ if ( ! function_exists( 'university_hub_fonts_url' ) ) :
 	 * @since 1.0.0
 	 * @return string Font URL.
 	 */
-	function university_hub_fonts_url() {
+	function school_hub_fonts_url() {
 
 		$fonts_url = '';
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 
 		/* translators: If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'university-hub' ) ) {
+		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'school-hub' ) ) {
 			$fonts[] = 'Roboto:300,400,500,700,900,300italic,400italic,500italic,700italic,900italic';
 		}
 
@@ -104,14 +104,14 @@ if ( ! function_exists( 'university_hub_fonts_url' ) ) :
 
 endif;
 
-if( ! function_exists( 'university_hub_get_sidebar_options' ) ) :
+if( ! function_exists( 'school_hub_get_sidebar_options' ) ) :
 
   /**
    * Get sidebar options.
    *
    * @since 1.0.0
    */
-  function university_hub_get_sidebar_options() {
+  function school_hub_get_sidebar_options() {
 
   	global $wp_registered_sidebars;
 
@@ -129,16 +129,16 @@ if( ! function_exists( 'university_hub_get_sidebar_options' ) ) :
 
 endif;
 
-if( ! function_exists( 'university_hub_primary_navigation_fallback' ) ) :
+if( ! function_exists( 'school_hub_primary_navigation_fallback' ) ) :
 
 	/**
 	 * Fallback for primary navigation.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_primary_navigation_fallback() {
+	function school_hub_primary_navigation_fallback() {
 		echo '<ul>';
-		echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'university-hub' ) . '</a></li>';
+		echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'school-hub' ) . '</a></li>';
 		wp_list_pages( array(
 			'title_li' => '',
 			'depth'    => 1,
@@ -150,14 +150,14 @@ if( ! function_exists( 'university_hub_primary_navigation_fallback' ) ) :
 
 endif;
 
-if ( ! function_exists( 'university_hub_the_custom_logo' ) ) :
+if ( ! function_exists( 'school_hub_the_custom_logo' ) ) :
 
 	/**
 	 * Render logo.
 	 *
 	 * @since 2.0
 	 */
-	function university_hub_the_custom_logo() {
+	function school_hub_the_custom_logo() {
 
 		if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
@@ -177,7 +177,7 @@ endif;
  * @param mixed  $value Raw value.
  * @return mixed Sanitized value.
  */
-function university_hub_widget_sanitize_post_id( $key, $field, $value ) {
+function school_hub_widget_sanitize_post_id( $key, $field, $value ) {
 
 	$output = '';
 	$value = absint( $value );
@@ -192,7 +192,7 @@ function university_hub_widget_sanitize_post_id( $key, $field, $value ) {
 
 }
 
-if ( ! function_exists( 'university_hub_get_index_page_id' ) ) :
+if ( ! function_exists( 'school_hub_get_index_page_id' ) ) :
 
 	/**
 	 * Get front index page ID.
@@ -202,7 +202,7 @@ if ( ! function_exists( 'university_hub_get_index_page_id' ) ) :
 	 * @param string $type Type.
 	 * @return int Corresponding Page ID.
 	 */
-	function university_hub_get_index_page_id( $type = 'front' ) {
+	function school_hub_get_index_page_id( $type = 'front' ) {
 
 		$page = '';
 
@@ -224,7 +224,7 @@ if ( ! function_exists( 'university_hub_get_index_page_id' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_render_select_dropdown' ) ) :
+if ( ! function_exists( 'school_hub_render_select_dropdown' ) ) :
 
 	/**
 	 * Render select dropdown.
@@ -236,7 +236,7 @@ if ( ! function_exists( 'university_hub_render_select_dropdown' ) ) :
 	 * @param array  $callback_args Callback arguments.
 	 * @return string Rendered markup.
 	 */
-	function university_hub_render_select_dropdown( $main_args, $callback, $callback_args = array() ) {
+	function school_hub_render_select_dropdown( $main_args, $callback, $callback_args = array() ) {
 
 		$defaults = array(
 			'id'          => '',
@@ -258,7 +258,7 @@ if ( ! function_exists( 'university_hub_render_select_dropdown' ) ) :
 
 			$output = "<select name='" . esc_attr( $r['name'] ) . "' id='" . esc_attr( $r['id'] ) . "'>\n";
 			if ( true === $r['add_default'] ) {
-				$output .= '<option value="">' . __( 'Default', 'university-hub' ) . '</option>\n';
+				$output .= '<option value="">' . __( 'Default', 'school-hub' ) . '</option>\n';
 			}
 			if ( ! empty( $choices ) ) {
 				foreach ( $choices as $key => $choice ) {
@@ -288,7 +288,7 @@ endif;
  * @param  array $replacement Sub array.
  * @return array New array.
  */
-function university_hub_array_splice_preserve_keys( &$input, $offset, $length = null, $replacement = array() ) {
+function school_hub_array_splice_preserve_keys( &$input, $offset, $length = null, $replacement = array() ) {
 	if ( empty( $replacement ) ) {
 		return array_splice( $input, $offset, $length );
 	}
@@ -302,7 +302,7 @@ function university_hub_array_splice_preserve_keys( &$input, $offset, $length = 
 	return $part_removed;
 }
 
-if ( ! function_exists( 'university_hub_get_active_homepage_sections' ) ) :
+if ( ! function_exists( 'school_hub_get_active_homepage_sections' ) ) :
 
 	/**
 	 * Returns active homepage sections.
@@ -311,14 +311,14 @@ if ( ! function_exists( 'university_hub_get_active_homepage_sections' ) ) :
 	 *
 	 * @return array Active sections.
 	 */
-	function university_hub_get_active_homepage_sections() {
+	function school_hub_get_active_homepage_sections() {
 
 		$output = array();
 
-		$homepage_sections_raw = (array)university_hub_get_option( 'homepage_sections' );
+		$homepage_sections_raw = (array)school_hub_get_option( 'homepage_sections' );
 
 		if ( ! empty( $homepage_sections_raw ) ) {
-			$default_sections = university_hub_get_home_sections_options();
+			$default_sections = school_hub_get_home_sections_options();
 			foreach ( $homepage_sections_raw as $key ) {
 				if ( isset( $default_sections[ $key ] ) ) {
 					$output[ $key ] = $default_sections[ $key ];
@@ -331,16 +331,16 @@ if ( ! function_exists( 'university_hub_get_active_homepage_sections' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_get_news_ticker_content' ) ) :
+if ( ! function_exists( 'school_hub_get_news_ticker_content' ) ) :
 
 	/**
 	 * Get news ticker content.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_get_news_ticker_content(){
+	function school_hub_get_news_ticker_content(){
 
-		$tickers = university_hub_news_ticker_details();
+		$tickers = school_hub_news_ticker_details();
 
 		if ( empty( $tickers ) ) {
 			return;
@@ -365,19 +365,19 @@ if ( ! function_exists( 'university_hub_get_news_ticker_content' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'university_hub_news_ticker_details' ) ) :
+if ( ! function_exists( 'school_hub_news_ticker_details' ) ) :
 
 	/**
 	 * Get news ticker details.
 	 *
 	 * @since 1.0.0
 	 */
-	function university_hub_news_ticker_details(){
+	function school_hub_news_ticker_details(){
 
 		$output = array();
 
-		$ticker_category = university_hub_get_option( 'ticker_category' );
-		$ticker_number   = university_hub_get_option( 'ticker_number' );
+		$ticker_category = school_hub_get_option( 'ticker_category' );
+		$ticker_number   = school_hub_get_option( 'ticker_number' );
 
 		$qargs = array(
 			'posts_per_page' => absint( $ticker_number ),

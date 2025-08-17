@@ -2,7 +2,7 @@
 /**
  * Custom Customizer Controls.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
@@ -16,7 +16,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
  *
  * @see WP_Customize_Control
  */
-class university_Hub_Heading_Control extends WP_Customize_Control {
+class school_Hub_Heading_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
@@ -70,7 +70,7 @@ class university_Hub_Heading_Control extends WP_Customize_Control {
  *
  * @see WP_Customize_Control
  */
-class university_Hub_Message_Control extends WP_Customize_Control {
+class school_Hub_Message_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
@@ -124,7 +124,7 @@ class university_Hub_Message_Control extends WP_Customize_Control {
  *
  * @see WP_Customize_Control
  */
-class university_Hub_Dropdown_Taxonomies_Control extends WP_Customize_Control {
+class school_Hub_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
@@ -170,7 +170,7 @@ class university_Hub_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 		$all_taxonomies = get_categories( $tax_args );
 
 		$choices = array();
-		$choices[0] = esc_html__( '&mdash; Select &mdash;', 'university-hub' );
+		$choices[0] = esc_html__( '&mdash; Select &mdash;', 'school-hub' );
 
 		if ( ! empty( $all_taxonomies ) && ! is_wp_error( $all_taxonomies ) ) {
 			foreach ( $all_taxonomies as $tax ) {
@@ -204,8 +204,8 @@ class university_Hub_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'university-hub-customize-controls' );
-		wp_enqueue_script( 'university-hub-customize-controls' );
+		wp_enqueue_style( 'school-hub-customize-controls' );
+		wp_enqueue_script( 'school-hub-customize-controls' );
 
 	}
 
@@ -242,7 +242,7 @@ class university_Hub_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 	public function render_content() {}
 }
 
-class university_Hub_Dropdown_Sidebars_Control extends WP_Customize_Control {
+class school_Hub_Dropdown_Sidebars_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
@@ -301,8 +301,8 @@ class university_Hub_Dropdown_Sidebars_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'university-hub-customize-controls' );
-		wp_enqueue_script( 'university-hub-customize-controls' );
+		wp_enqueue_style( 'school-hub-customize-controls' );
+		wp_enqueue_script( 'school-hub-customize-controls' );
 
 	}
 
@@ -346,7 +346,7 @@ class university_Hub_Dropdown_Sidebars_Control extends WP_Customize_Control {
  *
  * @see WP_Customize_Control
  */
-class university_Hub_Section_Manager_Control extends WP_Customize_Control {
+class school_Hub_Section_Manager_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.
@@ -371,8 +371,8 @@ class university_Hub_Section_Manager_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'university-hub-customize-controls' );
-		wp_enqueue_script( 'university-hub-customize-controls' );
+		wp_enqueue_style( 'school-hub-customize-controls' );
+		wp_enqueue_script( 'school-hub-customize-controls' );
 
 	}
 
@@ -436,7 +436,7 @@ class university_Hub_Section_Manager_Control extends WP_Customize_Control {
  * @since  1.0.0
  * @access public
  */
-class university_Hub_Customize_Section_Upsell extends WP_Customize_Section {
+class school_Hub_Customize_Section_Upsell extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.

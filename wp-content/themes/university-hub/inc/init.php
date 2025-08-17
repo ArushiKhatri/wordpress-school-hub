@@ -2,7 +2,7 @@
 /**
  * Load files.
  *
- * @package university_Hub
+ * @package school_Hub
  */
 
 /**
