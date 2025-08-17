@@ -87,7 +87,7 @@ pipeline{
           curl -X POST \
   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#deployments","text":" CI Successful!"}' \
+  -d '{"channel":"#new-channel","text":" CI Successful!"}' \
   https://slack.com/api/chat.postMessage
 
 
@@ -148,7 +148,7 @@ pipeline{
 curl -X POST \
   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#deployments","text":"CD Successful!"}' \
+  -d '{"channel":"#new-channel","text":"CD Successful!"}' \
   https://slack.com/api/chat.postMessage
 
 
@@ -227,7 +227,7 @@ curl -X POST \
 curl -X POST \
   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#deployments","text":" Rollback Successful!"}' \
+  -d '{"channel":"#new-channel","text":" Rollback Successful!"}' \
   https://slack.com/api/chat.postMessage
 
               ''' 
