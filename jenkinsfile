@@ -86,7 +86,7 @@ pipeline{
 
                 curl -X POST -H 'Content-type: application/json' \
                 --data '{"text":"CI successfully Completed!!!"}' \
-               https://hooks.slack.com/services/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
+              https://hooks.slack.com/services/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
 
             '''
         }
@@ -143,7 +143,7 @@ pipeline{
  
   curl -X POST -H 'Content-type: application/json' \
   --data '{"text":"CD Completed!!!"}' \
-  https://hooks.slack.com/services/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
+ https://hooks.slack.com/services/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
 
 
 
@@ -221,7 +221,7 @@ pipeline{
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-                       curl -X POST -H 'Content-type: application/json' --data '{"text":"Rollback Completed!!"}' https://hooks.slack.com/services/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
+                       curl -X POST -H 'Content-type: application/json' --data '{"text":"Rollback Completed!!"}' https://hooks.slack.com/services/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
 
               ''' 
 }
