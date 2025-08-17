@@ -84,7 +84,11 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-        curl -X POST   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-pmSB1Gt76y8wqCGqNy8O8WMx"   -H "Content-Type: application/json"   -d '{"channel":"new-channel","text":":tada: New bot token working successfully!"}'   https://slack.com/api/chat.postMessage
+        curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  https://slack.com/api/chat.postMessage
 
 
 
@@ -141,7 +145,12 @@ pipeline{
 
                 
  
-curl -X POST   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-pmSB1Gt76y8wqCGqNy8O8WMx"   -H "Content-Type: application/json"   -d '{"channel":"new-channel","text":":tada: New bot token working successfully!"}'   https://slack.com/api/chat.postMessage
+curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  https://slack.com/api/chat.postMessage
+
 
                 '''
             }
@@ -215,7 +224,11 @@ curl -X POST   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-pmSB1G
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-curl -X POST   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-pmSB1Gt76y8wqCGqNy8O8WMx"   -H "Content-Type: application/json"   -d '{"channel":"new-channel","text":":tada: New bot token working successfully!"}'   https://slack.com/api/chat.postMessage
+curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  https://slack.com/api/chat.postMessage
 
               ''' 
 }
