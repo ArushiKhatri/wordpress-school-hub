@@ -84,11 +84,12 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-        curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+      curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
   https://slack.com/api/chat.postMessage
+
 
 
 
@@ -146,9 +147,9 @@ pipeline{
                 
  
 curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
   https://slack.com/api/chat.postMessage
 
 
@@ -225,10 +226,11 @@ curl -X POST \
 
                     sh '''
 curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-1l2fCPL2h2cExV9esSA26Wyg" \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"#new-channel","text":"🎉 Bot working in new-channel!"}' \
+  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
   https://slack.com/api/chat.postMessage
+
 
               ''' 
 }
