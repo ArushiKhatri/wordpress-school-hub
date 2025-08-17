@@ -84,7 +84,12 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-           curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+          curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#deployments","text":" CI Successful!"}' \
+  https://slack.com/api/chat.postMessage
+
 
 
             '''
@@ -140,7 +145,11 @@ pipeline{
 
                 
  
-curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#deployments","text":"CD Successful!"}' \
+  https://slack.com/api/chat.postMessage
 
 
                 '''
@@ -215,7 +224,11 @@ curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"
                     writeFile file: 'slack-payload.json', text: slackMessage
 
                     sh '''
-curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+curl -X POST \
+  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-30AwNpaNzUL5cX15UtiLFGNF" \
+  -H "Content-Type: application/json" \
+  -d '{"channel":"#deployments","text":" Rollback Successful!"}' \
+  https://slack.com/api/chat.postMessage
 
               ''' 
 }
