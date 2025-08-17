@@ -85,8 +85,8 @@ pipeline{
                 TRIGGERED_BY=$BUILD_USER_ID
 
            curl -X POST -H 'Content-type: application/json' \
---data '{"text":"Hello, World!"}' \
-https://hooks.slack.com/services/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
+--data '{"text":"CI hogya"}' \
+https://hooks.slack.com/services/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
 
 
             '''
@@ -143,8 +143,8 @@ https://hooks.slack.com/services/T097PCU4NTZ/B09AR0GF77C/cu3boHBefjfYX6Dt6rnHdez
                 
  
 curl -X POST -H 'Content-type: application/json' \
---data '{"text":"Hello, World!"}' \
-https://hooks.slack.com/services/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
+--data '{"text":"CD Done"}' \
+https://hooks.slack.com/services/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
 
 
                 '''
@@ -220,8 +220,8 @@ https://hooks.slack.com/services/T097PCU4NTZ/B09AR0GF77C/cu3boHBefjfYX6Dt6rnHdez
 
                     sh '''
 curl -X POST -H 'Content-type: application/json' \
---data '{"text":"Hello, World!"}' \
-https://hooks.slack.com/services/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
+--data '{"text":"Rollback done!"}' \
+https://hooks.slack.com/services/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
 
               ''' 
 }
