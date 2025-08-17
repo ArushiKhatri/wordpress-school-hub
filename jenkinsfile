@@ -84,12 +84,11 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-      curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
-  -H "Content-Type: application/json" \
-  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
-  https://slack.com/api/chat.postMessage
-
+    curl -X POST \
+                      -H "Authorization: Bearer xoxb-9322564058034-9377965156513-jcBKOf0b5d8F3WN5UxVS95rK" \
+                      -H "Content-Type: application/json" \
+                      -d "{\\"channel\\": \\"#proj-jenkins\\", \\"text\\": \\"✅ Jenkins se notification chal gya Boss!\\"}" \
+                      https://slack.com/api/chat.postMessage
 
 
 
@@ -147,11 +146,10 @@ pipeline{
                 
  
 curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
-  -H "Content-Type: application/json" \
-  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
-  https://slack.com/api/chat.postMessage
-
+                      -H "Authorization: Bearer xoxb-9322564058034-9377965156513-jcBKOf0b5d8F3WN5UxVS95rK" \
+                      -H "Content-Type: application/json" \
+                      -d "{\\"channel\\": \\"#proj-jenkins\\", \\"text\\": \\"✅ Jenkins se notification chal gya Boss!\\"}" \
+                      https://slack.com/api/chat.postMessage
 
                 '''
             }
@@ -226,11 +224,10 @@ curl -X POST \
 
                     sh '''
 curl -X POST \
-  -H "Authorization: Bearer xoxb-9322564058034-9377965156513-byH6hPETm1y3c1A0R1eVgc76" \
-  -H "Content-Type: application/json" \
-  -d '{\\"channel\\":\\"#proj-jenkins\\",\\"text\\:\\"hehehehehehehe chal gya!\\"}' \
-  https://slack.com/api/chat.postMessage
-
+                      -H "Authorization: Bearer xoxb-9322564058034-9377965156513-jcBKOf0b5d8F3WN5UxVS95rK" \
+                      -H "Content-Type: application/json" \
+                      -d "{\\"channel\\": \\"#proj-jenkins\\", \\"text\\": \\"✅ Jenkins se notification chal gya Boss!\\"}" \
+                      https://slack.com/api/chat.postMessage
 
               ''' 
 }
