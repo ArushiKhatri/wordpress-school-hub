@@ -139,11 +139,11 @@ pipeline{
                     ZIP_NAME=$(head -n 1 zipname.txt)
 
                 
- sh '''
+ 
   curl -X POST -H 'Content-type: application/json' \
   --data '{"text":"CD Completed!!!"}' \
   https://hooks.slack.com/services/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w
-'''
+
 
 
 
