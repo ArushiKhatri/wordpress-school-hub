@@ -97,6 +97,7 @@ withCredentials([string(credentialsId: 'Slack_token', variable: 'SLACK_TOKEN')])
         }
     }
 }
+}
 
 
         // CD Stages
