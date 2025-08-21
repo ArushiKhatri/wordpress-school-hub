@@ -79,24 +79,21 @@ pipeline{
       stage('Slack Notification CI') {
     steps {
         wrap([$class: 'BuildUser']) {
-            sh '''
-                ZIP_NAME=$(cat zipname.txt)
-                BUILD_ID_VAL=$BUILD_ID
-                TRIGGERED_BY=$BUILD_USER_ID
+            withCredentials([string(credentialsId: 'Slack_token', variable: 'SLACK_TOKEN')]) {
+                sh '''
+                    ZIP_NAME=$(cat zipname.txt)
+                    BUILD_ID_VAL=$BUILD_ID
+                    TRIGGERED_BY=$BUILD_USER_ID
 
-withCredentials([string(credentialsId: 'Slack_token', variable: 'SLACK_TOKEN')]) {
-                    sh '''
-                        curl -X POST \
-                          -H "Authorization: Bearer $SLACK_TOKEN" \
-                          -H "Content-Type: application/json" \
-                          --data '{"channel": "new-channel", "text": "Jenkins build succeeded 🚀"}' \
-                          https://slack.com/api/chat.postMessage
-
-
-            '''
+                    curl -X POST \
+                      -H "Authorization: Bearer $SLACK_TOKEN" \
+                      -H "Content-Type: application/json" \
+                      --data "{\"channel\": \"new-channel\", \"text\": \"Jenkins build succeeded 🚀\"}" \
+                      https://slack.com/api/chat.postMessage
+                '''
+            }
         }
     }
-}
 }
 
 
