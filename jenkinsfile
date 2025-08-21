@@ -84,11 +84,13 @@ pipeline{
                 BUILD_ID_VAL=$BUILD_ID
                 TRIGGERED_BY=$BUILD_USER_ID
 
-  curl -X POST   -H "Authorization: Bearer xoxb-9322564058034-9377965156513-SiuSohCC0FwCQAyZGIQDARta"   -H "Content-Type: application/json"   --data '{
-    "channel": "new-channel",
-    "text": "Jenkins se notification chal gya 🚀"
-  }'   https://slack.com/api/chat.postMessage
-
+withCredentials([string(credentialsId: 'Slack_token', variable: 'SLACK_TOKEN')]) {
+                    sh '''
+                        curl -X POST \
+                          -H "Authorization: Bearer $SLACK_TOKEN" \
+                          -H "Content-Type: application/json" \
+                          --data '{"channel": "new-channel", "text": "Jenkins build succeeded 🚀"}' \
+                          https://slack.com/api/chat.postMessage
 
 
             '''
