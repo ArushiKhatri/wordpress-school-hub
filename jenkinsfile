@@ -88,7 +88,7 @@ pipeline{
                     curl -X POST \
                       -H "Authorization: Bearer $SLACK_TOKEN" \
                       -H "Content-Type: application/json" \
-                      --data "{\"channel\": \"new-channel\", \"text\": \"Jenkins build succeeded 🚀\"}" \
+                      --data "{\\"channel\\": \\"new-channel\\", \\"text\\": \\"Build #$BUILD_ID_VAL triggered by $TRIGGERED_BY succeeded 🚀 (Artifact: $ZIP_NAME)\\"}" \
                       https://slack.com/api/chat.postMessage
                 '''
             }
