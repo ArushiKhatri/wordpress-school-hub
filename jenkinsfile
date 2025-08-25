@@ -206,7 +206,7 @@ curl -X POST \
             }
         }
 
-        stage('Slack Notification Rollback') {
+     /*   stage('Slack Notification Rollback') {
             steps {
                 script {
                     def lines = readFile('latest.txt').split('\n').findAll { it.endsWith('.zip') }
@@ -239,7 +239,7 @@ curl -X POST \
               ''' 
 }
             }
-        }
+        } */
     }
 }
 
