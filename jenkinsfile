@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages {
-        // CI Stages
+        // CI Stages to be executed
         stage('Clone') {
             steps {
                 sh 'echo "Cloning The Repo"'
